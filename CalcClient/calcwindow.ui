@@ -271,22 +271,6 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections>
   <connection>
-   <sender>exitButton</sender>
-   <signal>clicked()</signal>
-   <receiver>CalcWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>490</x>
-     <y>294</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>287</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>input2</sender>
    <signal>valueChanged(double)</signal>
    <receiver>textEditResult</receiver>

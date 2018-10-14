@@ -30,8 +30,8 @@ void MyLoginDialog::on_login_button_clicked(){
     QString ip = ip_input_line->text();
     QString port = port_input_line->text();
 
-    if(username.isEmpty() || password.isEmpty()){
-        QMessageBox::critical(this, "Login", "Por favor preencha os dois campos", QMessageBox::Ok);
+    if(username.isEmpty() || password.isEmpty() || ip.isEmpty() || port.isEmpty()){
+        QMessageBox::critical(this, "Login", "Por favor preencha todos campos acima", QMessageBox::Ok);
         return;
     }
 
@@ -43,15 +43,16 @@ void MyLoginDialog::on_login_button_clicked(){
     jsonObject.insert("password", password);
 
     QJsonDocument jsonDocument(jsonObject);
-    QString data(jsonDocument.toJson(QJsonDocument::Compact));
-
-    QByteArray msg = data.toUtf8();
+    QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
+    QByteArray jsonData = jsonString.toUtf8();
 
 #ifdef DEBUG
-    qDebug() << "Msg: " << msg;
+    qDebug() << "=========== Mensagem Enviada ===========";
+    qDebug() << "Msg: " << jsonData;
+    qDebug() << "========================================";
 #endif
 
-    tcpSocket.write(msg);
+    tcpSocket.write(jsonData);
 }
 
 void MyLoginDialog::on_cancel_button_clicked(){
@@ -62,24 +63,25 @@ void MyLoginDialog::on_cancel_button_clicked(){
 void MyLoginDialog::readMessage(){
     tcpSocket.waitForReadyRead(-1);
 
-    QByteArray data = tcpSocket.readLine();
-    QString message = QString::fromStdString(data.toStdString());
+    QByteArray jsonData = tcpSocket.readLine();
+    QString jsonString = QString::fromStdString(jsonData.toStdString());
 
 #ifdef DEBUG
-    qDebug() << "Msg: " << message;
+    qDebug() << "========== Mensagem Recebida ===========";
+    qDebug() << "Msg: " << jsonString;
 #endif
 
-    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
+    QJsonObject jsonObject = jsonDocument.object();
 
-    bool response = jsonObject.value("valid").toBool();
-    // Tratar Resultado
+    bool valid = jsonObject.value("valid").toBool();
 
 #ifdef DEBUG
-    qDebug() << "response: " << response;
+    qDebug() << "response: " << valid;
+    qDebug() << "========================================";
 #endif
 
-    if(response){
+    if(valid){
         QString username = user_input_line->text();
         QString ip = ip_input_line->text();
         QString port = port_input_line->text();

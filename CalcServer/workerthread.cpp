@@ -139,7 +139,7 @@ void WorkerThread::run(){
         }
 
         QJsonObject answerJson;
-        answerJson.insert("responseType", 1);
+        answerJson.insert("answerType", 1);
         answerJson.insert("result", result);
 
         QJsonDocument answerDocument(answerJson);
@@ -179,11 +179,11 @@ void WorkerThread::run(){
     case 3:
     {
         QString username = jsonObject.value("username").toString();
-        vector<pair<QString, int>> operationsList = databaseHelper->getOperationsByUser(username);
+        vector<pair<QString, int>> operations = databaseHelper->getOperationsByUser(username);
 
 #ifdef DEBUG
         qDebug() << "========= Operações Armazenada =========";
-        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
             qDebug() << "Operação: "<< (*it).first <<", Qtd: "<<(*it).second;
         }
         qDebug() << "========================================";
@@ -191,9 +191,9 @@ void WorkerThread::run(){
 
 
         QJsonObject answerJson;
-        answerJson.insert("responseType", 3);
+        answerJson.insert("answerType", 3);
 
-        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
             answerJson.insert((*it).first, (*it).second);
         }
 
@@ -218,7 +218,7 @@ void WorkerThread::run(){
         QString username = jsonObject.value("username").toString();
         if(!databaseHelper->isAdmin(username)){
             QJsonObject answerJson;
-            answerJson.insert("responseType", 4);
+            answerJson.insert("answerType", 4);
             QJsonDocument answerDocument(answerJson);
             QString answerString(answerDocument.toJson(QJsonDocument::Compact));
             QByteArray answerData = answerString.toUtf8();
@@ -235,11 +235,11 @@ void WorkerThread::run(){
 
             return;
         }
-        vector<pair<QString, int>> operationsList = databaseHelper->getAllOperations();
+        vector<pair<QString, int>> operations = databaseHelper->getAllOperations();
 
 #ifdef DEBUG
         qDebug() << "========= Operações Armazenada =========";
-        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
             qDebug() << "Operação: "<< (*it).first <<", Qtd: "<<(*it).second;
         }
         qDebug() << "========================================";
@@ -247,9 +247,9 @@ void WorkerThread::run(){
 
 
         QJsonObject answerJson;
-        answerJson.insert("responseType", 3);
+        answerJson.insert("answerType", 3);
 
-        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
             answerJson.insert((*it).first, (*it).second);
         }
 
