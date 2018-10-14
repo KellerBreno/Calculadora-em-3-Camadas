@@ -10,7 +10,7 @@ class Server : public QTcpServer{
 
 public:
     Server(QObject *parent = 0);
-    ~Server();
+    virtual ~Server();
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;

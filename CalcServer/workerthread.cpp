@@ -15,6 +15,9 @@ WorkerThread::WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper
     : QThread(parent), socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){
 }
 
+WorkerThread::~WorkerThread(){
+}
+
 void WorkerThread::run(){
     QTcpSocket tcpSocket;
     if (!tcpSocket.setSocketDescriptor(socketDescriptor)) {
@@ -29,14 +32,16 @@ void WorkerThread::run(){
     QString message = QString::fromStdString(data.toStdString());
 
 #ifdef DEBUG
-    qDebug() << "Msg: " << message;
+    qDebug() << "============= Msg Recebida =============";
+    qDebug() << "Msg Receive: " << message;
 #endif
 
-    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(message.toUtf8());
+    QJsonObject jsonObject = jsonDocument.object();
 
 #ifdef DEBUG
     qDebug() << "Operation Type: " << jsonObject.value("operationType").toInt();
+    qDebug() << "========================================";
 #endif
     int operationType = jsonObject.value("operationType").toInt();
 
@@ -47,12 +52,13 @@ void WorkerThread::run(){
         QString password = jsonObject.value("password").toString();
 
 #ifdef DEBUG
+        qDebug() << "=============== Database ===============";
         qDebug() << "Username: " << username;
         qDebug() << "Password: " << password;
 #endif
 
-        QJsonObject loginResult;
-        vector<pair<QString, QString> > users = databaseHelper->getUsers();
+        QJsonObject answerResult;
+        vector<pair<QString, QString> > users = databaseHelper->getAllUsers();
         for (vector<pair<QString, QString> >::iterator it = users.begin(); it != users.end(); ++it){
             QString usernameDB = (*it).first;
             QString passwordDB = (*it).second;
@@ -60,48 +66,53 @@ void WorkerThread::run(){
 #ifdef DEBUG
             qDebug() << "UsernameDB: " << usernameDB;
             qDebug() << "PasswordDB: " << passwordDB;
+            qDebug() << "----------------------------------------";
 #endif
 
             // Validar as Credenciais
             if((usernameDB == username) && (passwordDB == password)){
                 // Usuário valido
                 bool adminLevel = databaseHelper->isAdmin(username);
-                loginResult.insert("valid", true);
-                loginResult.insert("adminLevel", adminLevel);
+                answerResult.insert("valid", true);
+                answerResult.insert("adminLevel", adminLevel);
 
-                QJsonDocument loginDocument(loginResult);
-                QString responseData(loginDocument.toJson(QJsonDocument::Compact));
-                QByteArray msgLogin = responseData.toUtf8();
+                QJsonDocument answerDocument(answerResult);
+                QString answerString(answerDocument.toJson(QJsonDocument::Compact));
+                QByteArray answerData = answerString.toUtf8();
 
 #ifdef DEBUG
-                qDebug() << "Msg Login: " << msgLogin;
+                qDebug() << "============= Msg Resposta =============";
+                qDebug() << "Msg Login: " << answerData;
+                qDebug() << "========================================";
 #endif
 
-                tcpSocket.write(msgLogin);
+                tcpSocket.write(answerData);
                 tcpSocket.disconnectFromHost();
                 tcpSocket.waitForDisconnected();
                 return;
             }
         }
         // Usuário invalido
-        loginResult.insert("valid", false);
+        answerResult.insert("valid", false);
 
-        QJsonDocument loginDocument(loginResult);
-        QString responseData(loginDocument.toJson(QJsonDocument::Compact));
-        QByteArray msgLogin = responseData.toUtf8();
+        QJsonDocument answerDocument(answerResult);
+        QString answerString(answerDocument.toJson(QJsonDocument::Compact));
+        QByteArray answerData = answerString.toUtf8();
 
 #ifdef DEBUG
-        qDebug() << "Msg Login: " << msgLogin;
+        qDebug() << "============= Msg Resposta =============";
+        qDebug() << "Msg Resposta: " << answerData;
+        qDebug() << "========================================";
 #endif
 
-        tcpSocket.write(msgLogin);
+        tcpSocket.write(answerData);
         tcpSocket.disconnectFromHost();
         tcpSocket.waitForDisconnected();
         break;
     }
     case 2:
     {
-        QString usernameInsert = jsonObject.value("username").toString();
+        QString username = jsonObject.value("username").toString();
         int opCode = jsonObject.value("opCode").toInt();
         double v1 = jsonObject.value("v1").toDouble();
         double v2 = jsonObject.value("v2").toDouble();
@@ -127,39 +138,40 @@ void WorkerThread::run(){
             break;
         }
 
-        QJsonObject response;
-        response.insert("responseType", 1);
-        response.insert("result", result);
+        QJsonObject answerJson;
+        answerJson.insert("responseType", 1);
+        answerJson.insert("result", result);
 
-        QJsonDocument resultDoc(response);
-        QString resultData(resultDoc.toJson(QJsonDocument::Compact));
+        QJsonDocument answerDocument(answerJson);
+        QString answerString(answerDocument.toJson(QJsonDocument::Compact));
 
-
-        int userId = databaseHelper->getUserId(usernameInsert);
+        int userId = databaseHelper->getUserId(username);
 
 #ifdef DEBUG
-        qDebug() << "===========================================" << endl;
+        qDebug() << "========== Dados da Resposta ===========" << endl;
         qDebug() << "userId: " << userId;
         qDebug() << "v1: " << v1;
         qDebug() << "Operação: " << operacao;
         qDebug() << "v2: " << v2;
         qDebug() << "Resultado: " << result;
-        qDebug() << "===========================================" << endl;
+        qDebug() << "========================================";
 #endif
 
         bool exec = databaseHelper->insertOperation(userId, v1, operacao, v2, result);
 
 #ifdef DEBUG
-        qDebug() << "executou :" << exec;
+        qDebug() << "A query foi executada: " << exec;
 #endif
 
-        QByteArray msgLogin = resultData.toUtf8();
+        QByteArray answerData = answerString.toUtf8();
 
 #ifdef DEBUG
-        qDebug() << "Msg Login: " << msgLogin;
+        qDebug() << "============= Msg Resposta =============";
+        qDebug() << "Msg Resposta: " << answerData;
+        qDebug() << "========================================";
 #endif
 
-        tcpSocket.write(msgLogin);
+        tcpSocket.write(answerData);
         tcpSocket.disconnectFromHost();
         tcpSocket.waitForDisconnected();
         break;
@@ -167,33 +179,35 @@ void WorkerThread::run(){
     case 3:
     {
         QString username = jsonObject.value("username").toString();
-        vector<pair<QString, int>> operations = databaseHelper->getOperationsByUser(username);
+        vector<pair<QString, int>> operationsList = databaseHelper->getOperationsByUser(username);
 
 #ifdef DEBUG
-        qDebug() << "===========================================" << endl;
-        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
+        qDebug() << "========= Operações Armazenada =========";
+        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
             qDebug() << "Operação: "<< (*it).first <<", Qtd: "<<(*it).second;
         }
-        qDebug() << "===========================================" << endl;
+        qDebug() << "========================================";
 #endif
 
 
-        QJsonObject response;
-        response.insert("responseType", 3);
+        QJsonObject answerJson;
+        answerJson.insert("responseType", 3);
 
-        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
-            response.insert((*it).first, (*it).second);
+        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+            answerJson.insert((*it).first, (*it).second);
         }
 
-        QJsonDocument resultDoc(response);
-        QString resultData(resultDoc.toJson(QJsonDocument::Compact));
-        QByteArray msgLogin = resultData.toUtf8();
+        QJsonDocument answerDocument(answerJson);
+        QString answerString(answerDocument.toJson(QJsonDocument::Compact));
+        QByteArray answerData = answerString.toUtf8();
 
 #ifdef DEBUG
-        qDebug() << "Msg Login: " << msgLogin;
+        qDebug() << "============= Msg Resposta =============";
+        qDebug() << "Msg Resposta: " << answerData;
+        qDebug() << "========================================";
 #endif
 
-        tcpSocket.write(msgLogin);
+        tcpSocket.write(answerData);
         tcpSocket.disconnectFromHost();
         tcpSocket.waitForDisconnected();
 
@@ -203,49 +217,53 @@ void WorkerThread::run(){
     {
         QString username = jsonObject.value("username").toString();
         if(!databaseHelper->isAdmin(username)){
-            QJsonObject response;
-            response.insert("responseType", 4);
-            QJsonDocument resultDoc(response);
-            QString resultData(resultDoc.toJson(QJsonDocument::Compact));
-            QByteArray msgLogin = resultData.toUtf8();
+            QJsonObject answerJson;
+            answerJson.insert("responseType", 4);
+            QJsonDocument answerDocument(answerJson);
+            QString answerString(answerDocument.toJson(QJsonDocument::Compact));
+            QByteArray answerData = answerString.toUtf8();
 
-    #ifdef DEBUG
-            qDebug() << "Msg Login: " << msgLogin;
-    #endif
+#ifdef DEBUG
+            qDebug() << "============= Msg Resposta =============";
+            qDebug() << "Msg Resposta: " << answerData;
+            qDebug() << "========================================";
+#endif
 
-            tcpSocket.write(msgLogin);
+            tcpSocket.write(answerData);
             tcpSocket.disconnectFromHost();
             tcpSocket.waitForDisconnected();
 
             return;
         }
-        vector<pair<QString, int>> operations = databaseHelper->getOperations();
+        vector<pair<QString, int>> operationsList = databaseHelper->getAllOperations();
 
 #ifdef DEBUG
-        qDebug() << "===========================================" << endl;
-        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
+        qDebug() << "========= Operações Armazenada =========";
+        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
             qDebug() << "Operação: "<< (*it).first <<", Qtd: "<<(*it).second;
         }
-        qDebug() << "===========================================" << endl;
+        qDebug() << "========================================";
 #endif
 
 
-        QJsonObject response;
-        response.insert("responseType", 3);
+        QJsonObject answerJson;
+        answerJson.insert("responseType", 3);
 
-        for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
-            response.insert((*it).first, (*it).second);
+        for(vector<pair<QString, int>>::iterator it = operationsList.begin(); it!= operationsList.end(); ++it){
+            answerJson.insert((*it).first, (*it).second);
         }
 
-        QJsonDocument resultDoc(response);
-        QString resultData(resultDoc.toJson(QJsonDocument::Compact));
-        QByteArray msgLogin = resultData.toUtf8();
+        QJsonDocument answerDocument(answerJson);
+        QString answerString(answerDocument.toJson(QJsonDocument::Compact));
+        QByteArray answerData = answerString.toUtf8();
 
 #ifdef DEBUG
-        qDebug() << "Msg Login: " << msgLogin;
+        qDebug() << "============= Msg Resposta =============";
+        qDebug() << "Msg Resposta: " << answerString;
+        qDebug() << "========================================";
 #endif
 
-        tcpSocket.write(msgLogin);
+        tcpSocket.write(answerData);
         tcpSocket.disconnectFromHost();
         tcpSocket.waitForDisconnected();
     }

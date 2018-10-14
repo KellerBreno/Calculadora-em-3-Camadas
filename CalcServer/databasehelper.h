@@ -12,9 +12,9 @@ class DatabaseHelper{
 public:
     virtual int getUserId(QString username) = 0;
     virtual bool insertOperation(int userId, double v1, QString operacao, double v2, double resultado) = 0;
-    virtual vector<pair<QString, QString>> getUsers() = 0;
+    virtual vector<pair<QString, QString>> getAllUsers() = 0;
     virtual vector<pair<QString, int>> getOperationsByUser(QString username) = 0;
-    virtual vector<pair<QString, int>> getOperations() = 0;
+    virtual vector<pair<QString, int>> getAllOperations() = 0;
     virtual bool isAdmin(QString username) = 0;
 };
 
