@@ -11,9 +11,10 @@ public:
     virtual ~DatabaseHelperImpl();
     virtual int getUserId(QString username);
     virtual bool insertOperation(int userId, double v1, QString operacao, double v2, double resultado);
-    virtual vector<pair<QString, QString>> getUsers();
+    virtual vector<pair<QString, QString>> getAllUsers();
     virtual vector<pair<QString, int>> getOperationsByUser(QString username);
-    virtual vector<pair<QString, int>> getOperations();
+    virtual vector<pair<QString, int>> getAllOperations();
+    virtual bool isAdmin(QString username);
 
 protected:
     QSqlDatabase sqlDatabase;

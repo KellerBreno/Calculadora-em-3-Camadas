@@ -15,12 +15,12 @@ void DatabaseHelperImpl::setupDatabase(){
 int DatabaseHelperImpl::getUserId(QString username){
     setupDatabase();
     if(!sqlDatabase.open()){
-        // Throw error
+        throw "Não foi possivel se conectar ao banco de dados";
     }
 
-    QSqlQuery selectQuery("SELECT id FROM users WHERE login = '" + username + "'", sqlDatabase);
-    selectQuery.next();
-    int userId = selectQuery.value(0).toInt();
+    QSqlQuery select("SELECT id FROM users WHERE login = '" + username + "'", sqlDatabase);
+    select.next();
+    int userId = select.value(0).toInt();
 
     sqlDatabase.close();
 
@@ -31,92 +31,105 @@ bool DatabaseHelperImpl::insertOperation(int userId, double v1, QString operacao
     setupDatabase();
 
     if(!sqlDatabase.open()){
-        // Throw error
+        throw "Não foi possivel se conectar ao banco de dados";
     }
 
-    QSqlQuery insertQuery;
-    insertQuery.prepare("INSERT INTO operations (user_id, operando1, operador, operando2, resultado) "
+    QSqlQuery insert;
+    insert.prepare("INSERT INTO operations (user_id, operando1, operador, operando2, resultado) "
                         "VALUES (:user, :par1, :op, :par2, :resultado)");
-    insertQuery.bindValue(":user", userId);
-    insertQuery.bindValue(":par1", v1);
-    insertQuery.bindValue(":op", operacao);
-    insertQuery.bindValue(":par2", v2);
-    insertQuery.bindValue(":resultado", resultado);
-    bool b = insertQuery.exec();
+    insert.bindValue(":user", userId);
+    insert.bindValue(":par1", v1);
+    insert.bindValue(":op", operacao);
+    insert.bindValue(":par2", v2);
+    insert.bindValue(":resultado", resultado);
+    bool b = insert.exec();
 
     sqlDatabase.close();
 
     return b;
 }
 
-
-vector<pair<QString, QString>> DatabaseHelperImpl::getUsers(){
+vector<pair<QString, QString>> DatabaseHelperImpl::getAllUsers(){
     setupDatabase();
 
     if(!sqlDatabase.open()){
-        // Throw error
+        throw "Não foi possivel se conectar ao banco de dados";
     }
 
     vector<pair<QString, QString> > users;
-    QSqlQuery search("SELECT login, senha FROM users", sqlDatabase);
-    while (search.next()) {
+    QSqlQuery select("SELECT login, senha FROM users", sqlDatabase);
+    while (select.next()) {
         pair<QString, QString> userData;
 
-        QString username = search.value(0).toString();
-        QString password = search.value(1).toString();
+        QString username = select.value(0).toString();
+        QString password = select.value(1).toString();
 
         userData = make_pair(username, password);
         users.push_back(userData);
     }
 
     sqlDatabase.close();
-    return users; // Retorno local, conferir
+    return users;
 }
-
 
 vector<pair<QString, int>> DatabaseHelperImpl::getOperationsByUser(QString username){
     setupDatabase();
 
     if(!sqlDatabase.open()){
-        // Throw error
+        throw "Não foi possivel se conectar ao banco de dados";
     }
 
     vector<pair<QString, int>> operationsByUser;
-    QSqlQuery search("SELECT operador, count(*) as Frequencia FROM users as u, operations as op "
+    QSqlQuery select("SELECT operador, count(*) as Frequencia FROM users as u, operations as op "
                      "WHERE op.user_id = u.id AND u.login = '" + username + "' GROUP BY operador", sqlDatabase);
-    while (search.next()) {
+    while (select.next()) {
         pair<QString, int> opData;
 
-        QString operacao = search.value(0).toString();
-        long qtd = search.value(1).toInt();
+        QString operacao = select.value(0).toString();
+        long value = select.value(1).toInt();
 
-        opData = make_pair(operacao, qtd);
+        opData = make_pair(operacao, value);
         operationsByUser.push_back(opData);
     }
 
     sqlDatabase.close();
-    return operationsByUser; // Retorno local, conferir
+    return operationsByUser;
 }
 
-vector<pair<QString, int>> DatabaseHelperImpl::getOperations(){
+vector<pair<QString, int>> DatabaseHelperImpl::getAllOperations(){
     setupDatabase();
 
     if(!sqlDatabase.open()){
-        // Throw error
+        throw "Não foi possivel se conectar ao banco de dados";
     }
 
     vector<pair<QString, int>> operations;
-    QSqlQuery search("SELECT operador, count(*) as Frequencia FROM operations GROUP BY operador", sqlDatabase);
-    while (search.next()) {
+    QSqlQuery select("SELECT operador, count(*) as Frequencia FROM operations GROUP BY operador", sqlDatabase);
+    while (select.next()) {
         pair<QString, int> opData;
 
-        QString operacao = search.value(0).toString();
-        long qtd = search.value(1).toInt();
+        QString operacao = select.value(0).toString();
+        long value = select.value(1).toInt();
 
-        opData = make_pair(operacao, qtd);
+        opData = make_pair(operacao, value);
         operations.push_back(opData);
     }
 
     sqlDatabase.close();
-    return operations; // Retorno local, conferir
+    return operations;
+}
+
+bool DatabaseHelperImpl::isAdmin(QString username){
+    setupDatabase();
+
+    if(!sqlDatabase.open()){
+        throw "Não foi possivel se conectar ao banco de dados";
+    }
+
+    QSqlQuery select("SELECT adminLevel FROM users WHERE login ='" + username + "'", sqlDatabase);
+    select.next();
+    bool adminLevel = select.value(0).toBool();
+
+    sqlDatabase.close();
+    return adminLevel;
 }

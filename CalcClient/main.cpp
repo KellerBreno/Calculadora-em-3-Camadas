@@ -4,16 +4,15 @@
 int main(int argc, char *argv[]){
     QApplication app(argc, argv);
 
-    MyCalcWindow myCalcWindow;
-    myCalcWindow.setEnabled(false);
-    MyLoginDialog myLoginDialog;
-    myLoginDialog.setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::WindowStaysOnTopHint);
+    MyCalcWindow calcWindow;
+    calcWindow.setEnabled(false);
+    MyLoginDialog loginDialog;
 
-    QObject::connect(&myLoginDialog, SIGNAL(logged(QString, QString, int)), &myCalcWindow, SLOT(onUserLogin(QString, QString, int)));
-    QObject::connect(&myLoginDialog, SIGNAL(quit(void)), &myCalcWindow, SLOT(onQuit(void)));
+    QObject::connect(&loginDialog, SIGNAL(logged(QString, bool, QString, int)), &calcWindow, SLOT(onUserLogin(QString, bool, QString, int)));
+    QObject::connect(&loginDialog, SIGNAL(quit(void)), &calcWindow, SLOT(onQuit(void)));
 
-    myCalcWindow.show();
-    myLoginDialog.show();
+    calcWindow.show();
+    loginDialog.show();
 
     return app.exec();
 }

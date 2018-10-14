@@ -11,6 +11,7 @@ class WorkerThread : public QThread {
 
 public:
     WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper);
+    virtual ~WorkerThread();
     void run() override;
 
 signals:

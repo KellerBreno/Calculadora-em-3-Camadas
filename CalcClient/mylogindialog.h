@@ -18,7 +18,7 @@ public slots:
     void readMessage(void);
 
 signals:
-    void logged(QString username, QString ip, int port);
+    void logged(QString username, bool adminLevel, QString ip, int port);
     void quit(void);
 
 private:
