@@ -24,7 +24,7 @@ public slots:
     void on_radioButtonDiv_clicked(void);
     void on_actionByUser_triggered(void);
     void on_actionAllUsers_triggered(void);
-    void onUserLogin(QString username, QString ip, int port);
+    void onUserLogin(QString username, bool adminLevel, QString ip, int port);
     void onQuit(void);
     void readMessage(void);
     void showPieChart(QString title, vector<pair<QString, int>> operations);
@@ -34,6 +34,7 @@ private:
     QString ip;
     int port;
     QTcpSocket tcpSocket;
+    bool adminLevel;
 };
 
 #endif // MYCALCEXAMPLE_H

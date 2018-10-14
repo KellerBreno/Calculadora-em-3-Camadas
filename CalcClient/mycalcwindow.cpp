@@ -78,11 +78,12 @@ void MyCalcWindow::on_radioButtonDiv_clicked(void){
     on_execButton_clicked();
 }
 
-void MyCalcWindow::onUserLogin(QString username, QString ip, int port){
+void MyCalcWindow::onUserLogin(QString username, bool adminLevel, QString ip, int port){
     setEnabled(true);
     this->username = username;
     this->ip = ip;
     this->port = port;
+    this->adminLevel = adminLevel;
 }
 
 void MyCalcWindow::onQuit(void){

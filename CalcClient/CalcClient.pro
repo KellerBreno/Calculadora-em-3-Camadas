@@ -5,7 +5,7 @@
 QT += core gui sql widgets network charts
 
 TEMPLATE = app
-TARGET = CalcExample
+TARGET = CalcClient
 INCLUDEPATH += .
 
 CONFIG += c++11

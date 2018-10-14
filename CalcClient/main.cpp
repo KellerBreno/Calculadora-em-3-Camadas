@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
     MyLoginDialog myLoginDialog;
     myLoginDialog.setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::WindowStaysOnTopHint);
 
-    QObject::connect(&myLoginDialog, SIGNAL(logged(QString, QString, int)), &myCalcWindow, SLOT(onUserLogin(QString, QString, int)));
+    QObject::connect(&myLoginDialog, SIGNAL(logged(QString, bool, QString, int)), &myCalcWindow, SLOT(onUserLogin(QString, bool, QString, int)));
     QObject::connect(&myLoginDialog, SIGNAL(quit(void)), &myCalcWindow, SLOT(onQuit(void)));
 
     myCalcWindow.show();

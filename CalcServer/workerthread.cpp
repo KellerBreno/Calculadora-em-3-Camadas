@@ -65,7 +65,9 @@ void WorkerThread::run(){
             // Validar as Credenciais
             if((usernameDB == username) && (passwordDB == password)){
                 // Usuário valido
+                bool adminLevel = databaseHelper->getUserLevel(username);
                 loginResult.insert("valid", true);
+                loginResult.insert("adminLevel", adminLevel);
 
                 QJsonDocument loginDocument(loginResult);
                 QString responseData(loginDocument.toJson(QJsonDocument::Compact));

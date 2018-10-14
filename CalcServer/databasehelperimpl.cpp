@@ -49,7 +49,6 @@ bool DatabaseHelperImpl::insertOperation(int userId, double v1, QString operacao
     return b;
 }
 
-
 vector<pair<QString, QString>> DatabaseHelperImpl::getUsers(){
     setupDatabase();
 
@@ -119,4 +118,18 @@ vector<pair<QString, int>> DatabaseHelperImpl::getOperations(){
 
     sqlDatabase.close();
     return operations; // Retorno local, conferir
+}
+
+bool DatabaseHelperImpl::getUserLevel(QString username){
+    setupDatabase();
+
+    if(!sqlDatabase.open()){
+        // Throw error
+    }
+
+    QSqlQuery search("SELECT adminLevel FROM users WHERE login ='" + username + "'", sqlDatabase);
+    bool adminLevel = search.value(0).toBool();
+
+    sqlDatabase.close();
+    return adminLevel;
 }

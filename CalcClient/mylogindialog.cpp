@@ -83,9 +83,10 @@ void MyLoginDialog::readMessage(){
         QString username = user_input_line->text();
         QString ip = ip_input_line->text();
         QString port = port_input_line->text();
+        bool adminLevel = jsonObject.value("adminLevel").toBool();
         QMessageBox::information(this, "Login", "Seja Bem Vindo, " + username, QMessageBox::Ok);
         // Abre a calculadora
-        emit logged(username, ip, port.toInt());
+        emit logged(username, adminLevel, ip, port.toInt());
         close();
     } else {
         QMessageBox::information(this, "Login", "Credenciais Incorretas", QMessageBox::Ok);
