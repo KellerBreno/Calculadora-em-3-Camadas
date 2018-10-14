@@ -14,7 +14,7 @@ public:
     virtual vector<pair<QString, QString>> getUsers();
     virtual vector<pair<QString, int>> getOperationsByUser(QString username);
     virtual vector<pair<QString, int>> getOperations();
-    virtual bool getUserLevel(QString username);
+    virtual bool isAdmin(QString username);
 
 protected:
     QSqlDatabase sqlDatabase;

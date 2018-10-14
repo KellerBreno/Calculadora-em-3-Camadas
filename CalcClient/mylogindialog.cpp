@@ -1,4 +1,4 @@
-//#define DEBUG
+#define DEBUG
 
 #include "mylogindialog.h"
 #include "ui_logindialog.h"

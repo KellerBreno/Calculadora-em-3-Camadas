@@ -84,6 +84,7 @@ void MyCalcWindow::onUserLogin(QString username, bool adminLevel, QString ip, in
     this->ip = ip;
     this->port = port;
     this->adminLevel = adminLevel;
+    actionAllUsers->setVisible(adminLevel);
 }
 
 void MyCalcWindow::onQuit(void){
@@ -144,6 +145,11 @@ void MyCalcWindow::readMessage(){
         showPieChart("Operações feitas por Todos Usuários", operations);
     }
         break;
+    case 4:
+    {
+        QMessageBox::information(this, "CalcWindow", "O seu usuário não tem permissão para realizar essa ação", QMessageBox::Ok);
+    }
+        break;
     }
 
 }
@@ -168,10 +174,14 @@ void MyCalcWindow::on_actionByUser_triggered(void){
 }
 
 void MyCalcWindow::on_actionAllUsers_triggered(void){
+    if(!adminLevel){
+        return;
+    }
     tcpSocket.connectToHost(ip, port);
 
     QJsonObject jsonObject;
     jsonObject.insert("operationType", 4);
+    jsonObject.insert("username", username);
 
     QJsonDocument jsonDocument(jsonObject);
     QString data(jsonDocument.toJson(QJsonDocument::Compact));
@@ -186,45 +196,33 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
 }
 
 void MyCalcWindow::showPieChart(QString title, vector<pair<QString, int>> operations){
-    qDebug() << "Entrou";
-
     QPieSeries *series = new QPieSeries();
 
     for(vector<pair<QString, int>>::iterator it = operations.begin(); it != operations.end(); ++it){
         series->append((*it).first, (*it).second);
     }
 
-    qDebug() << "Criou Pie Series";
-
-    QPieSlice *sliceAdd = series->slices().at(0);
-    sliceAdd->setLabelVisible();
-    QPieSlice *sliceSub = series->slices().at(1);
-    sliceSub->setLabelVisible();
-    QPieSlice *sliceMult = series->slices().at(2);
-    sliceMult ->setLabelVisible();
-    QPieSlice *sliceDiv = series->slices().at(3);
-    sliceDiv->setLabelVisible();
-
-    qDebug() << "Adicionou Labels";
+//    QPieSlice *sliceAdd = series->slices().at(0);
+//    sliceAdd->setLabelVisible();
+//    QPieSlice *sliceSub = series->slices().at(1);
+//    sliceSub->setLabelVisible();
+//    QPieSlice *sliceMult = series->slices().at(2);
+//    sliceMult ->setLabelVisible();
+//    QPieSlice *sliceDiv = series->slices().at(3);
+//    sliceDiv->setLabelVisible();
 
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->setTitle(title);
-    chart->legend()->hide();
-
-    qDebug() << "Criou o Chart";
+    //chart->legend()->hide();
 
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
-
-    qDebug() << "Criou a view";
 
     QMainWindow *window = new QMainWindow();
     window->setCentralWidget(chartView);
     window->resize(400, 300);
     window->show();
-
-    qDebug() << "Exibiu";
     // TODO leak de memoria
 }
 

@@ -65,7 +65,7 @@ void WorkerThread::run(){
             // Validar as Credenciais
             if((usernameDB == username) && (passwordDB == password)){
                 // Usuário valido
-                bool adminLevel = databaseHelper->getUserLevel(username);
+                bool adminLevel = databaseHelper->isAdmin(username);
                 loginResult.insert("valid", true);
                 loginResult.insert("adminLevel", adminLevel);
 
@@ -201,6 +201,24 @@ void WorkerThread::run(){
         break;
     case 4:
     {
+        QString username = jsonObject.value("username").toString();
+        if(!databaseHelper->isAdmin(username)){
+            QJsonObject response;
+            response.insert("responseType", 4);
+            QJsonDocument resultDoc(response);
+            QString resultData(resultDoc.toJson(QJsonDocument::Compact));
+            QByteArray msgLogin = resultData.toUtf8();
+
+    #ifdef DEBUG
+            qDebug() << "Msg Login: " << msgLogin;
+    #endif
+
+            tcpSocket.write(msgLogin);
+            tcpSocket.disconnectFromHost();
+            tcpSocket.waitForDisconnected();
+
+            return;
+        }
         vector<pair<QString, int>> operations = databaseHelper->getOperations();
 
 #ifdef DEBUG

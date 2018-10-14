@@ -15,7 +15,7 @@ public:
     virtual vector<pair<QString, QString>> getUsers() = 0;
     virtual vector<pair<QString, int>> getOperationsByUser(QString username) = 0;
     virtual vector<pair<QString, int>> getOperations() = 0;
-    virtual bool getUserLevel(QString username) = 0;
+    virtual bool isAdmin(QString username) = 0;
 };
 
 #endif // DATABASEHELPER_H
