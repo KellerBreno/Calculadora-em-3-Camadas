@@ -11,9 +11,15 @@ Nessa seção é explicado os requisitos para se compilar o projeto e como execu
 Para executar esse projeto é necessário que você tenha as APIs QT Network, QT Database, QT Threads e QT Charts.
 Essas APIs estão disponíveis na ferramenta QT Maintenance Tool instalada junto com o QT.
 
-## Executando o Projeto
+### Executando o Projeto
 
-Após compilar o projeto e gerar os executáveis é necessário copiar o arquivo calc_example.sqlite da pasta Recursos para a localização do executável CalcServer. Com isso a aplicação irá funcionar corretamente.
+Após compilar o projeto e gerar os executáveis, para executar o código do server é necessário:
+
+#### Linux
+Copiar o arquivo calc_example.sqlite da pasta Recursos para a localização do executável CalcServer. 
+
+#### MacOS
+Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerado no diretório onde o executavel do CalcServer está localizado.
 
 ### Nova instância do banco de dados
 
