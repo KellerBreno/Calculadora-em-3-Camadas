@@ -23,12 +23,22 @@ Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerad
 
 ### Nova instância do banco de dados
 
-Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um novo .sqlite através do programa DB Browser para SQLite (Linux).
+Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um novo .sqlite através do programa 'DB Browser for SQLite' (Linux).
 
 ## Versões
 
-Aqui estão listadas as versões do Projeto:
+Após clonar o projeto para a sua maquina, você pode acessar as versões do projeto. Essas versões estão listadas abaixo:
 
-[V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Utilizando classes concretas
+\- [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Utilizando classes concretas
 
-Caso deseje testar a aplicação na versão, basta realizar um checkout no commit referente a aquela versão.
+Para acessar as versões tageadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
+
+### Exemplos 
+
+Para a tag V1, você pode fazer:
+
+\- git checkout 115865f (para checkouts pelo código do commit)
+
+**ou** 
+
+\- git checkout V1 (para checkouts pela tag)
