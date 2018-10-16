@@ -27,6 +27,8 @@ Caso deseje criar uma nova instância do banco de dados, é possível utilizar o
 
 ## Versões
 
-Versões do Projeto:
+Aqui estão listadas as versões do Projeto:
 
 [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Utilizando classes concretas
+
+Caso deseje testar a aplicação na versão, basta realizar um checkout no commit referente a aquela versão.
