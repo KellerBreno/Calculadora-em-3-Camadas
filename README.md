@@ -24,3 +24,9 @@ Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerad
 ### Nova instância do banco de dados
 
 Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um novo .sqlite através do programa DB Browser para SQLite (Linux).
+
+## Versões
+
+Versões do Projeto:
+
+[V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Utilizando classes concretas
