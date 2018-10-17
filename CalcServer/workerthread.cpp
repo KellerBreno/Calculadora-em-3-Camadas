@@ -191,7 +191,7 @@ void WorkerThread::run(){
 
 
         QJsonObject answerJson;
-        answerJson.insert("answerType", 3);
+        answerJson.insert("answerType", 2);
 
         for(vector<pair<QString, int>>::iterator it = operations.begin(); it!= operations.end(); ++it){
             answerJson.insert((*it).first, (*it).second);

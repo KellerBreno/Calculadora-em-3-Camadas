@@ -212,6 +212,11 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
 }
 
 void MyCalcWindow::showPieChart(QString title, vector<pair<QString, int>> operations){
+    if(chartWindow != nullptr){
+        chartWindow->close();
+        delete chartWindow;
+        chartWindow = nullptr;
+    }
     QPieSeries *series = new QPieSeries();
 
     for(vector<pair<QString, int>>::iterator it = operations.begin(); it != operations.end(); ++it){
