@@ -37,7 +37,7 @@ Para acessar as versões tageadas é **necessário** realizar um checkout no com
 
 Para a tag V1, você pode fazer:
 
-\- git checkout 115865f (para checkouts pelo código do commit)
+\- git checkout a5d02da (para checkouts pelo código do commit)
 
 **ou** 
 
