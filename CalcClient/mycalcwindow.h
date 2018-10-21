@@ -19,6 +19,9 @@ using namespace std;
 class MyCalcWindow : public QMainWindow, private Ui::CalcWindow{
     Q_OBJECT
 
+    friend class MyLoginDialogTest;
+    friend class MyCalcWindowTest;
+
 public:
     MyCalcWindow(QWidget *parent = nullptr);
     virtual ~MyCalcWindow();

@@ -9,6 +9,8 @@
 class MyLoginDialog : public QWidget, private Ui::LoginDialog {
     Q_OBJECT
 
+    friend class MyLoginDialogTest;
+
 public:
     MyLoginDialog(QWidget *parent = nullptr);
 

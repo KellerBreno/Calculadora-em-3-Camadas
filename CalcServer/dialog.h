@@ -10,6 +10,9 @@ class QPushButton;
 class Dialog : public QWidget{
     Q_OBJECT
 
+    friend class DialogTest;
+    friend class SocketsTest;
+
 public:
     Dialog(QWidget *parent = 0);
 
