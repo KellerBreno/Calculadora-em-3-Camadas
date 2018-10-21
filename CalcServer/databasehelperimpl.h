@@ -6,6 +6,9 @@
 #include "databasehelper.h"
 
 class DatabaseHelperImpl : public DatabaseHelper{
+
+    friend class DatabaseHelperImplTest;
+
 public:
     DatabaseHelperImpl();
     virtual ~DatabaseHelperImpl();
