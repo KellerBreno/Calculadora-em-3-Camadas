@@ -1,3 +1,3 @@
-CalcClient/CalcClient.pro.user
-CalcServer/CalcServer.pro.user
-build-CalcClient-*
+*.pro.user
+*.pro.user
+build-*
