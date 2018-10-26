@@ -1,44 +1,101 @@
 # Calculadora em 3 Camadas
 
-Projeto de exemplo de construção de uma calculadora com arquitetura em 3 camadas, utilizando APIs do QT. 
+Este trabalho é um projeto-exemplo de construção de uma calculadora com arquitetura cliente/servidor dividida em três camadas, utilizando APIs do QT. 
 
-## Getting Started
+## Ponto de Partida
 
-Nessa seção é explicado os requisitos para se compilar o projeto e como executá-lo na sua máquina.
+Nessa seção é explicado os requisitos para se compilar o projeto e como executá-lo no seu computador.
 
-### Pré Requisitos
+### Dependências
 
-Para executar esse projeto é necessário que você tenha as APIs QT Network, QT Database, QT Threads e QT Charts.
-Essas APIs estão disponíveis na ferramenta QT Maintenance Tool instalada junto com o QT.
+Para compilar este projeto é necessário que você tenha instaladas as APIs QT SQL, QT Network, QT Database, QT Threads e QT Charts. Essas APIs estão disponíveis na ferramenta *QT Maintenance Tool* instalada junto com o QT.
 
 ### Executando o Projeto
 
-Após compilar o projeto e gerar os executáveis, para executar o código do server é necessário:
+Após compilar o projeto e gerar os executáveis do cliente e servidor, para executar o código do servidor é necessário:
 
-#### Linux
+#### Windows/Linux
 Copiar o arquivo calc_example.sqlite da pasta Recursos para a localização do executável CalcServer. 
 
 #### MacOS
-Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerado no diretório onde o executavel do CalcServer está localizado.
+Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerado no diretório onde o executável do CalcServer está localizado.
 
-### Nova instância do banco de dados
+### Banco de Dados vazio
 
-Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um novo .sqlite através do programa 'DB Browser for SQLite' (Linux).
+Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um nova instância do banco por meio do programa *DB Browser for SQLite* disponível para Linux e MacOS.
 
 ## Versões
 
-Após clonar o projeto para a sua maquina, você pode acessar as versões do projeto. Essas versões estão listadas abaixo:
+Após clonar o projeto para a sua máquina, você pode acessar as versões do projeto. Essas versões estão listadas abaixo:
 
-\- [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Utilizando classes concretas
+\- [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Versão 1: Projeto com classes concretas
 
-Para acessar as versões tageadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
+Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 
-### Exemplos 
+### Exemplo 
 
-Para a tag V1, você pode fazer:
+Caso deseje ver o projeto na Versão 1, você pode fazer:
 
-\- git checkout a5d02da (para checkouts pelo código do commit)
+Para checkouts pelo código do commit:
 
-**ou** 
+~~~
+git checkout a5d02da 
+~~~
 
-\- git checkout V1 (para checkouts pela tag)
+Para checkouts pela tag:
+~~~
+git checkout V1 
+~~~
+
+## Documentação
+
+Nessa seção é explicado como gerar a documentação do código utilizando a ferramenta *Doxygen*.
+
+### Pré-Requisitos
+
+Para se utilizar essa ferramenta é necessário instalá-la no seu computador. Para isso você pode fazer:
+
+#### Linux
+
+Você pode adicionar a ferramenta pelo terminal por meio do apt-get:
+
+~~~
+sudo apt-get install doxygen 
+~~~
+
+A documentação gerada também utiliza a ferramenta *dot* oferecida pelo *graphviz* para gerar graficos da relação entre as classes. Portanto para a ferramenta funcionar corretamente é necessário instalar o graphviz:
+
+~~~
+sudo apt-get install graphviz
+~~~
+
+Por fim, caso deseje utilizar a ferramenta com GUI do *Doxygen* para editar o arquivo de configuração é necessário:
+
+~~~
+sudo apt-get install doxygen-gui
+~~~
+
+### Como utilizar
+
+Nessa seção será explicado como gerar a documentação através da ferramenta *Doxygen*.
+
+#### Terminal
+
+Para gerar a documentação, basta digitar no terminal (aberto na pasta raiz do projeto) o comando: 
+
+~~~
+doxygen Doxyfile 
+~~~
+
+Com isso ele irá gerar uma pasta nomeada "Documentação" contendo duas pastas "html", a qual conterá a documentação no formato de uma página WEB e "latex", a qual conterá a documentação no formato latex que poderá ser utilizado para gerar um arquivo pdf.
+
+#### Interface Gráfica
+
+Caso deseje utilizar a ferramenta gráfica para isso, você deve digitar no terminal: 
+
+~~~
+doxywizard Doxyfile
+~~~
+
+E ele abrirá uma janela, onde você pode alterar as configurações ou gerar a documentação.
+
