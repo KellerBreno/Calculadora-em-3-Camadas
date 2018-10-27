@@ -1,12 +1,26 @@
+/*!
+ * \file databasehelperimpl.cpp
+ * Arquivo contendo a implementação da Classe DatabaseHelperImpl.
+ */
+
 #include "databasehelperimpl.h"
 
 #include <QSqlQuery>
 #include <QVariant>
 
+/*!
+ * \brief Construtor padrão.
+ */
 DatabaseHelperImpl::DatabaseHelperImpl(){}
 
+/*!
+ * \brief Destrutor padrão.
+ */
 DatabaseHelperImpl::~DatabaseHelperImpl(){}
 
+/*!
+ * \brief Metódo para inicialização do banco de dados.
+ */
 void DatabaseHelperImpl::setupDatabase(){
     sqlDatabase = QSqlDatabase::addDatabase("QSQLITE");
     sqlDatabase.setDatabaseName("calc_example.sqlite");

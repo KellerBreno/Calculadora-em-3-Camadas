@@ -1,3 +1,8 @@
+/*!
+ * \file server.h
+ * Arquivo contendo a declaração da Classe Server.
+ */
+
 #ifndef SERVER_H
 #define SERVER_H
 
@@ -5,6 +10,10 @@
 
 #include <QTcpServer>
 
+/*!
+ * \class Server
+ * \brief Clase para gerenciamento de uma customização de QTcpServer.
+ */
 class Server : public QTcpServer{
     Q_OBJECT
 
@@ -14,6 +23,10 @@ public:
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;
+
+    /*!
+     * \brief Referência ao helper de acesso ao banco de dados.
+     */
     DatabaseHelper *databaseHelper;
 };
 

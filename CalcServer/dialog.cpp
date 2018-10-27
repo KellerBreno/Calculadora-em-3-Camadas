@@ -1,11 +1,23 @@
+/*!
+ * \file dialog.cpp
+ * Arquivo contendo a implementação da Classe Dialog.
+ */
+
+
 #include <QtWidgets>
 #include <QtNetwork>
 
 #include <stdlib.h>
 
 #include "dialog.h"
-#include "server.h"
 
+/*!
+ * \brief Construtor padrão da classe Dialog
+ *
+ * Instância e configura a interface. Além disso configura a instância de Server antes de deixa-la tratando as requisições.
+ *
+ * \param parent Referência ao widget pai
+ */
 Dialog::Dialog(QWidget *parent) : QWidget(parent){
     statusLabel = new QLabel;
     statusLabel->setWordWrap(true);
