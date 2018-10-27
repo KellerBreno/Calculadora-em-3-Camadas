@@ -1,3 +1,8 @@
+/*!
+ * \file mycalcwindow.h
+ * Arquivo contendo a declaração da Classe MyCalcWindow.
+ */
+
 #ifndef MYCALCSCREEN_H
 #define MYCALCSCREEN_H
 
@@ -16,10 +21,23 @@ QT_CHARTS_USE_NAMESPACE
 
 using namespace std;
 
+/*!
+ * \class MyCalcWindow
+ * \brief Classe para gerenciar as ações de uma calculadora.
+ *
+ * Esta classe gerencia as iterações do usuário com uma calculadora e delega todas suas operações a serem feitas no servidor.
+ *
+ */
 class MyCalcWindow : public QMainWindow, private Ui::CalcWindow{
     Q_OBJECT
 
+    /*!
+     * \brief Classe para Testes do MyLoginDialog.
+     */
     friend class MyLoginDialogTest;
+    /*!
+     * \brief Classe para Testes do MyCalcWindow.
+     */
     friend class MyCalcWindowTest;
 
 public:
@@ -37,15 +55,39 @@ public slots:
     void onUserLogin(QString username, bool adminLevel, QString ip, int port);
     void onQuit(void);
     void readMessage(void);
-    void showPieChart(QString title, vector<pair<QString, int>> operations);
 
 private:
     void execute(void);
+    void showPieChart(QString title, vector<pair<QString, int>> operations);
+
+    /*!
+     * \brief Username do usuário conectado.
+     */
     QString username;
+
+    /*!
+     * \brief IP onde o servidor está localizado.
+     */
     QString ip;
+
+    /*!
+     * \brief Porta a qual o servidor está escutando.
+     */
     int port;
+
+    /*!
+     * \brief TCPSocket utilizado pela aplicação para comunicar com servidor.
+     */
     QTcpSocket tcpSocket;
+
+    /*!
+     * \brief Flag representando que o usuário é ou não administrador.
+     */
     bool adminLevel;
+
+    /*!
+     * \brief MainWindow auxiliar para exibição de gráficos de operações.
+     */
     QMainWindow* chartWindow;
 };
 

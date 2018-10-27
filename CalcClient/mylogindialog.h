@@ -1,3 +1,8 @@
+/*!
+ * \file mylogindialog.h
+ * Arquivo contendo a declaração da Classe MyLoginDialog.
+ */
+
 #ifndef MYLOGINDIALOG_H
 #define MYLOGINDIALOG_H
 
@@ -6,9 +11,19 @@
 
 #include "ui_logindialog.h"
 
+/*!
+ * \class MyLoginDialog
+ * \brief Classe para gerenciar as requisições de login.
+ *
+ * Esta classe gerencia as iterações do usuário com uma janela de login e realiza a validação dos dados em um servidor.
+ *
+ */
 class MyLoginDialog : public QWidget, private Ui::LoginDialog {
     Q_OBJECT
 
+    /*!
+     * \brief Classe para Testes de MyLoginDialog.
+     */
     friend class MyLoginDialogTest;
 
 public:
@@ -24,6 +39,9 @@ signals:
     void quit(void);
 
 private:
+    /*!
+     * \brief TCPSocket utilizado pela aplicação para comunicar com servidor.
+     */
     QTcpSocket tcpSocket;
 
 };
