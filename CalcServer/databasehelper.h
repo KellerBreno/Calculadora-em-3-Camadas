@@ -13,6 +13,10 @@
 
 using namespace std;
 
+/*!
+ * \class DatabaseHelper
+ * \brief Interface para acesso a qualquer banco de dados.
+ */
 class DatabaseHelper{
 public:
     /*!
