@@ -84,7 +84,7 @@ Nessa seção será explicado como gerar a documentação através da ferramenta
 Para gerar a documentação sem os testes, basta digitar no terminal (aberto na pasta raiz do projeto) o comando: 
 
 ~~~
-doxygen DocumentacaoSemTestes.config 
+doxygen Doxygen.config 
 ~~~
 
 Com isso ele irá gerar uma pasta nomeada "Documentação" contendo duas pastas "html", a qual conterá a documentação no formato de uma página WEB e "latex", a qual conterá a documentação no formato latex que poderá ser utilizado para gerar um arquivo pdf.
@@ -94,8 +94,8 @@ Com isso ele irá gerar uma pasta nomeada "Documentação" contendo duas pastas 
 Caso deseje utilizar a ferramenta gráfica para isso, você deve digitar no terminal: 
 
 ~~~
-doxywizard <arquivo de configuração>
+doxywizard Doxygen.config
 ~~~
 
-Substitua \<arquivo de configuração\> pelo nome do arquivo correspondente. Ao executar o comando, ele abrirá uma janela. Nessa janela você pode alterar as configurações ou gerar a documentação.
+Ao executar o comando, ele abrirá uma janela. Nessa janela você pode alterar as configurações ou gerar a documentação.
 
