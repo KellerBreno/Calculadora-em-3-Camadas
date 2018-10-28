@@ -3,7 +3,6 @@
  * Arquivo contendo a implementação da Classe Dialog.
  */
 
-
 #include <QtWidgets>
 #include <QtNetwork>
 
@@ -16,7 +15,7 @@
  *
  * Instância e configura a interface. Além disso configura a instância de Server antes de deixa-la tratando as requisições.
  *
- * \param parent Referência ao widget pai
+ * \param parent Referência ao componente pai.
  */
 Dialog::Dialog(QWidget *parent) : QWidget(parent){
     statusLabel = new QLabel;

@@ -29,7 +29,7 @@
  * Além de inicializar os atributos parent e chartWindow, o construtor configura a interface por meio do método 'setupUi' da classe pai
  * CalcWindow e conecta os slots para a leitura de mensagens do servidor e saída da aplicação.
  *
- * \param parent Referência ao widget pai.
+ * \param parent Referência ao componente pai.
  *
  */
 MyCalcWindow::MyCalcWindow(QWidget *parent) : QMainWindow (parent), chartWindow(nullptr){

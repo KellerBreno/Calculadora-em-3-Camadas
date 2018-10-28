@@ -31,7 +31,7 @@ using namespace std;
  * Além de inicializar o atributo parent, o construtor configura a interface por meio do método 'setupUi' da classe pai LoginDialog e
  * conecta o slot para a leitura de mensagens do servidor.
  *
- * \param parent Referência ao widget pai.
+ * \param parent Referência ao componente pai.
  *
  */
 MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){

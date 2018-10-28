@@ -31,7 +31,7 @@ Server::~Server(){
 /*!
  * \brief Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar.
  *
- * \param socketDescriptor Contém as informações de configuração do socket.
+ * \param socketDescriptor Informações de configuração do socket.
  */
 void Server::incomingConnection(qintptr socketDescriptor){
     WorkerThread *thread = new WorkerThread(socketDescriptor, this, databaseHelper);
