@@ -34,4 +34,3 @@ SOURCES += \
     main.cpp \
     mylogindialog.cpp \
     mycalcwindow.cpp
-

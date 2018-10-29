@@ -28,7 +28,9 @@ Caso deseje criar uma nova instância do banco de dados, é possível utilizar o
 
 Após clonar o projeto para a sua máquina, você pode acessar as versões do projeto. Essas versões estão listadas abaixo:
 
-\- [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Versão 1: Projeto com classes concretas
+- [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Versão 1: Projeto com classes concretas;
+
+- [V2](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V2) - Versão 2: Projeto com documentação.
 
 Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 
@@ -63,7 +65,7 @@ Você pode adicionar a ferramenta pelo terminal por meio do apt-get:
 sudo apt-get install doxygen 
 ~~~
 
-A documentação gerada também utiliza a ferramenta *dot* oferecida pelo *graphviz* para gerar graficos da relação entre as classes. Portanto para a ferramenta funcionar corretamente é necessário instalar o graphviz:
+A documentação gerada também utiliza a ferramenta *dot* oferecida pelo *graphviz* para gerar gráficos da relação entre as classes. Portanto para a ferramenta funcionar corretamente é necessário instalar o graphviz:
 
 ~~~
 sudo apt-get install graphviz
@@ -87,7 +89,7 @@ Para gerar a documentação sem os testes, basta digitar no terminal (aberto na 
 doxygen Doxygen.config 
 ~~~
 
-Com isso ele irá gerar uma pasta nomeada "Documentação" contendo duas pastas "html", a qual conterá a documentação no formato de uma página WEB e "latex", a qual conterá a documentação no formato latex que poderá ser utilizado para gerar um arquivo pdf.
+Com isso ele irá gerar uma pasta nomeada "Documentação" contendo duas pastas "html", a qual conterá a documentação no formato de uma página WEB e "latex", a qual conterá a documentação no formato latex que poderá ser utilizado para gerar um arquivo pdf. No caso da documentação gerada por latex é preciso que o compilador para o latex esteja pré-configurado na máquina.
 
 #### Interface Gráfica
 
@@ -98,4 +100,3 @@ doxywizard Doxygen.config
 ~~~
 
 Ao executar o comando, ele abrirá uma janela. Nessa janela você pode alterar as configurações ou gerar a documentação.
-
