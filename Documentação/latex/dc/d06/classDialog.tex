@@ -1,0 +1,87 @@
+\hypertarget{classDialog}{}\section{Dialog Class Reference}
+\label{classDialog}\index{Dialog@{Dialog}}
+
+
+Classe para exibição dos dados do servidor.  
+
+
+
+
+{\ttfamily \#include $<$dialog.\+h$>$}
+
+
+
+Inheritance diagram for Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{dc/de6/classDialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{df/de8/classDialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDialog_acfa2063f9f962d394c6a645b6e7e08d8}{Dialog} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \hyperlink{classDialog}{Dialog}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Label $\ast$ \hyperlink{classDialog_a0637bc55b1a71b4667477778a8c72f9a}{status\+Label}\hypertarget{classDialog_a0637bc55b1a71b4667477778a8c72f9a}{}\label{classDialog_a0637bc55b1a71b4667477778a8c72f9a}
+
+\begin{DoxyCompactList}\small\item\em Q\+Label para exibição dos dados do servidor. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{classDialog_adad2ac3f09934c21fb4c797a88496376}{quit\+Button}\hypertarget{classDialog_adad2ac3f09934c21fb4c797a88496376}{}\label{classDialog_adad2ac3f09934c21fb4c797a88496376}
+
+\begin{DoxyCompactList}\small\item\em Botão de sair da aplicação. \end{DoxyCompactList}\item 
+\hyperlink{classServer}{Server} \hyperlink{classDialog_aec51788da8fed7e13ad1a66b8e0c4379}{server}\hypertarget{classDialog_aec51788da8fed7e13ad1a66b8e0c4379}{}\label{classDialog_aec51788da8fed7e13ad1a66b8e0c4379}
+
+\begin{DoxyCompactList}\small\item\em Instância de \hyperlink{classServer}{Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classDialog_a9fe923be634f4d12f5a825141fafb85f}{Dialog\+Test}\hypertarget{classDialog_a9fe923be634f4d12f5a825141fafb85f}{}\label{classDialog_a9fe923be634f4d12f5a825141fafb85f}
+
+\begin{DoxyCompactList}\small\item\em Classe de Testes para \hyperlink{classDialog}{Dialog}. \end{DoxyCompactList}\item 
+class \hyperlink{classDialog_a9c408e8dbdb17dca5ff54b16daeed3f6}{Sockets\+Test}\hypertarget{classDialog_a9c408e8dbdb17dca5ff54b16daeed3f6}{}\label{classDialog_a9c408e8dbdb17dca5ff54b16daeed3f6}
+
+\begin{DoxyCompactList}\small\item\em Classe de Testes para Sockets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe para exibição dos dados do servidor. 
+
+Esta classe cria uma instância de \hyperlink{classServer}{Server} e exibe suas informações. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Dialog@{Dialog}!Dialog@{Dialog}}
+\index{Dialog@{Dialog}!Dialog@{Dialog}}
+\subsubsection[{\texorpdfstring{Dialog(\+Q\+Widget $\ast$parent=0)}{Dialog(QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Dialog\+::\+Dialog (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classDialog_acfa2063f9f962d394c6a645b6e7e08d8}{}\label{classDialog_acfa2063f9f962d394c6a645b6e7e08d8}
+
+
+Construtor padrão da classe \hyperlink{classDialog}{Dialog}. 
+
+Instância e configura a interface. Além disso configura a instância de \hyperlink{classServer}{Server} antes de deixa-\/la tratando as requisições.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Referência ao componente pai. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Server/\hyperlink{dialog_8h}{dialog.\+h}\item 
+Calc\+Server/\hyperlink{dialog_8cpp}{dialog.\+cpp}\end{DoxyCompactItemize}

@@ -1,3 +1,12 @@
+/*!
+ * \file mylogindialog.cpp
+ * Arquivo contendo a implementação da Classe MyLoginDialog.
+ */
+
+/*!
+ * \def DEBUG
+ * Flag demarcando se as mensagens de debug devem ou não serem exibidas.
+ */
 #define DEBUG
 
 #include "mylogindialog.h"
@@ -16,13 +25,28 @@
 
 using namespace std;
 
-// TODO override X action
+/*!
+ * \brief Construtor Padrão para a classe MyLoginDialog.
+ *
+ * Inicializa o atributo parent, configura a interface por meio do método 'setupUi' da classe pai LoginDialog e
+ * conecta o slot para a leitura de mensagens do servidor.
+ *
+ * \param parent Referência ao componente pai.
+ *
+ */
 MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){
     setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
     connect(&tcpSocket, &QIODevice::readyRead, this, &MyLoginDialog::readMessage);
 }
 
+/*!
+ * \brief Slot chamado para realizar a operação de login.
+ *
+ * Recupera as informações da interface e realiza um requisição de autenticação ao servidor.
+ *
+ * \sa MyLoginDialog::readMessage().
+ */
 void MyLoginDialog::on_login_button_clicked(){
     // Pega dados de login do usuário por meio da interface
     QString username = user_input_line->text();
@@ -55,11 +79,24 @@ void MyLoginDialog::on_login_button_clicked(){
     tcpSocket.write(jsonData);
 }
 
+/*!
+ * \brief Slot chamado para finalizar a aplicação.
+ *
+ * \sa MyLoginDialog::quit().
+ */
 void MyLoginDialog::on_cancel_button_clicked(){
     emit quit();
     close();
 }
 
+/*!
+ * \brief Slot chamado quando o socket recebe uma mensagem de resposta do servidor.
+ *
+ * Esse método recebe uma resposta do servidor sobre a tentativa de login. Caso positivo emite um signal informando que o usuário foi
+ * autenticado. Caso contrário mostra uma janela de erro.
+ *
+ * \sa MyLoginDialog::on_login_button_clicked(), MyLoginDialog::logged(QString,bool,QString,int).
+ */
 void MyLoginDialog::readMessage(){
     tcpSocket.waitForReadyRead(-1);
 
