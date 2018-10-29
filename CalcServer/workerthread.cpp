@@ -22,9 +22,14 @@
 
 /*!
  * \brief Construtor para configurar a thread.
+ *
+ * Ao ser chamado este construtor seta os atributos para os valores informados.
+ *
  * \param socketDescriptor Informações de configuração do socket.
  * \param parent Referência ao componente pai.
  * \param databaseHelper Referência ao helper de acesso ao banco de dados.
+ *
+ * \sa WorkerThread::WorkerThread().
  */
 WorkerThread::WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)
     : QThread(parent), socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){
@@ -32,6 +37,8 @@ WorkerThread::WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper
 
 /*!
  * \brief Construtor Padrão.
+ *
+ * \sa WorkerThread::WorkerThread(int, QObject*, DatabaseHelper*)
  */
 WorkerThread::WorkerThread(){
 }
@@ -44,6 +51,11 @@ WorkerThread::~WorkerThread(){
 
 /*!
  * \brief Método para delegação do tratamento de uma mensagem recebida e envio da respostas.
+ *
+ * Este método recebe um byte array correspondente a um objeto JSON, após isso cria um objeto JSON e delega a resolução da mensagem para o
+ * método handlMessage. Por fim, recebe a resposta da mensagem, codifica ela e envia ao cliente pela rede.
+ *
+ * \sa WorkerThread::handleMessage(QJsonObject), WorkerThread::error(QTcpSocket::SocketError).
  */
 void WorkerThread::run(){
     QTcpSocket tcpSocket;
@@ -85,8 +97,15 @@ void WorkerThread::run(){
 
 /*!
  * \brief Rotina auxiliar para o tratamento de mensagens recebidas.
+ *
+ * O método recebe uma mensagem JSON, extrai o tipo de mensagem dos dados contidos no JSON e delega o tratamento dos dados restantes para
+ * alguns dos métodos handle disponiveis.
+ *
  * \param jsonObject Dados da mensagem recebida.
- * \return Dados codificado em um mensagem de resposta
+ * \return Dados codificado em um mensagem de resposta.
+ *
+ * \sa WorkerThread::handleAuthenticate(QJsonObject), WorkerThread::handleOperation(QJsonObject), WorkerThread::handleUserReport(QJsonObject),
+ * WorkerThread::handleAllUsersReport(QJsonObject).
  */
 QJsonObject WorkerThread::handleMessage(QJsonObject jsonObject){
     QJsonObject answer;
@@ -111,12 +130,15 @@ QJsonObject WorkerThread::handleMessage(QJsonObject jsonObject){
 }
 
 /*!
- * \brief Autentica um usuário.
+ * \brief Método para tratamento de mensagens de autenticação.
  *
- * Responde se o usuário e senha são corretos e caso positivo se esse usuário é um administrador.
+ * O método recebe um objeto JSON contendo as informações de login de um usuário, extrai esses dados e verifica se eles estão armazenados no
+ * banco, caso positivo responde que é um usuário valido e verifica se ele é um administrador, caso negativo responde que o usuário é invalido.
  *
  * \param jsonObject Dados da mensagem recebida.
- * \return Dados codificado em um mensagem de resposta
+ * \return Dados codificado em um mensagem de resposta.
+ *
+ * \sa WorkerThread::handleMessage(QJsonObject)
  */
 QJsonObject WorkerThread::handleAuthenticate(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
@@ -157,12 +179,15 @@ QJsonObject WorkerThread::handleAuthenticate(QJsonObject jsonObject){
 }
 
 /*!
- * \brief Realiza e armazena uma operação em banco.
+ * \brief Método para realizar uma operação e armazena-la em banco.
  *
- * Esse metódo busca o id do usuário informado, realiza uma operação matématica e armazena esse registro para consultas posteriores.
+ * O método recebe um objeto JSON contendo as informações da operação a ser realizada. Sendo assim, ele extrai os dados do JSON e realiza a
+ * operação, após isso armazena o registro no banco e responde o usuário com a solução da operação.
  *
  * \param jsonObject Dados da mensagem recebida.
- * \return Dados codificado em um mensagem de resposta
+ * \return Dados codificado em um mensagem de resposta.
+ *
+ * \sa WorkerThread::handleMessage(QJsonObject)
  */
 QJsonObject WorkerThread::handleOperation(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
@@ -218,12 +243,15 @@ QJsonObject WorkerThread::handleOperation(QJsonObject jsonObject){
 }
 
 /*!
- * \brief Gera uma relatório de operações de um usuário.
+ * \brief Método gera um relatório de operações do usuário informado.
  *
- * Realiza uma agregação no banco para obter a quantidade de operações que o usuário informado realizou.
+ * Este método recebe um JSON contendo os dados necessário. Ao extrair o nome do usuário, ele realiza uma agregação no banco para obter a
+ * quantidade de operações que o usuário informado realizou.
  *
  * \param jsonObject Dados da mensagem recebida.
- * \return Dados codificado em um mensagem de resposta
+ * \return Dados codificado em um mensagem de resposta.
+ *
+ * \sa WorkerThread::handleMessage(QJsonObject)
  */
 QJsonObject WorkerThread::handleUserReport(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
@@ -249,12 +277,15 @@ QJsonObject WorkerThread::handleUserReport(QJsonObject jsonObject){
 }
 
 /*!
- * \brief Gera uma relatório de todas as operações realizadas.
+ * \brief Método gera um relatório de operações de todos usuários.
  *
- * Realiza uma agregação no banco para obter a quantidade de operações que todos os usuários realizaram.
+ * Este método recebe um JSON contendo os dados necessário. Ao extrair o nome do usuário, verifica se ele é administrador, portanto se tem
+ * autorização para realizar essa operação. Sendo verdadeiro, ele realiza uma agregação no banco para obter a quantidade de operações de todos os usuários.
  *
  * \param jsonObject Dados da mensagem recebida.
- * \return Dados codificado em um mensagem de resposta
+ * \return Dados codificado em um mensagem de resposta.
+ *
+ * \sa WorkerThread::handleMessage(QJsonObject)
  */
 QJsonObject WorkerThread::handleAllUsersReport(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();

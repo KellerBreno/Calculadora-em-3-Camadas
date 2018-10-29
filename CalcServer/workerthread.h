@@ -29,11 +29,15 @@ public:
     void run() override;
 
 signals:
+    /*!
+     * \brief Signal utilizado para sinalizar erros.
+     * \param socketError Tipo do erro detectado.
+     */
     void error(QTcpSocket::SocketError socketError);
 
 protected:
     /*!
-     * \brief Contém a informação sobre o socket.
+     * \brief Contém as informações de configuração do socket.
      */
     int socketDescriptor;
 
@@ -43,9 +47,18 @@ protected:
     DatabaseHelper *databaseHelper;
 
 private:
+    /*!
+     * \brief Construtor de Cópia.
+     * \param rhs Objeto a ser copiado.
+     */
     WorkerThread(const WorkerThread& rhs){}
+
+    /*!
+     * \brief Sobrecarga do operador =.
+     * \param rhs Objeto a ser copiado.
+     * \return Novo objeto copiado.
+     */
     WorkerThread& operator=(const WorkerThread& rhs){}
-    void trataMensagem(QString message, QTcpSocket tcpSocket);
 
     WorkerThread();
     QJsonObject handleMessage(QJsonObject jsonObject);

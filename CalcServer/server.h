@@ -12,7 +12,7 @@
 
 /*!
  * \class Server
- * \brief Clase para gerenciamento de uma customização de QTcpServer.
+ * \brief Clase para gerenciamento de servidor TCP.
  */
 class Server : public QTcpServer{
     Q_OBJECT

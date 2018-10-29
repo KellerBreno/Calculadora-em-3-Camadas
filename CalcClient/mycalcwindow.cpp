@@ -26,8 +26,8 @@
 /*!
  * \brief Construtor Padrão para a classe MyCalcWindow.
  *
- * Além de inicializar os atributos parent e chartWindow, o construtor configura a interface por meio do método 'setupUi' da classe pai
- * CalcWindow e conecta os slots para a leitura de mensagens do servidor e saída da aplicação.
+ * Esse construtor inicializa os atributos parent e chartWindow. Além disso, o construtor configura a interface por meio do método 'setupUi'
+ * da classe pai CalcWindow e conecta os slots para a leitura de mensagens do servidor e saída da aplicação.
  *
  * \param parent Referência ao componente pai.
  *
@@ -53,6 +53,11 @@ MyCalcWindow::~MyCalcWindow(){
 
 /*!
  * \brief Método privado para coleta dos dados e envio ao servidor para realização de operações.
+ *
+ * Este método extrai os dados da interface, encapsula eles em um objeto JSON e envia ao servidor para ser realizada.
+ *
+ * \sa MyCalcWindow::on_execButton_clicked(), MyCalcWindow::on_radioButtonSoma_clicked(), MyCalcWindow::on_radioButtonSub_clicked(),
+ * MyCalcWindow::on_radioButtonMult_clicked(), MyCalcWindow::on_radioButtonDiv_clicked(), MyCalcWindow::readMessage().
  */
 void MyCalcWindow::execute(){
    double parcela1 = input1->value();
@@ -94,6 +99,8 @@ void MyCalcWindow::execute(){
 
 /*!
  * \brief Slot chamado quando se clica no botão 'Executar' e executa uma operação.
+ *
+ * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_execButton_clicked(void){
    execute();
@@ -101,6 +108,8 @@ void MyCalcWindow::on_execButton_clicked(void){
 
 /*!
  * \brief Slot chamado quando se clica no radio button da operação soma.
+ *
+ * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonSoma_clicked(void){
    execute();
@@ -108,6 +117,8 @@ void MyCalcWindow::on_radioButtonSoma_clicked(void){
 
 /*!
  * \brief Slot chamado quando se clica no radio button da operação subtração.
+ *
+ * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonSub_clicked(void){
    execute();
@@ -115,6 +126,8 @@ void MyCalcWindow::on_radioButtonSub_clicked(void){
 
 /*!
  * \brief Slot chamado quando se clica no radio button da operação multiplicação.
+ *
+ * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonMult_clicked(void){
    execute();
@@ -122,6 +135,8 @@ void MyCalcWindow::on_radioButtonMult_clicked(void){
 
 /*!
  * \brief Slot chamado quando se clica no radio button da operação divisão.
+ *
+ * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonDiv_clicked(void){
    execute();
@@ -155,6 +170,10 @@ void MyCalcWindow::onQuit(void){
 
 /*!
  * \brief Slot chamado quando o socket recebe uma mensagem de resposta do servidor.
+ *
+ * Ao receber uma resposta do servidor, este método extrai as informações da mensagem e realiza a operação correspondente.
+ *
+ * \sa MyCalcWindow::execute(), MyCalcWindow::on_actionAllUsers_triggered(), MyCalcWindow::on_actionByUser_triggered().
  */
 void MyCalcWindow::readMessage(){
    tcpSocket.waitForReadyRead(-1);
@@ -225,6 +244,8 @@ void MyCalcWindow::readMessage(){
  * \brief Slot chamado quando selecionada a opção do menu 'Por Usuário'.
  *
  * Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas pelo usuário.
+ *
+ * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionByUser_triggered(void){
    tcpSocket.connectToHost(ip, port);
@@ -251,6 +272,8 @@ void MyCalcWindow::on_actionByUser_triggered(void){
  * \brief Slot chamado quando selecionada a opção do menu 'Todos os Usuários'.
  *
  * Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas por todos os usuários.
+ *
+ * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionAllUsers_triggered(void){
    if(!adminLevel){
@@ -277,9 +300,11 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
 }
 
 /*!
- * \brief Método utilizado para se gerar exibições em gráfico pizza das operações realizadas, sejam por todos os usuários ou somente um deles.
+ * \brief Método é utilizado para se gerar exibições em gráfico pizza das operações realizadas, sejam por todos os usuários ou somente um deles.
  * \param title Título do gráfico.
  * \param operations Vetor contendo os dados das operações em pares (Operação, Quantidade).
+ *
+ * \sa MyCalcWindow::on_actionByUser_triggered(), MyCalcWindow::on_actionAllUser_triggered().
  */
 void MyCalcWindow::showPieChart(QString title, vector<pair<QString, int>> operations){
    if(chartWindow != nullptr){

@@ -15,7 +15,7 @@ using namespace std;
 
 /*!
  * \class DatabaseHelper
- * \brief Interface para acesso a qualquer banco de dados.
+ * \brief Interface para acesso a um banco de dados.
  */
 class DatabaseHelper{
 public:
@@ -47,12 +47,14 @@ public:
      * \brief Gera uma tabela de sobre as operações realizadas pelo usuário.
      * \param username Nome do usuário a ser buscado.
      * \return Lista de pares contendo tipo de operação e quantidade de vezes que ela foi realizada.
+     * \sa DatabaseHelper::getAllOperations().
      */
     virtual vector<pair<QString, int>> getOperationsByUser(QString username) = 0;
 
     /*!
      * \brief Gera uma tabela de sobre as operações realizadas por todos os usuários.
      * \return Lista de pares contendo tipo de operação e quantidade de vezes que ela foi realizada.
+     * \sa DatabaseHelper::getOperationsByUser(QString).
      */
     virtual vector<pair<QString, int>> getAllOperations() = 0;
 

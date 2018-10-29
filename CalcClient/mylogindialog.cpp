@@ -28,7 +28,7 @@ using namespace std;
 /*!
  * \brief Construtor Padrão para a classe MyLoginDialog.
  *
- * Além de inicializar o atributo parent, o construtor configura a interface por meio do método 'setupUi' da classe pai LoginDialog e
+ * Inicializa o atributo parent, configura a interface por meio do método 'setupUi' da classe pai LoginDialog e
  * conecta o slot para a leitura de mensagens do servidor.
  *
  * \param parent Referência ao componente pai.
@@ -43,7 +43,9 @@ MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){
 /*!
  * \brief Slot chamado para realizar a operação de login.
  *
- * Recupera as informações da interface e realiza um requisição ao servidor.
+ * Recupera as informações da interface e realiza um requisição de autenticação ao servidor.
+ *
+ * \sa MyLoginDialog::readMessage().
  */
 void MyLoginDialog::on_login_button_clicked(){
     // Pega dados de login do usuário por meio da interface
@@ -79,6 +81,8 @@ void MyLoginDialog::on_login_button_clicked(){
 
 /*!
  * \brief Slot chamado para finalizar a aplicação.
+ *
+ * \sa MyLoginDialog::quit().
  */
 void MyLoginDialog::on_cancel_button_clicked(){
     emit quit();
@@ -87,6 +91,11 @@ void MyLoginDialog::on_cancel_button_clicked(){
 
 /*!
  * \brief Slot chamado quando o socket recebe uma mensagem de resposta do servidor.
+ *
+ * Esse método recebe uma resposta do servidor sobre a tentativa de login. Caso positivo emite um signal informando que o usuário foi
+ * autenticado. Caso contrário mostra uma janela de erro.
+ *
+ * \sa MyLoginDialog::on_login_button_clicked(), MyLoginDialog::logged(QString,bool,QString,int).
  */
 void MyLoginDialog::readMessage(){
     tcpSocket.waitForReadyRead(-1);

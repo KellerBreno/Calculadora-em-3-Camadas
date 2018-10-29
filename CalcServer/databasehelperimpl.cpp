@@ -20,6 +20,9 @@ DatabaseHelperImpl::~DatabaseHelperImpl(){}
 
 /*!
  * \brief Metódo para inicialização do banco de dados.
+ *
+ * Este método configura o gerenciador de banco de dados para trabalhar com o drive QSQLITE e a instância do banco nomeada calc_example.sqlite.
+ *
  */
 void DatabaseHelperImpl::setupDatabase(){
     sqlDatabase = QSqlDatabase::addDatabase("QSQLITE");
