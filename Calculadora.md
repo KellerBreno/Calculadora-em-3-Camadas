@@ -30,7 +30,7 @@ Após clonar o projeto para a sua máquina, você pode acessar as versões do pr
 
 - [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Versão 1: Projeto com classes concretas;
 
-- [V2](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V2) - Versão 2: Projeto com documentação.
+- [V2](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V2) - Versão 2: Projeto com documentação das classes concretas.
 
 Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 

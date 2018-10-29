@@ -1,0 +1,169 @@
+\hypertarget{classMyLoginDialog}{}\section{My\+Login\+Dialog Class Reference}
+\label{classMyLoginDialog}\index{My\+Login\+Dialog@{My\+Login\+Dialog}}
+
+
+Classe para gerenciar as requisições de login.  
+
+
+
+
+{\ttfamily \#include $<$mylogindialog.\+h$>$}
+
+
+
+Inheritance diagram for My\+Login\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{d5/d81/classMyLoginDialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for My\+Login\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{db/d47/classMyLoginDialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{on\+\_\+login\+\_\+button\+\_\+clicked} (void)
+\begin{DoxyCompactList}\small\item\em Slot chamado para realizar a operação de login. \end{DoxyCompactList}\item 
+void \hyperlink{classMyLoginDialog_a98b534e1f3e50217b7d0d603846f6fa3}{on\+\_\+cancel\+\_\+button\+\_\+clicked} (void)
+\begin{DoxyCompactList}\small\item\em Slot chamado para finalizar a aplicação. \end{DoxyCompactList}\item 
+void \hyperlink{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{read\+Message} (void)
+\begin{DoxyCompactList}\small\item\em Slot chamado quando o socket recebe uma mensagem de resposta do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{logged} (Q\+String username, bool admin\+Level, Q\+String ip, int port)
+\begin{DoxyCompactList}\small\item\em Signal emitido quando a operação de login é realizada com sucesso. \end{DoxyCompactList}\item 
+void \hyperlink{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{quit} (void)\hypertarget{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{}\label{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}
+
+\begin{DoxyCompactList}\small\item\em Signal emitido para finalizar a aplicação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMyLoginDialog_ae20170dfe9e23fc1b794d3b5a2d2cc97}{My\+Login\+Dialog} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construtor Padrão para a classe \hyperlink{classMyLoginDialog}{My\+Login\+Dialog}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Tcp\+Socket \hyperlink{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}{tcp\+Socket}\hypertarget{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}{}\label{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}
+
+\begin{DoxyCompactList}\small\item\em T\+C\+P\+Socket utilizado pela aplicação para comunicar com servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMyLoginDialog_aec613ce0d143a48322f72a2b90819fcb}{My\+Login\+Dialog\+Test}\hypertarget{classMyLoginDialog_aec613ce0d143a48322f72a2b90819fcb}{}\label{classMyLoginDialog_aec613ce0d143a48322f72a2b90819fcb}
+
+\begin{DoxyCompactList}\small\item\em Classe para Testes de \hyperlink{classMyLoginDialog}{My\+Login\+Dialog}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe para gerenciar as requisições de login. 
+
+Esta classe gerencia as iterações do usuário com uma janela de login e realiza a validação dos dados em um servidor. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\subsubsection[{\texorpdfstring{My\+Login\+Dialog(\+Q\+Widget $\ast$parent=nullptr)}{MyLoginDialog(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}My\+Login\+Dialog\+::\+My\+Login\+Dialog (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classMyLoginDialog_ae20170dfe9e23fc1b794d3b5a2d2cc97}{}\label{classMyLoginDialog_ae20170dfe9e23fc1b794d3b5a2d2cc97}
+
+
+Construtor Padrão para a classe \hyperlink{classMyLoginDialog}{My\+Login\+Dialog}. 
+
+Inicializa o atributo parent, configura a interface por meio do método \textquotesingle{}setup\+Ui\textquotesingle{} da classe pai Login\+Dialog e conecta o slot para a leitura de mensagens do servidor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Referência ao componente pai. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!logged@{logged}}
+\index{logged@{logged}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\subsubsection[{\texorpdfstring{logged}{logged}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::logged (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username, }
+\item[{bool}]{admin\+Level, }
+\item[{Q\+String}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{}\label{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}
+
+
+Signal emitido quando a operação de login é realizada com sucesso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário. \\
+\hline
+{\em admin\+Level} & Flag identificando se o usuário é administrador. \\
+\hline
+{\em ip} & IP onde o servidor está localizado. \\
+\hline
+{\em port} & Porta onde o servidor está escutando. \\
+\hline
+\end{DoxyParams}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!on\+\_\+cancel\+\_\+button\+\_\+clicked@{on\+\_\+cancel\+\_\+button\+\_\+clicked}}
+\index{on\+\_\+cancel\+\_\+button\+\_\+clicked@{on\+\_\+cancel\+\_\+button\+\_\+clicked}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\subsubsection[{\texorpdfstring{on\+\_\+cancel\+\_\+button\+\_\+clicked}{on_cancel_button_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::on\+\_\+cancel\+\_\+button\+\_\+clicked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyLoginDialog_a98b534e1f3e50217b7d0d603846f6fa3}{}\label{classMyLoginDialog_a98b534e1f3e50217b7d0d603846f6fa3}
+
+
+Slot chamado para finalizar a aplicação. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{My\+Login\+Dialog\+::quit()}. 
+\end{DoxySeeAlso}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!on\+\_\+login\+\_\+button\+\_\+clicked@{on\+\_\+login\+\_\+button\+\_\+clicked}}
+\index{on\+\_\+login\+\_\+button\+\_\+clicked@{on\+\_\+login\+\_\+button\+\_\+clicked}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\subsubsection[{\texorpdfstring{on\+\_\+login\+\_\+button\+\_\+clicked}{on_login_button_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::on\+\_\+login\+\_\+button\+\_\+clicked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{}\label{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}
+
+
+Slot chamado para realizar a operação de login. 
+
+Recupera as informações da interface e realiza um requisição de autenticação ao servidor.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{My\+Login\+Dialog\+::read\+Message()}. 
+\end{DoxySeeAlso}
+\index{My\+Login\+Dialog@{My\+Login\+Dialog}!read\+Message@{read\+Message}}
+\index{read\+Message@{read\+Message}!My\+Login\+Dialog@{My\+Login\+Dialog}}
+\subsubsection[{\texorpdfstring{read\+Message}{readMessage}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::read\+Message (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{}\label{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}
+
+
+Slot chamado quando o socket recebe uma mensagem de resposta do servidor. 
+
+Esse método recebe uma resposta do servidor sobre a tentativa de login. Caso positivo emite um signal informando que o usuário foi autenticado. Caso contrário mostra uma janela de erro.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{My\+Login\+Dialog\+::on\+\_\+login\+\_\+button\+\_\+clicked()}, \hyperlink{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{My\+Login\+Dialog\+::logged(\+Q\+String,bool,\+Q\+String,int)}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Client/\hyperlink{mylogindialog_8h}{mylogindialog.\+h}\item 
+Calc\+Client/\hyperlink{mylogindialog_8cpp}{mylogindialog.\+cpp}\end{DoxyCompactItemize}
