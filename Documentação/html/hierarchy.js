@@ -13,13 +13,19 @@ var hierarchy =
       [ "MyCalcWindow", "d2/dd3/classMyCalcWindow.html", null ]
     ] ],
     [ "QTcpServer", null, [
-      [ "Server", "db/d00/classServer.html", null ]
+      [ "Server", "db/d00/classServer.html", [
+        [ "ServerImpl", "d4/d62/classServerImpl.html", null ]
+      ] ]
     ] ],
     [ "QThread", null, [
-      [ "WorkerThread", "db/d07/classWorkerThread.html", null ]
+      [ "WorkerThread", "db/d07/classWorkerThread.html", [
+        [ "WorkerThreadImpl", "de/da0/classWorkerThreadImpl.html", null ]
+      ] ]
     ] ],
     [ "QWidget", null, [
-      [ "Dialog", "dc/d06/classDialog.html", null ],
-      [ "MyLoginDialog", "de/d21/classMyLoginDialog.html", null ]
+      [ "MyLoginDialog", "de/d21/classMyLoginDialog.html", null ],
+      [ "ServerDialog", "d2/d58/classServerDialog.html", [
+        [ "ServerDialogImpl", "d1/da6/classServerDialogImpl.html", null ]
+      ] ]
     ] ]
 ];

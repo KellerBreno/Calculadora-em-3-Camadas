@@ -105,18 +105,14 @@ $(document).ready(function(){initNavTree('db/d07/classWorkerThread.html','../../
 
 <div class="header">
   <div class="summary">
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="../../d8/dba/classWorkerThread-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">WorkerThread Class Reference</div>  </div>
+<div class="title">WorkerThread Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Classe para realização de operações do servidor em uma thread.  
+<p>Interface para thread de trabalho auxiliar.  
  <a href="../../db/d07/classWorkerThread.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d31/workerthread_8h_source.html">workerthread.h</a>&gt;</code></p>
@@ -124,128 +120,26 @@ $(document).ready(function(){initNavTree('db/d07/classWorkerThread.html','../../
 Inheritance diagram for WorkerThread:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/da8/classWorkerThread__inherit__graph.png" border="0" usemap="#WorkerThread_inherit__map" alt="Inheritance graph"/></div>
+<map name="WorkerThread_inherit__map" id="WorkerThread_inherit__map">
+<area shape="rect" id="node3" href="../../de/da0/classWorkerThreadImpl.html" title="Implementação da interface WorkerThread para realização de operações do servidor em uma thread..." alt="" coords="5,155,135,181"/>
+</map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for WorkerThread:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/d07/classWorkerThread__coll__graph.png" border="0" usemap="#WorkerThread_coll__map" alt="Collaboration graph"/></div>
-<map name="WorkerThread_coll__map" id="WorkerThread_coll__map">
-<area shape="rect" id="node3" href="../../d3/daa/classDatabaseHelper.html" title="Interface para acesso a um banco de dados. " alt="" coords="102,5,218,32"/>
-</map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:a8b1ad08936a109f898f566cc2531515b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a8b1ad08936a109f898f566cc2531515b">error</a> (QTcpSocket::SocketError socketError)</td></tr>
-<tr class="memdesc:a8b1ad08936a109f898f566cc2531515b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal utilizado para sinalizar erros.  <a href="#a8b1ad08936a109f898f566cc2531515b">More...</a><br /></td></tr>
-<tr class="separator:a8b1ad08936a109f898f566cc2531515b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a996fd18b3a50cd21b757713563ad4760"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a996fd18b3a50cd21b757713563ad4760">WorkerThread</a> (int <a class="el" href="../../db/d07/classWorkerThread.html#a91f04630dd7a5a85c70513ce80eabc38">socketDescriptor</a>, QObject *parent, <a class="el" href="../../d3/daa/classDatabaseHelper.html">DatabaseHelper</a> *<a class="el" href="../../db/d07/classWorkerThread.html#a6e4a5d94c50b922a4e2c7361e8d8656f">databaseHelper</a>)</td></tr>
-<tr class="memdesc:a996fd18b3a50cd21b757713563ad4760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor para configurar a thread.  <a href="#a996fd18b3a50cd21b757713563ad4760">More...</a><br /></td></tr>
-<tr class="separator:a996fd18b3a50cd21b757713563ad4760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa554e7d73f0f185a850ca0ef145d6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5aa554e7d73f0f185a850ca0ef145d6d"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a5aa554e7d73f0f185a850ca0ef145d6d">~WorkerThread</a> ()</td></tr>
-<tr class="memdesc:a5aa554e7d73f0f185a850ca0ef145d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor Padrão. <br /></td></tr>
-<tr class="separator:a5aa554e7d73f0f185a850ca0ef145d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d48604849d66bdaa5e46b196eb745b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a7d48604849d66bdaa5e46b196eb745b6">run</a> () override</td></tr>
-<tr class="memdesc:a7d48604849d66bdaa5e46b196eb745b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para delegação do tratamento de uma mensagem recebida e envio da respostas.  <a href="#a7d48604849d66bdaa5e46b196eb745b6">More...</a><br /></td></tr>
-<tr class="separator:a7d48604849d66bdaa5e46b196eb745b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a91f04630dd7a5a85c70513ce80eabc38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91f04630dd7a5a85c70513ce80eabc38"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a91f04630dd7a5a85c70513ce80eabc38">socketDescriptor</a></td></tr>
-<tr class="memdesc:a91f04630dd7a5a85c70513ce80eabc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contém as informações de configuração do socket. <br /></td></tr>
-<tr class="separator:a91f04630dd7a5a85c70513ce80eabc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e4a5d94c50b922a4e2c7361e8d8656f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e4a5d94c50b922a4e2c7361e8d8656f"></a>
-<a class="el" href="../../d3/daa/classDatabaseHelper.html">DatabaseHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a6e4a5d94c50b922a4e2c7361e8d8656f">databaseHelper</a></td></tr>
-<tr class="memdesc:a6e4a5d94c50b922a4e2c7361e8d8656f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Referência ao helper de acesso ao banco de dados. <br /></td></tr>
-<tr class="separator:a6e4a5d94c50b922a4e2c7361e8d8656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a1e71938585e7ae4e280817622352b209"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a1e71938585e7ae4e280817622352b209">WorkerThread</a> (const <a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a1e71938585e7ae4e280817622352b209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor de Cópia.  <a href="#a1e71938585e7ae4e280817622352b209">More...</a><br /></td></tr>
-<tr class="separator:a1e71938585e7ae4e280817622352b209"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2650163fc1ed2eb11f19ac07754f327e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a2650163fc1ed2eb11f19ac07754f327e">operator=</a> (const <a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a2650163fc1ed2eb11f19ac07754f327e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobrecarga do operador =.  <a href="#a2650163fc1ed2eb11f19ac07754f327e">More...</a><br /></td></tr>
-<tr class="separator:a2650163fc1ed2eb11f19ac07754f327e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a04907e80bd0776e15fbdb515cd35b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a4a04907e80bd0776e15fbdb515cd35b3">WorkerThread</a> ()</td></tr>
-<tr class="memdesc:a4a04907e80bd0776e15fbdb515cd35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor Padrão.  <a href="#a4a04907e80bd0776e15fbdb515cd35b3">More...</a><br /></td></tr>
-<tr class="separator:a4a04907e80bd0776e15fbdb515cd35b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace7c1f1f36697deb8e68f0c8615be93c"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c">handleMessage</a> (QJsonObject jsonObject)</td></tr>
-<tr class="memdesc:ace7c1f1f36697deb8e68f0c8615be93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotina auxiliar para o tratamento de mensagens recebidas.  <a href="#ace7c1f1f36697deb8e68f0c8615be93c">More...</a><br /></td></tr>
-<tr class="separator:ace7c1f1f36697deb8e68f0c8615be93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a105b46fa3f787f6a2111f2891d8a8d39"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a105b46fa3f787f6a2111f2891d8a8d39">handleAuthenticate</a> (QJsonObject jsonObject)</td></tr>
-<tr class="memdesc:a105b46fa3f787f6a2111f2891d8a8d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para tratamento de mensagens de autenticação.  <a href="#a105b46fa3f787f6a2111f2891d8a8d39">More...</a><br /></td></tr>
-<tr class="separator:a105b46fa3f787f6a2111f2891d8a8d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a79b214b331c4f3d2d99e5d312bc5c8"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a7a79b214b331c4f3d2d99e5d312bc5c8">handleOperation</a> (QJsonObject jsonObject)</td></tr>
-<tr class="memdesc:a7a79b214b331c4f3d2d99e5d312bc5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para realizar uma operação e armazena-la em banco.  <a href="#a7a79b214b331c4f3d2d99e5d312bc5c8">More...</a><br /></td></tr>
-<tr class="separator:a7a79b214b331c4f3d2d99e5d312bc5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac98a61240985e5d17aea3481f15853f7"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#ac98a61240985e5d17aea3481f15853f7">handleUserReport</a> (QJsonObject jsonObject)</td></tr>
-<tr class="memdesc:ac98a61240985e5d17aea3481f15853f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método gera um relatório de operações do usuário informado.  <a href="#ac98a61240985e5d17aea3481f15853f7">More...</a><br /></td></tr>
-<tr class="separator:ac98a61240985e5d17aea3481f15853f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd116aa561be999fb0648a0ae1a6b6ed"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#abd116aa561be999fb0648a0ae1a6b6ed">handleAllUsersReport</a> (QJsonObject jsonObject)</td></tr>
-<tr class="memdesc:abd116aa561be999fb0648a0ae1a6b6ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método gera um relatório de operações de todos usuários.  <a href="#abd116aa561be999fb0648a0ae1a6b6ed">More...</a><br /></td></tr>
-<tr class="separator:abd116aa561be999fb0648a0ae1a6b6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a9b782f47c630bd470969aeba01a706b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b782f47c630bd470969aeba01a706b2"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a9b782f47c630bd470969aeba01a706b2">OperacoesTest</a></td></tr>
-<tr class="memdesc:a9b782f47c630bd470969aeba01a706b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe de Testes para <a class="el" href="../../db/d07/classWorkerThread.html" title="Classe para realização de operações do servidor em uma thread. ">WorkerThread</a>. <br /></td></tr>
-<tr class="separator:a9b782f47c630bd470969aeba01a706b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008dd6f762a2c20641afbb2a69319ca4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a008dd6f762a2c20641afbb2a69319ca4">run</a> ()=0</td></tr>
+<tr class="memdesc:a008dd6f762a2c20641afbb2a69319ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para delegação do tratamento de uma mensagem recebida e envio da respostas.  <a href="#a008dd6f762a2c20641afbb2a69319ca4">More...</a><br /></td></tr>
+<tr class="separator:a008dd6f762a2c20641afbb2a69319ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe para realização de operações do servidor em uma thread. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a996fd18b3a50cd21b757713563ad4760"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WorkerThread::WorkerThread </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>socketDescriptor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d3/daa/classDatabaseHelper.html">DatabaseHelper</a> *&#160;</td>
-          <td class="paramname"><em>databaseHelper</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Construtor para configurar a thread. </p>
-<p>Ao ser chamado este construtor seta os atributos para os valores informados.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">socketDescriptor</td><td>Informações de configuração do socket. </td></tr>
-    <tr><td class="paramname">parent</td><td>Referência ao componente pai. </td></tr>
-    <tr><td class="paramname">databaseHelper</td><td>Referência ao helper de acesso ao banco de dados.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#a4a04907e80bd0776e15fbdb515cd35b3" title="Construtor Padrão. ">WorkerThread::WorkerThread()</a>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a1e71938585e7ae4e280817622352b209"></a>
+<div class="textblock"><p>Interface para thread de trabalho auxiliar. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a008dd6f762a2c20641afbb2a69319ca4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -253,39 +147,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">WorkerThread::WorkerThread </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construtor de Cópia. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>Objeto a ser copiado. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a4a04907e80bd0776e15fbdb515cd35b3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WorkerThread::WorkerThread </td>
+          <td class="memname">virtual void WorkerThread::run </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -293,287 +155,21 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construtor Padrão. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#a996fd18b3a50cd21b757713563ad4760" title="Construtor para configurar a thread. ">WorkerThread::WorkerThread(int, QObject*, DatabaseHelper*)</a> </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a8b1ad08936a109f898f566cc2531515b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WorkerThread::error </td>
-          <td>(</td>
-          <td class="paramtype">QTcpSocket::SocketError&#160;</td>
-          <td class="paramname"><em>socketError</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Signal utilizado para sinalizar erros. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">socketError</td><td>Tipo do erro detectado. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="abd116aa561be999fb0648a0ae1a6b6ed"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject WorkerThread::handleAllUsersReport </td>
-          <td>(</td>
-          <td class="paramtype">QJsonObject&#160;</td>
-          <td class="paramname"><em>jsonObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Método gera um relatório de operações de todos usuários. </p>
-<p>Este método recebe um JSON contendo os dados necessário. Ao extrair o nome do usuário, verifica se ele é administrador, portanto se tem autorização para realizar essa operação. Sendo verdadeiro, ele realiza uma agregação no banco para obter a quantidade de operações de todos os usuários.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonObject</td><td>Dados da mensagem recebida. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Dados codificado em um mensagem de resposta.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThread::handleMessage(QJsonObject)</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a105b46fa3f787f6a2111f2891d8a8d39"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject WorkerThread::handleAuthenticate </td>
-          <td>(</td>
-          <td class="paramtype">QJsonObject&#160;</td>
-          <td class="paramname"><em>jsonObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Método para tratamento de mensagens de autenticação. </p>
-<p>O método recebe um objeto JSON contendo as informações de login de um usuário, extrai esses dados e verifica se eles estão armazenados no banco, caso positivo responde que é um usuário valido e verifica se ele é um administrador, caso negativo responde que o usuário é invalido.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonObject</td><td>Dados da mensagem recebida. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Dados codificado em um mensagem de resposta.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThread::handleMessage(QJsonObject)</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ace7c1f1f36697deb8e68f0c8615be93c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject WorkerThread::handleMessage </td>
-          <td>(</td>
-          <td class="paramtype">QJsonObject&#160;</td>
-          <td class="paramname"><em>jsonObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rotina auxiliar para o tratamento de mensagens recebidas. </p>
-<p>O método recebe uma mensagem JSON, extrai o tipo de mensagem dos dados contidos no JSON e delega o tratamento dos dados restantes para alguns dos métodos handle disponiveis.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonObject</td><td>Dados da mensagem recebida. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Dados codificado em um mensagem de resposta.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#a105b46fa3f787f6a2111f2891d8a8d39" title="Método para tratamento de mensagens de autenticação. ">WorkerThread::handleAuthenticate(QJsonObject)</a>, <a class="el" href="../../db/d07/classWorkerThread.html#a7a79b214b331c4f3d2d99e5d312bc5c8" title="Método para realizar uma operação e armazena-la em banco. ">WorkerThread::handleOperation(QJsonObject)</a>, <a class="el" href="../../db/d07/classWorkerThread.html#ac98a61240985e5d17aea3481f15853f7" title="Método gera um relatório de operações do usuário informado. ">WorkerThread::handleUserReport(QJsonObject)</a>, <a class="el" href="../../db/d07/classWorkerThread.html#abd116aa561be999fb0648a0ae1a6b6ed" title="Método gera um relatório de operações de todos usuários. ">WorkerThread::handleAllUsersReport(QJsonObject)</a>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a7a79b214b331c4f3d2d99e5d312bc5c8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject WorkerThread::handleOperation </td>
-          <td>(</td>
-          <td class="paramtype">QJsonObject&#160;</td>
-          <td class="paramname"><em>jsonObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Método para realizar uma operação e armazena-la em banco. </p>
-<p>O método recebe um objeto JSON contendo as informações da operação a ser realizada. Sendo assim, ele extrai os dados do JSON e realiza a operação, após isso armazena o registro no banco e responde o usuário com a solução da operação.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonObject</td><td>Dados da mensagem recebida. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Dados codificado em um mensagem de resposta.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThread::handleMessage(QJsonObject)</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac98a61240985e5d17aea3481f15853f7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonObject WorkerThread::handleUserReport </td>
-          <td>(</td>
-          <td class="paramtype">QJsonObject&#160;</td>
-          <td class="paramname"><em>jsonObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Método gera um relatório de operações do usuário informado. </p>
-<p>Este método recebe um JSON contendo os dados necessário. Ao extrair o nome do usuário, ele realiza uma agregação no banco para obter a quantidade de operações que o usuário informado realizou.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">jsonObject</td><td>Dados da mensagem recebida. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Dados codificado em um mensagem de resposta.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThread::handleMessage(QJsonObject)</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a2650163fc1ed2eb11f19ac07754f327e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a>&amp; WorkerThread::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../db/d07/classWorkerThread.html">WorkerThread</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sobrecarga do operador =. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>Objeto a ser copiado. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Novo objeto copiado. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a7d48604849d66bdaa5e46b196eb745b6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WorkerThread::run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Método para delegação do tratamento de uma mensagem recebida e envio da respostas. </p>
 <p>Este método recebe um byte array correspondente a um objeto JSON, após isso cria um objeto JSON e delega a resolução da mensagem para o método handlMessage. Por fim, recebe a resposta da mensagem, codifica ela e envia ao cliente pela rede.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html#ace7c1f1f36697deb8e68f0c8615be93c" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThread::handleMessage(QJsonObject)</a>, <a class="el" href="../../db/d07/classWorkerThread.html#a8b1ad08936a109f898f566cc2531515b" title="Signal utilizado para sinalizar erros. ">WorkerThread::error(QTcpSocket::SocketError)</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/da0/classWorkerThreadImpl.html#ac1ced60fd043f7dca8a7e7e1857a91cb" title="Rotina auxiliar para o tratamento de mensagens recebidas. ">WorkerThreadImpl::handleMessage(QJsonObject)</a>, <a class="el" href="../../de/da0/classWorkerThreadImpl.html#ae260562530b71dc55a6d360d5e4d896d" title="Signal utilizado para sinalizar erros. ">WorkerThreadImpl::error(QTcpSocket::SocketError)</a>. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../de/da0/classWorkerThreadImpl.html#a24ef315ed0b7914ffd099c23a5a6e16c">WorkerThreadImpl</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>CalcServer/<a class="el" href="../../d3/d31/workerthread_8h_source.html">workerthread.h</a></li>
-<li>CalcServer/<a class="el" href="../../da/d63/workerthread_8cpp.html">workerthread.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -11,6 +11,6 @@ var searchData=
   ['on_5fradiobuttonsub_5fclicked',['on_radioButtonSub_clicked',['../d2/dd3/classMyCalcWindow.html#a01fac328f5546feb830a67a7d35cc7f5',1,'MyCalcWindow']]],
   ['onquit',['onQuit',['../d2/dd3/classMyCalcWindow.html#a809b1da213d1424ba098c1f0ee2d0bd5',1,'MyCalcWindow']]],
   ['onuserlogin',['onUserLogin',['../d2/dd3/classMyCalcWindow.html#a35f3b06bb33f0dbbfb238e6944f31074',1,'MyCalcWindow']]],
-  ['operacoestest',['OperacoesTest',['../db/d07/classWorkerThread.html#a9b782f47c630bd470969aeba01a706b2',1,'WorkerThread']]],
-  ['operator_3d',['operator=',['../d5/d1d/classDatabaseHelperImpl.html#a165437593ebfabea3bdaf342d339d0cc',1,'DatabaseHelperImpl::operator=()'],['../db/d07/classWorkerThread.html#a2650163fc1ed2eb11f19ac07754f327e',1,'WorkerThread::operator=()']]]
+  ['operacoestest',['OperacoesTest',['../de/da0/classWorkerThreadImpl.html#a9b782f47c630bd470969aeba01a706b2',1,'WorkerThreadImpl']]],
+  ['operator_3d',['operator=',['../d5/d1d/classDatabaseHelperImpl.html#a165437593ebfabea3bdaf342d339d0cc',1,'DatabaseHelperImpl::operator=()'],['../de/da0/classWorkerThreadImpl.html#a6424bd714467a9cb3a38fa976501fb53',1,'WorkerThreadImpl::operator=()']]]
 ];

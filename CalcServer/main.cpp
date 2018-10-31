@@ -3,11 +3,15 @@
 
 #include <stdlib.h>
 
-#include "dialog.h"
+#include "serverdialogimpl.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    Dialog dialog;
-    dialog.show();
-    return app.exec();
+    ServerDialog *serverDialog = new ServerDialogImpl();
+    serverDialog->show();
+
+    app.exec();
+
+    delete serverDialog;
+    return 0;
 }

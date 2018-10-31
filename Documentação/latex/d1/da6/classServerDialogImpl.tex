@@ -1,0 +1,90 @@
+\hypertarget{classServerDialogImpl}{}\section{Server\+Dialog\+Impl Class Reference}
+\label{classServerDialogImpl}\index{Server\+Dialog\+Impl@{Server\+Dialog\+Impl}}
+
+
+Implementação da interface \hyperlink{classServerDialog}{Server\+Dialog}.  
+
+
+
+
+{\ttfamily \#include $<$serverdialogimpl.\+h$>$}
+
+
+
+Inheritance diagram for Server\+Dialog\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{d1/da5/classServerDialogImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Dialog\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{d3/d6b/classServerDialogImpl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServerDialogImpl_a5a5cf39e32c0559a8fcdeb372fb055b3}{Server\+Dialog\+Impl} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \hyperlink{classServerDialogImpl}{Server\+Dialog\+Impl}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classServerDialogImpl_a0e73fbf7d75d033ec4ec12dc93931952}{$\sim$\+Server\+Dialog\+Impl} ()\hypertarget{classServerDialogImpl_a0e73fbf7d75d033ec4ec12dc93931952}{}\label{classServerDialogImpl_a0e73fbf7d75d033ec4ec12dc93931952}
+
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \hyperlink{classServerDialogImpl}{Server\+Dialog\+Impl}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Label $\ast$ \hyperlink{classServerDialogImpl_a939de93eb188fe551041eb94531072af}{status\+Label}\hypertarget{classServerDialogImpl_a939de93eb188fe551041eb94531072af}{}\label{classServerDialogImpl_a939de93eb188fe551041eb94531072af}
+
+\begin{DoxyCompactList}\small\item\em Q\+Label para exibição dos dados do servidor. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{classServerDialogImpl_a620d45dc0aca6115b54502cf4939fa60}{quit\+Button}\hypertarget{classServerDialogImpl_a620d45dc0aca6115b54502cf4939fa60}{}\label{classServerDialogImpl_a620d45dc0aca6115b54502cf4939fa60}
+
+\begin{DoxyCompactList}\small\item\em Botão de sair da aplicação. \end{DoxyCompactList}\item 
+\hyperlink{classServer}{Server} $\ast$ \hyperlink{classServerDialogImpl_ad69d13de3b1f89c826bb5a5c82ee91fb}{server}\hypertarget{classServerDialogImpl_ad69d13de3b1f89c826bb5a5c82ee91fb}{}\label{classServerDialogImpl_ad69d13de3b1f89c826bb5a5c82ee91fb}
+
+\begin{DoxyCompactList}\small\item\em Instância de \hyperlink{classServer}{Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classServerDialogImpl_a9fe923be634f4d12f5a825141fafb85f}{Dialog\+Test}\hypertarget{classServerDialogImpl_a9fe923be634f4d12f5a825141fafb85f}{}\label{classServerDialogImpl_a9fe923be634f4d12f5a825141fafb85f}
+
+\begin{DoxyCompactList}\small\item\em Classe de Testes para \hyperlink{classServerDialog}{Server\+Dialog}. \end{DoxyCompactList}\item 
+class \hyperlink{classServerDialogImpl_a9c408e8dbdb17dca5ff54b16daeed3f6}{Sockets\+Test}\hypertarget{classServerDialogImpl_a9c408e8dbdb17dca5ff54b16daeed3f6}{}\label{classServerDialogImpl_a9c408e8dbdb17dca5ff54b16daeed3f6}
+
+\begin{DoxyCompactList}\small\item\em Classe de Testes para Sockets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementação da interface \hyperlink{classServerDialog}{Server\+Dialog}. 
+
+Esta classe cria uma instância de \hyperlink{classServer}{Server} e exibe suas informações. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Server\+Dialog\+Impl@{Server\+Dialog\+Impl}!Server\+Dialog\+Impl@{Server\+Dialog\+Impl}}
+\index{Server\+Dialog\+Impl@{Server\+Dialog\+Impl}!Server\+Dialog\+Impl@{Server\+Dialog\+Impl}}
+\subsubsection[{\texorpdfstring{Server\+Dialog\+Impl(\+Q\+Widget $\ast$parent=nullptr)}{ServerDialogImpl(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Server\+Dialog\+Impl\+::\+Server\+Dialog\+Impl (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classServerDialogImpl_a5a5cf39e32c0559a8fcdeb372fb055b3}{}\label{classServerDialogImpl_a5a5cf39e32c0559a8fcdeb372fb055b3}
+
+
+Construtor padrão da classe \hyperlink{classServerDialogImpl}{Server\+Dialog\+Impl}. 
+
+Instância e configura a interface. Além disso configura a instância de \hyperlink{classServer}{Server} antes de deixa-\/la tratando as requisições.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Referência ao componente pai. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Server/\hyperlink{serverdialogimpl_8h}{serverdialogimpl.\+h}\item 
+Calc\+Server/\hyperlink{serverdialogimpl_8cpp}{serverdialogimpl.\+cpp}\end{DoxyCompactItemize}

@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$d2/dd3/classMyCalcWindow.html" title="Classe para gerenciar as ações de uma calculadora. " alt="" coords="160,31,275,57"/>
+<area shape="rect" id="node2" href="$de/d21/classMyLoginDialog.html" title="Classe para gerenciar as requisições de login. " alt="" coords="144,5,252,32"/>
+<area shape="rect" id="node4" href="$d2/d58/classServerDialog.html" title="Classe para exibição dos dados do servidor. " alt="" coords="149,56,247,83"/>
+<area shape="rect" id="node5" href="$d1/da6/classServerDialogImpl.html" title="Implementação da interface ServerDialog. " alt="" coords="300,56,423,83"/>
 </map>

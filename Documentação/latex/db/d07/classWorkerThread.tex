@@ -2,7 +2,7 @@
 \label{classWorkerThread}\index{Worker\+Thread@{Worker\+Thread}}
 
 
-Classe para realização de operações do servidor em uma thread.  
+Interface para thread de trabalho auxiliar.  
 
 
 
@@ -15,7 +15,7 @@ Inheritance diagram for Worker\+Thread\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=158pt]{d3/da8/classWorkerThread__inherit__graph}
+\includegraphics[width=177pt]{d3/da8/classWorkerThread__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,286 +24,27 @@ Collaboration diagram for Worker\+Thread\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=249pt]{de/d07/classWorkerThread__coll__graph}
+\includegraphics[width=158pt]{de/d07/classWorkerThread__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Signals}
-\begin{DoxyCompactItemize}
-\item 
-void \hyperlink{classWorkerThread_a8b1ad08936a109f898f566cc2531515b}{error} (Q\+Tcp\+Socket\+::\+Socket\+Error socket\+Error)
-\begin{DoxyCompactList}\small\item\em Signal utilizado para sinalizar erros. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classWorkerThread_a996fd18b3a50cd21b757713563ad4760}{Worker\+Thread} (int \hyperlink{classWorkerThread_a91f04630dd7a5a85c70513ce80eabc38}{socket\+Descriptor}, Q\+Object $\ast$parent, \hyperlink{classDatabaseHelper}{Database\+Helper} $\ast$\hyperlink{classWorkerThread_a6e4a5d94c50b922a4e2c7361e8d8656f}{database\+Helper})
-\begin{DoxyCompactList}\small\item\em Construtor para configurar a thread. \end{DoxyCompactList}\item 
-virtual \hyperlink{classWorkerThread_a5aa554e7d73f0f185a850ca0ef145d6d}{$\sim$\+Worker\+Thread} ()\hypertarget{classWorkerThread_a5aa554e7d73f0f185a850ca0ef145d6d}{}\label{classWorkerThread_a5aa554e7d73f0f185a850ca0ef145d6d}
-
-\begin{DoxyCompactList}\small\item\em Destrutor Padrão. \end{DoxyCompactList}\item 
-void \hyperlink{classWorkerThread_a7d48604849d66bdaa5e46b196eb745b6}{run} () override
+virtual void \hyperlink{classWorkerThread_a008dd6f762a2c20641afbb2a69319ca4}{run} ()=0
 \begin{DoxyCompactList}\small\item\em Método para delegação do tratamento de uma mensagem recebida e envio da respostas. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{classWorkerThread_a91f04630dd7a5a85c70513ce80eabc38}{socket\+Descriptor}\hypertarget{classWorkerThread_a91f04630dd7a5a85c70513ce80eabc38}{}\label{classWorkerThread_a91f04630dd7a5a85c70513ce80eabc38}
-
-\begin{DoxyCompactList}\small\item\em Contém as informações de configuração do socket. \end{DoxyCompactList}\item 
-\hyperlink{classDatabaseHelper}{Database\+Helper} $\ast$ \hyperlink{classWorkerThread_a6e4a5d94c50b922a4e2c7361e8d8656f}{database\+Helper}\hypertarget{classWorkerThread_a6e4a5d94c50b922a4e2c7361e8d8656f}{}\label{classWorkerThread_a6e4a5d94c50b922a4e2c7361e8d8656f}
-
-\begin{DoxyCompactList}\small\item\em Referência ao helper de acesso ao banco de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{classWorkerThread_a1e71938585e7ae4e280817622352b209}{Worker\+Thread} (const \hyperlink{classWorkerThread}{Worker\+Thread} \&rhs)
-\begin{DoxyCompactList}\small\item\em Construtor de Cópia. \end{DoxyCompactList}\item 
-\hyperlink{classWorkerThread}{Worker\+Thread} \& \hyperlink{classWorkerThread_a2650163fc1ed2eb11f19ac07754f327e}{operator=} (const \hyperlink{classWorkerThread}{Worker\+Thread} \&rhs)
-\begin{DoxyCompactList}\small\item\em Sobrecarga do operador =. \end{DoxyCompactList}\item 
-\hyperlink{classWorkerThread_a4a04907e80bd0776e15fbdb515cd35b3}{Worker\+Thread} ()
-\begin{DoxyCompactList}\small\item\em Construtor Padrão. \end{DoxyCompactList}\item 
-Q\+Json\+Object \hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{handle\+Message} (Q\+Json\+Object json\+Object)
-\begin{DoxyCompactList}\small\item\em Rotina auxiliar para o tratamento de mensagens recebidas. \end{DoxyCompactList}\item 
-Q\+Json\+Object \hyperlink{classWorkerThread_a105b46fa3f787f6a2111f2891d8a8d39}{handle\+Authenticate} (Q\+Json\+Object json\+Object)
-\begin{DoxyCompactList}\small\item\em Método para tratamento de mensagens de autenticação. \end{DoxyCompactList}\item 
-Q\+Json\+Object \hyperlink{classWorkerThread_a7a79b214b331c4f3d2d99e5d312bc5c8}{handle\+Operation} (Q\+Json\+Object json\+Object)
-\begin{DoxyCompactList}\small\item\em Método para realizar uma operação e armazena-\/la em banco. \end{DoxyCompactList}\item 
-Q\+Json\+Object \hyperlink{classWorkerThread_ac98a61240985e5d17aea3481f15853f7}{handle\+User\+Report} (Q\+Json\+Object json\+Object)
-\begin{DoxyCompactList}\small\item\em Método gera um relatório de operações do usuário informado. \end{DoxyCompactList}\item 
-Q\+Json\+Object \hyperlink{classWorkerThread_abd116aa561be999fb0648a0ae1a6b6ed}{handle\+All\+Users\+Report} (Q\+Json\+Object json\+Object)
-\begin{DoxyCompactList}\small\item\em Método gera um relatório de operações de todos usuários. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-class \hyperlink{classWorkerThread_a9b782f47c630bd470969aeba01a706b2}{Operacoes\+Test}\hypertarget{classWorkerThread_a9b782f47c630bd470969aeba01a706b2}{}\label{classWorkerThread_a9b782f47c630bd470969aeba01a706b2}
-
-\begin{DoxyCompactList}\small\item\em Classe de Testes para \hyperlink{classWorkerThread}{Worker\+Thread}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Classe para realização de operações do servidor em uma thread. 
-
-\subsection{Constructor \& Destructor Documentation}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{Worker\+Thread(int socket\+Descriptor, Q\+Object $\ast$parent, Database\+Helper $\ast$database\+Helper)}{WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)}}]{\setlength{\rightskip}{0pt plus 5cm}Worker\+Thread\+::\+Worker\+Thread (
-\begin{DoxyParamCaption}
-\item[{int}]{socket\+Descriptor, }
-\item[{Q\+Object $\ast$}]{parent, }
-\item[{{\bf Database\+Helper} $\ast$}]{database\+Helper}
-\end{DoxyParamCaption}
-)}\hypertarget{classWorkerThread_a996fd18b3a50cd21b757713563ad4760}{}\label{classWorkerThread_a996fd18b3a50cd21b757713563ad4760}
-
-
-Construtor para configurar a thread. 
-
-Ao ser chamado este construtor seta os atributos para os valores informados.
-
-
-\begin{DoxyParams}{Parameters}
-{\em socket\+Descriptor} & Informações de configuração do socket. \\
-\hline
-{\em parent} & Referência ao componente pai. \\
-\hline
-{\em database\+Helper} & Referência ao helper de acesso ao banco de dados.\\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_a4a04907e80bd0776e15fbdb515cd35b3}{Worker\+Thread\+::\+Worker\+Thread()}. 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{Worker\+Thread(const Worker\+Thread \&rhs)}{WorkerThread(const WorkerThread &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}Worker\+Thread\+::\+Worker\+Thread (
-\begin{DoxyParamCaption}
-\item[{const {\bf Worker\+Thread} \&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classWorkerThread_a1e71938585e7ae4e280817622352b209}{}\label{classWorkerThread_a1e71938585e7ae4e280817622352b209}
-
-
-Construtor de Cópia. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rhs} & Objeto a ser copiado. \\
-\hline
-\end{DoxyParams}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\index{Worker\+Thread@{Worker\+Thread}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{Worker\+Thread()}{WorkerThread()}}]{\setlength{\rightskip}{0pt plus 5cm}Worker\+Thread\+::\+Worker\+Thread (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_a4a04907e80bd0776e15fbdb515cd35b3}{}\label{classWorkerThread_a4a04907e80bd0776e15fbdb515cd35b3}
-
-
-Construtor Padrão. 
-
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_a996fd18b3a50cd21b757713563ad4760}{Worker\+Thread\+::\+Worker\+Thread(int, Q\+Object$\ast$, Database\+Helper$\ast$)} 
-\end{DoxySeeAlso}
-
+Interface para thread de trabalho auxiliar. 
 
 \subsection{Member Function Documentation}
-\index{Worker\+Thread@{Worker\+Thread}!error@{error}}
-\index{error@{error}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{error}{error}}]{\setlength{\rightskip}{0pt plus 5cm}void Worker\+Thread\+::error (
-\begin{DoxyParamCaption}
-\item[{Q\+Tcp\+Socket\+::\+Socket\+Error}]{socket\+Error}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classWorkerThread_a8b1ad08936a109f898f566cc2531515b}{}\label{classWorkerThread_a8b1ad08936a109f898f566cc2531515b}
-
-
-Signal utilizado para sinalizar erros. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em socket\+Error} & Tipo do erro detectado. \\
-\hline
-\end{DoxyParams}
-\index{Worker\+Thread@{Worker\+Thread}!handle\+All\+Users\+Report@{handle\+All\+Users\+Report}}
-\index{handle\+All\+Users\+Report@{handle\+All\+Users\+Report}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{handle\+All\+Users\+Report(\+Q\+Json\+Object json\+Object)}{handleAllUsersReport(QJsonObject jsonObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Json\+Object Worker\+Thread\+::handle\+All\+Users\+Report (
-\begin{DoxyParamCaption}
-\item[{Q\+Json\+Object}]{json\+Object}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_abd116aa561be999fb0648a0ae1a6b6ed}{}\label{classWorkerThread_abd116aa561be999fb0648a0ae1a6b6ed}
-
-
-Método gera um relatório de operações de todos usuários. 
-
-Este método recebe um J\+S\+ON contendo os dados necessário. Ao extrair o nome do usuário, verifica se ele é administrador, portanto se tem autorização para realizar essa operação. Sendo verdadeiro, ele realiza uma agregação no banco para obter a quantidade de operações de todos os usuários.
-
-
-\begin{DoxyParams}{Parameters}
-{\em json\+Object} & Dados da mensagem recebida. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Dados codificado em um mensagem de resposta.
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{Worker\+Thread\+::handle\+Message(\+Q\+Json\+Object)} 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!handle\+Authenticate@{handle\+Authenticate}}
-\index{handle\+Authenticate@{handle\+Authenticate}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{handle\+Authenticate(\+Q\+Json\+Object json\+Object)}{handleAuthenticate(QJsonObject jsonObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Json\+Object Worker\+Thread\+::handle\+Authenticate (
-\begin{DoxyParamCaption}
-\item[{Q\+Json\+Object}]{json\+Object}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_a105b46fa3f787f6a2111f2891d8a8d39}{}\label{classWorkerThread_a105b46fa3f787f6a2111f2891d8a8d39}
-
-
-Método para tratamento de mensagens de autenticação. 
-
-O método recebe um objeto J\+S\+ON contendo as informações de login de um usuário, extrai esses dados e verifica se eles estão armazenados no banco, caso positivo responde que é um usuário valido e verifica se ele é um administrador, caso negativo responde que o usuário é invalido.
-
-
-\begin{DoxyParams}{Parameters}
-{\em json\+Object} & Dados da mensagem recebida. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Dados codificado em um mensagem de resposta.
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{Worker\+Thread\+::handle\+Message(\+Q\+Json\+Object)} 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!handle\+Message@{handle\+Message}}
-\index{handle\+Message@{handle\+Message}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{handle\+Message(\+Q\+Json\+Object json\+Object)}{handleMessage(QJsonObject jsonObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Json\+Object Worker\+Thread\+::handle\+Message (
-\begin{DoxyParamCaption}
-\item[{Q\+Json\+Object}]{json\+Object}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{}\label{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}
-
-
-Rotina auxiliar para o tratamento de mensagens recebidas. 
-
-O método recebe uma mensagem J\+S\+ON, extrai o tipo de mensagem dos dados contidos no J\+S\+ON e delega o tratamento dos dados restantes para alguns dos métodos handle disponiveis.
-
-
-\begin{DoxyParams}{Parameters}
-{\em json\+Object} & Dados da mensagem recebida. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Dados codificado em um mensagem de resposta.
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_a105b46fa3f787f6a2111f2891d8a8d39}{Worker\+Thread\+::handle\+Authenticate(\+Q\+Json\+Object)}, \hyperlink{classWorkerThread_a7a79b214b331c4f3d2d99e5d312bc5c8}{Worker\+Thread\+::handle\+Operation(\+Q\+Json\+Object)}, \hyperlink{classWorkerThread_ac98a61240985e5d17aea3481f15853f7}{Worker\+Thread\+::handle\+User\+Report(\+Q\+Json\+Object)}, \hyperlink{classWorkerThread_abd116aa561be999fb0648a0ae1a6b6ed}{Worker\+Thread\+::handle\+All\+Users\+Report(\+Q\+Json\+Object)}. 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!handle\+Operation@{handle\+Operation}}
-\index{handle\+Operation@{handle\+Operation}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{handle\+Operation(\+Q\+Json\+Object json\+Object)}{handleOperation(QJsonObject jsonObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Json\+Object Worker\+Thread\+::handle\+Operation (
-\begin{DoxyParamCaption}
-\item[{Q\+Json\+Object}]{json\+Object}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_a7a79b214b331c4f3d2d99e5d312bc5c8}{}\label{classWorkerThread_a7a79b214b331c4f3d2d99e5d312bc5c8}
-
-
-Método para realizar uma operação e armazena-\/la em banco. 
-
-O método recebe um objeto J\+S\+ON contendo as informações da operação a ser realizada. Sendo assim, ele extrai os dados do J\+S\+ON e realiza a operação, após isso armazena o registro no banco e responde o usuário com a solução da operação.
-
-
-\begin{DoxyParams}{Parameters}
-{\em json\+Object} & Dados da mensagem recebida. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Dados codificado em um mensagem de resposta.
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{Worker\+Thread\+::handle\+Message(\+Q\+Json\+Object)} 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!handle\+User\+Report@{handle\+User\+Report}}
-\index{handle\+User\+Report@{handle\+User\+Report}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{handle\+User\+Report(\+Q\+Json\+Object json\+Object)}{handleUserReport(QJsonObject jsonObject)}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Json\+Object Worker\+Thread\+::handle\+User\+Report (
-\begin{DoxyParamCaption}
-\item[{Q\+Json\+Object}]{json\+Object}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classWorkerThread_ac98a61240985e5d17aea3481f15853f7}{}\label{classWorkerThread_ac98a61240985e5d17aea3481f15853f7}
-
-
-Método gera um relatório de operações do usuário informado. 
-
-Este método recebe um J\+S\+ON contendo os dados necessário. Ao extrair o nome do usuário, ele realiza uma agregação no banco para obter a quantidade de operações que o usuário informado realizou.
-
-
-\begin{DoxyParams}{Parameters}
-{\em json\+Object} & Dados da mensagem recebida. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Dados codificado em um mensagem de resposta.
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{Worker\+Thread\+::handle\+Message(\+Q\+Json\+Object)} 
-\end{DoxySeeAlso}
-\index{Worker\+Thread@{Worker\+Thread}!operator=@{operator=}}
-\index{operator=@{operator=}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{operator=(const Worker\+Thread \&rhs)}{operator=(const WorkerThread &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Worker\+Thread}\& Worker\+Thread\+::operator= (
-\begin{DoxyParamCaption}
-\item[{const {\bf Worker\+Thread} \&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classWorkerThread_a2650163fc1ed2eb11f19ac07754f327e}{}\label{classWorkerThread_a2650163fc1ed2eb11f19ac07754f327e}
-
-
-Sobrecarga do operador =. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rhs} & Objeto a ser copiado. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Novo objeto copiado. 
-\end{DoxyReturn}
 \index{Worker\+Thread@{Worker\+Thread}!run@{run}}
 \index{run@{run}!Worker\+Thread@{Worker\+Thread}}
-\subsubsection[{\texorpdfstring{run() override}{run() override}}]{\setlength{\rightskip}{0pt plus 5cm}void Worker\+Thread\+::run (
+\subsubsection[{\texorpdfstring{run()=0}{run()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Worker\+Thread\+::run (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}}\hypertarget{classWorkerThread_a7d48604849d66bdaa5e46b196eb745b6}{}\label{classWorkerThread_a7d48604849d66bdaa5e46b196eb745b6}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classWorkerThread_a008dd6f762a2c20641afbb2a69319ca4}{}\label{classWorkerThread_a008dd6f762a2c20641afbb2a69319ca4}
 
 
 Método para delegação do tratamento de uma mensagem recebida e envio da respostas. 
@@ -311,11 +52,14 @@ Método para delegação do tratamento de uma mensagem recebida e envio da respo
 Este método recebe um byte array correspondente a um objeto J\+S\+ON, após isso cria um objeto J\+S\+ON e delega a resolução da mensagem para o método handl\+Message. Por fim, recebe a resposta da mensagem, codifica ela e envia ao cliente pela rede.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classWorkerThread_ace7c1f1f36697deb8e68f0c8615be93c}{Worker\+Thread\+::handle\+Message(\+Q\+Json\+Object)}, \hyperlink{classWorkerThread_a8b1ad08936a109f898f566cc2531515b}{Worker\+Thread\+::error(\+Q\+Tcp\+Socket\+::\+Socket\+Error)}. 
+\hyperlink{classWorkerThreadImpl_ac1ced60fd043f7dca8a7e7e1857a91cb}{Worker\+Thread\+Impl\+::handle\+Message(\+Q\+Json\+Object)}, \hyperlink{classWorkerThreadImpl_ae260562530b71dc55a6d360d5e4d896d}{Worker\+Thread\+Impl\+::error(\+Q\+Tcp\+Socket\+::\+Socket\+Error)}. 
 \end{DoxySeeAlso}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Implemented in \hyperlink{classWorkerThreadImpl_a24ef315ed0b7914ffd099c23a5a6e16c}{Worker\+Thread\+Impl}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Calc\+Server/\hyperlink{workerthread_8h}{workerthread.\+h}\item 
-Calc\+Server/\hyperlink{workerthread_8cpp}{workerthread.\+cpp}\end{DoxyCompactItemize}
+Calc\+Server/\hyperlink{workerthread_8h}{workerthread.\+h}\end{DoxyCompactItemize}

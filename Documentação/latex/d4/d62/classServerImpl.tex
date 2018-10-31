@@ -1,0 +1,116 @@
+\hypertarget{classServerImpl}{}\section{Server\+Impl Class Reference}
+\label{classServerImpl}\index{Server\+Impl@{Server\+Impl}}
+
+
+Implementação da interface \hyperlink{classServer}{Server}.  
+
+
+
+
+{\ttfamily \#include $<$serverimpl.\+h$>$}
+
+
+
+Inheritance diagram for Server\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{d3/da0/classServerImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{de/d15/classServerImpl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classServerImpl_a0c81e2a5af6cea9a1ff0445008c22e84}{Server\+Impl} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \hyperlink{classServerImpl}{Server\+Impl}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classServerImpl_aef0bf73c21130de67a3f262dff915cd2}{$\sim$\+Server\+Impl} () override
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classServerImpl_a54dda38486e9964432b501f7da00ed97}{incoming\+Connection} (qintptr socket\+Descriptor) override
+\begin{DoxyCompactList}\small\item\em Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDatabaseHelper}{Database\+Helper} $\ast$ \hyperlink{classServerImpl_af78b294c790b327b0023f295c5d7508c}{database\+Helper}\hypertarget{classServerImpl_af78b294c790b327b0023f295c5d7508c}{}\label{classServerImpl_af78b294c790b327b0023f295c5d7508c}
+
+\begin{DoxyCompactList}\small\item\em Referência ao helper de acesso ao banco de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementação da interface \hyperlink{classServer}{Server}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Server\+Impl@{Server\+Impl}!Server\+Impl@{Server\+Impl}}
+\index{Server\+Impl@{Server\+Impl}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{Server\+Impl(\+Q\+Object $\ast$parent=nullptr)}{ServerImpl(QObject *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Server\+Impl\+::\+Server\+Impl (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{classServerImpl_a0c81e2a5af6cea9a1ff0445008c22e84}{}\label{classServerImpl_a0c81e2a5af6cea9a1ff0445008c22e84}
+
+
+Construtor padrão da classe \hyperlink{classServerImpl}{Server\+Impl}. 
+
+Demanda a configuração do \hyperlink{classServer}{Server} para a classe pai e instância um helper de acesso ao banco de dados.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Referência ao componente pai. \\
+\hline
+\end{DoxyParams}
+\index{Server\+Impl@{Server\+Impl}!````~Server\+Impl@{$\sim$\+Server\+Impl}}
+\index{````~Server\+Impl@{$\sim$\+Server\+Impl}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{$\sim$\+Server\+Impl() override}{~ServerImpl() override}}]{\setlength{\rightskip}{0pt plus 5cm}Server\+Impl\+::$\sim$\+Server\+Impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classServerImpl_aef0bf73c21130de67a3f262dff915cd2}{}\label{classServerImpl_aef0bf73c21130de67a3f262dff915cd2}
+
+
+Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}. 
+
+Apaga a referência ao helper de acesso ao banco de dados. 
+
+\subsection{Member Function Documentation}
+\index{Server\+Impl@{Server\+Impl}!incoming\+Connection@{incoming\+Connection}}
+\index{incoming\+Connection@{incoming\+Connection}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{incoming\+Connection(qintptr socket\+Descriptor) override}{incomingConnection(qintptr socketDescriptor) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Impl\+::incoming\+Connection (
+\begin{DoxyParamCaption}
+\item[{qintptr}]{socket\+Descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classServerImpl_a54dda38486e9964432b501f7da00ed97}{}\label{classServerImpl_a54dda38486e9964432b501f7da00ed97}
+
+
+Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar. 
+
+Ao receber uma conexão o servidor delega o tratamento dela a um thread auxiliar e volta a escutar as transmissões.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket\+Descriptor} & Informações de configuração do socket.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classWorkerThread}{Worker\+Thread}. 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classServer_a2397527620515d7e18fc599b22fb64ae}{Server}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Server/\hyperlink{serverimpl_8h}{serverimpl.\+h}\item 
+Calc\+Server/\hyperlink{serverimpl_8cpp}{serverimpl.\+cpp}\end{DoxyCompactItemize}

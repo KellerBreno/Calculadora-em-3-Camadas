@@ -1,12 +1,10 @@
 /*!
  * \file server.h
- * Arquivo contendo a declaração da Classe Server.
+ * Arquivo contendo a declaração da Interface Server.
  */
 
 #ifndef SERVER_H
 #define SERVER_H
-
-#include "databasehelper.h"
 
 #include <QTcpServer>
 
@@ -17,17 +15,18 @@
 class Server : public QTcpServer{
     Q_OBJECT
 
-public:
-    Server(QObject *parent = 0);
-    virtual ~Server();
-
 protected:
-    void incomingConnection(qintptr socketDescriptor) override;
-
     /*!
-     * \brief Referência ao helper de acesso ao banco de dados.
+     * \brief Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar.
+     *
+     * Ao receber uma conexão o servidor delega o tratamento dela a um thread auxiliar e volta a escutar as transmissões.
+     *
+     * \param socketDescriptor Informações de configuração do socket.
+     *
+     * \sa WorkerThread.
      */
-    DatabaseHelper *databaseHelper;
+    virtual void incomingConnection(qintptr socketDescriptor) = 0;
+
 };
 
 #endif // SERVER_H
