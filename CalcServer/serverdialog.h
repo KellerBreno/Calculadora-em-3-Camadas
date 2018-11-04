@@ -13,8 +13,9 @@
  * \brief Classe para exibição dos dados do servidor.
  *
  */
-class ServerDialog: public QWidget{
-    Q_OBJECT
+class ServerDialog{
+public:
+    virtual void show() = 0;
 };
 
 #endif // SERVERDIALOG_H

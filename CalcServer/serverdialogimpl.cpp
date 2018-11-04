@@ -18,8 +18,7 @@
  *
  * \param parent Referência ao componente pai.
  */
-ServerDialogImpl::ServerDialogImpl(QWidget *parent){
-    this->setParent(parent);
+ServerDialogImpl::ServerDialogImpl(QWidget *parent):QWidget (parent){
     statusLabel = new QLabel;
     statusLabel->setWordWrap(true);
     quitButton = new QPushButton(tr("Sair"));
@@ -69,4 +68,8 @@ ServerDialogImpl::ServerDialogImpl(QWidget *parent){
  */
 ServerDialogImpl::~ServerDialogImpl(){
     delete server;
+}
+
+void ServerDialogImpl::show(){
+    QWidget::show();
 }

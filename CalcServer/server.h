@@ -6,16 +6,14 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <QTcpServer>
+#include <QString>
 
 /*!
  * \class Server
  * \brief Clase para gerenciamento de servidor TCP.
  */
-class Server : public QTcpServer{
-    Q_OBJECT
-
-protected:
+class Server {
+public:
     /*!
      * \brief Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar.
      *
@@ -26,7 +24,9 @@ protected:
      * \sa WorkerThread.
      */
     virtual void incomingConnection(qintptr socketDescriptor) = 0;
-
+    virtual bool listen() = 0;
+    virtual QString errorString() const = 0;
+    virtual quint16	serverPort() const = 0;
 };
 
 #endif // SERVER_H

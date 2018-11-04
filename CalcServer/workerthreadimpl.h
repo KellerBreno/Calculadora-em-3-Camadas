@@ -6,16 +6,18 @@
 #ifndef WORKERTHREADIMPL_H
 #define WORKERTHREADIMPL_H
 
+#include <QThread>
 #include <QTcpSocket>
 
 #include "databasehelper.h"
+#include "server.h"
 #include "workerthread.h"
 
 /*!
  * \class WorkerThreadImpl
  * \brief Implementação da interface WorkerThread para realização de operações do servidor em uma thread.
  */
-class WorkerThreadImpl : public WorkerThread {
+class WorkerThreadImpl :public QThread, public WorkerThread {
     Q_OBJECT
 
     /*!
@@ -27,6 +29,9 @@ public:
     WorkerThreadImpl(qintptr socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper);
     virtual ~WorkerThreadImpl() override;
     virtual void run() override;
+    virtual void start() override;
+    virtual void deleteLater() override;
+    virtual QObject* getQObject() override;
 
 signals:
     /*!
@@ -34,6 +39,7 @@ signals:
      * \param socketError Tipo do erro detectado.
      */
     void error(QTcpSocket::SocketError socketError);
+    virtual void finished() override;
 
 protected:
     /*!

@@ -32,9 +32,7 @@
  * \sa WorkerThreadImpl::WorkerThreadImpl().
  */
 WorkerThreadImpl::WorkerThreadImpl(qintptr socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)
-    : socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){
-    this->setParent(parent);
-}
+    : QThread(parent), socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){}
 
 /*!
  * \brief Construtor Padrão.
@@ -48,6 +46,18 @@ WorkerThreadImpl::WorkerThreadImpl(){
  * \brief Destrutor Padrão.
  */
 WorkerThreadImpl::~WorkerThreadImpl(){
+}
+
+void WorkerThreadImpl::start(){
+    QThread::start();
+}
+
+void WorkerThreadImpl::deleteLater(){
+    QThread::deleteLater();
+}
+
+QObject* WorkerThreadImpl::getQObject(){
+    return this;
 }
 
 void WorkerThreadImpl::run(){

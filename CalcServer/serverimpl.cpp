@@ -14,8 +14,7 @@
  *
  * \param parent Referência ao componente pai.
  */
-ServerImpl::ServerImpl(QObject *parent){
-    this->setParent(parent);
+ServerImpl::ServerImpl(QObject *parent) : QTcpServer(parent){
     databaseHelper = new DatabaseHelperImpl();
 }
 
@@ -31,6 +30,18 @@ ServerImpl::~ServerImpl(){
 
 void ServerImpl::incomingConnection(qintptr socketDescriptor){
     WorkerThread *thread = new WorkerThreadImpl(socketDescriptor, this, databaseHelper);
-    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+    connect(thread->getQObject(), SIGNAL(finished()), thread->getQObject(), SLOT(deleteLater()));
     thread->start();
+}
+
+bool ServerImpl::listen(){
+    return QTcpServer::listen();
+}
+
+QString ServerImpl::errorString() const{
+    return QTcpServer::errorString();
+}
+
+quint16	ServerImpl::serverPort() const{
+    return QTcpServer::serverPort();
 }

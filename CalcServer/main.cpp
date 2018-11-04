@@ -9,9 +9,5 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     ServerDialog *serverDialog = new ServerDialogImpl();
     serverDialog->show();
-
-    app.exec();
-
-    delete serverDialog;
-    return 0;
+    return app.exec();
 }

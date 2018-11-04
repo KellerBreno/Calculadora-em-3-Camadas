@@ -8,17 +8,21 @@
 
 #include "databasehelper.h"
 #include "server.h"
+#include <QTcpServer>
 
 /*!
  * \class ServerImpl
  * \brief Implementação da interface Server.
  */
-class ServerImpl : public Server{
+class ServerImpl : public QTcpServer, public Server{
     Q_OBJECT
 
 public:
     ServerImpl(QObject *parent = nullptr);
     virtual ~ServerImpl() override;
+    virtual bool listen() override;
+    virtual QString errorString() const override;
+    virtual quint16	serverPort() const override;
 
 protected:
     void incomingConnection(qintptr socketDescriptor) override;

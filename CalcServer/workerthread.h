@@ -6,15 +6,13 @@
 #ifndef WORKERTHREAD_H
 #define WORKERTHREAD_H
 
-#include <QThread>
+#include <QObject>
 
 /*!
  * \class WorkerThread
  * \brief Interface para thread de trabalho auxiliar.
  */
-class WorkerThread: public QThread{
-    Q_OBJECT
-
+class WorkerThread{
 public:
     /*!
      * \brief Método para delegação do tratamento de uma mensagem recebida e envio da respostas.
@@ -25,6 +23,10 @@ public:
      * \sa WorkerThreadImpl::handleMessage(QJsonObject), WorkerThreadImpl::error(QTcpSocket::SocketError).
      */
     virtual void run() = 0;
+    virtual void start() = 0;
+    virtual void finished() = 0;
+    virtual void deleteLater() = 0;
+    virtual QObject* getQObject() = 0;
 };
 
 #endif // WORKERTHREAD_H

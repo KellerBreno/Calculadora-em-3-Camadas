@@ -19,7 +19,7 @@ class QPushButton;
  * Esta classe cria uma instância de Server e exibe suas informações.
  *
  */
-class ServerDialogImpl : public ServerDialog{
+class ServerDialogImpl : public QWidget, public ServerDialog{
     Q_OBJECT
 
     /*!
@@ -35,6 +35,7 @@ class ServerDialogImpl : public ServerDialog{
 public:
     ServerDialogImpl(QWidget *parent = nullptr);
     virtual ~ServerDialogImpl();
+    virtual void show();
 
 private:
     /*!
