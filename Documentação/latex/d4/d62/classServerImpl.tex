@@ -15,7 +15,7 @@ Inheritance diagram for Server\+Impl\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=149pt]{d3/da0/classServerImpl__inherit__graph}
+\includegraphics[width=212pt]{d3/da0/classServerImpl__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Collaboration diagram for Server\+Impl\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=261pt]{de/d15/classServerImpl__coll__graph}
+\includegraphics[width=317pt]{de/d15/classServerImpl__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -33,7 +33,13 @@ Collaboration diagram for Server\+Impl\+:\nopagebreak
 \hyperlink{classServerImpl_a0c81e2a5af6cea9a1ff0445008c22e84}{Server\+Impl} (Q\+Object $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Construtor padrão da classe \hyperlink{classServerImpl}{Server\+Impl}. \end{DoxyCompactList}\item 
 virtual \hyperlink{classServerImpl_aef0bf73c21130de67a3f262dff915cd2}{$\sim$\+Server\+Impl} () override
-\begin{DoxyCompactList}\small\item\em Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classServerImpl_a3a186b4e86c634750f8fb95f962d5ec9}{listen} () override
+\begin{DoxyCompactList}\small\item\em Método para escutar conexões ao server. \end{DoxyCompactList}\item 
+virtual Q\+String \hyperlink{classServerImpl_aaadf6ebb053052ee61303848374e8d20}{error\+String} () const override
+\begin{DoxyCompactList}\small\item\em Método que retorna a mensagem referente ao último erro do server. \end{DoxyCompactList}\item 
+virtual quint16 \hyperlink{classServerImpl_a769680151e32d74aeae35dfbb1dcbde0}{server\+Port} () const override
+\begin{DoxyCompactList}\small\item\em Método que informa a porta a qual o servidor está escutando. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -83,6 +89,24 @@ Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}.
 Apaga a referência ao helper de acesso ao banco de dados. 
 
 \subsection{Member Function Documentation}
+\index{Server\+Impl@{Server\+Impl}!error\+String@{error\+String}}
+\index{error\+String@{error\+String}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{error\+String() const override}{errorString() const override}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Server\+Impl\+::error\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classServerImpl_aaadf6ebb053052ee61303848374e8d20}{}\label{classServerImpl_aaadf6ebb053052ee61303848374e8d20}
+
+
+Método que retorna a mensagem referente ao último erro do server. 
+
+\begin{DoxyReturn}{Returns}
+Mensagem de erro. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classServer_a66eb77ac2362bdae05081591389c3cf5}{Server}.
+
 \index{Server\+Impl@{Server\+Impl}!incoming\+Connection@{incoming\+Connection}}
 \index{incoming\+Connection@{incoming\+Connection}!Server\+Impl@{Server\+Impl}}
 \subsubsection[{\texorpdfstring{incoming\+Connection(qintptr socket\+Descriptor) override}{incomingConnection(qintptr socketDescriptor) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Impl\+::incoming\+Connection (
@@ -107,6 +131,44 @@ Ao receber uma conexão o servidor delega o tratamento dela a um thread auxiliar
 
 
 Implements \hyperlink{classServer_a2397527620515d7e18fc599b22fb64ae}{Server}.
+
+\index{Server\+Impl@{Server\+Impl}!listen@{listen}}
+\index{listen@{listen}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{listen() override}{listen() override}}]{\setlength{\rightskip}{0pt plus 5cm}bool Server\+Impl\+::listen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classServerImpl_a3a186b4e86c634750f8fb95f962d5ec9}{}\label{classServerImpl_a3a186b4e86c634750f8fb95f962d5ec9}
+
+
+Método para escutar conexões ao server. 
+
+Esse método instancia um listener em um ip e porta do computador. Caso consiga retorna verdadeiro, caso contrário, retorna falso.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classServerDialog}{Server\+Dialog} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classServer_a2393cde56bb44076cbfba00c89412acf}{Server}.
+
+\index{Server\+Impl@{Server\+Impl}!server\+Port@{server\+Port}}
+\index{server\+Port@{server\+Port}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{server\+Port() const override}{serverPort() const override}}]{\setlength{\rightskip}{0pt plus 5cm}quint16 Server\+Impl\+::server\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classServerImpl_a769680151e32d74aeae35dfbb1dcbde0}{}\label{classServerImpl_a769680151e32d74aeae35dfbb1dcbde0}
+
+
+Método que informa a porta a qual o servidor está escutando. 
+
+\begin{DoxyReturn}{Returns}
+Porta onde o servidor está escutando. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classServer_ad32766e2608017d9fcd0903ab3748803}{Server}.
 
 
 

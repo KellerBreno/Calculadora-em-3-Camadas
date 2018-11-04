@@ -18,26 +18,46 @@ Inheritance diagram for Worker\+Thread\+:\nopagebreak
 \includegraphics[width=177pt]{d3/da8/classWorkerThread__inherit__graph}
 \end{center}
 \end{figure}
-
-
-Collaboration diagram for Worker\+Thread\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=158pt]{de/d07/classWorkerThread__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{classWorkerThread_a008dd6f762a2c20641afbb2a69319ca4}{run} ()=0
-\begin{DoxyCompactList}\small\item\em Método para delegação do tratamento de uma mensagem recebida e envio da respostas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Método para delegação do tratamento de uma mensagem recebida e envio da respostas. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWorkerThread_a4d6d532dfbb27c5a435018ea697acb11}{start} ()=0\hypertarget{classWorkerThread_a4d6d532dfbb27c5a435018ea697acb11}{}\label{classWorkerThread_a4d6d532dfbb27c5a435018ea697acb11}
+
+\begin{DoxyCompactList}\small\item\em Método para o inicio de execução de uma \hyperlink{classWorkerThread}{Worker\+Thread}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWorkerThread_a270d44343c31516acebd9544788e3886}{finished} ()=0\hypertarget{classWorkerThread_a270d44343c31516acebd9544788e3886}{}\label{classWorkerThread_a270d44343c31516acebd9544788e3886}
+
+\begin{DoxyCompactList}\small\item\em Representa o fim de execução de \hyperlink{classWorkerThread}{Worker\+Thread}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWorkerThread_abf55cfb94dd10a2a3b2ff3896473c11b}{delete\+Later} ()=0\hypertarget{classWorkerThread_abf55cfb94dd10a2a3b2ff3896473c11b}{}\label{classWorkerThread_abf55cfb94dd10a2a3b2ff3896473c11b}
+
+\begin{DoxyCompactList}\small\item\em Responsavel por desalocar elementos da \hyperlink{classWorkerThread}{Worker\+Thread}. \end{DoxyCompactList}\item 
+virtual Q\+Object $\ast$ \hyperlink{classWorkerThread_a7cce841d4e0b98ebdeb0c7027045dfc4}{get\+Q\+Object} ()=0
+\begin{DoxyCompactList}\small\item\em Método retorna uma referência a um objeto Q\+Object correspondente a essa classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Interface para thread de trabalho auxiliar. 
 
 \subsection{Member Function Documentation}
+\index{Worker\+Thread@{Worker\+Thread}!get\+Q\+Object@{get\+Q\+Object}}
+\index{get\+Q\+Object@{get\+Q\+Object}!Worker\+Thread@{Worker\+Thread}}
+\subsubsection[{\texorpdfstring{get\+Q\+Object()=0}{getQObject()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Object$\ast$ Worker\+Thread\+::get\+Q\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classWorkerThread_a7cce841d4e0b98ebdeb0c7027045dfc4}{}\label{classWorkerThread_a7cce841d4e0b98ebdeb0c7027045dfc4}
+
+
+Método retorna uma referência a um objeto Q\+Object correspondente a essa classe. 
+
+\begin{DoxyReturn}{Returns}
+Referencia ao Q\+Object correspondente a classe. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classWorkerThreadImpl_a30689eaffcb664bc95644bf497ea1446}{Worker\+Thread\+Impl}.
+
 \index{Worker\+Thread@{Worker\+Thread}!run@{run}}
 \index{run@{run}!Worker\+Thread@{Worker\+Thread}}
 \subsubsection[{\texorpdfstring{run()=0}{run()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Worker\+Thread\+::run (

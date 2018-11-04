@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('db/d00/classServer.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../d2/d2d/classServer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Server Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -121,24 +121,56 @@ Inheritance diagram for Server:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dd7/classServer__inherit__graph.png" border="0" usemap="#Server_inherit__map" alt="Inheritance graph"/></div>
 <map name="Server_inherit__map" id="Server_inherit__map">
-<area shape="rect" id="node3" href="../../d4/d62/classServerImpl.html" title="Implementação da interface Server. " alt="" coords="9,155,94,181"/>
+<area shape="rect" id="node2" href="../../d4/d62/classServerImpl.html" title="Implementação da interface Server. " alt="" coords="5,80,91,107"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Server:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/ddc/classServer__coll__graph.png" border="0" usemap="#Server_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
 <tr class="memitem:a2397527620515d7e18fc599b22fb64ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d00/classServer.html#a2397527620515d7e18fc599b22fb64ae">incomingConnection</a> (qintptr socketDescriptor)=0</td></tr>
 <tr class="memdesc:a2397527620515d7e18fc599b22fb64ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar.  <a href="#a2397527620515d7e18fc599b22fb64ae">More...</a><br /></td></tr>
 <tr class="separator:a2397527620515d7e18fc599b22fb64ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2393cde56bb44076cbfba00c89412acf"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d00/classServer.html#a2393cde56bb44076cbfba00c89412acf">listen</a> ()=0</td></tr>
+<tr class="memdesc:a2393cde56bb44076cbfba00c89412acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para escutar conexões ao server.  <a href="#a2393cde56bb44076cbfba00c89412acf">More...</a><br /></td></tr>
+<tr class="separator:a2393cde56bb44076cbfba00c89412acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66eb77ac2362bdae05081591389c3cf5"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d00/classServer.html#a66eb77ac2362bdae05081591389c3cf5">errorString</a> () const =0</td></tr>
+<tr class="memdesc:a66eb77ac2362bdae05081591389c3cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que retorna a mensagem referente ao último erro do server.  <a href="#a66eb77ac2362bdae05081591389c3cf5">More...</a><br /></td></tr>
+<tr class="separator:a66eb77ac2362bdae05081591389c3cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32766e2608017d9fcd0903ab3748803"><td class="memItemLeft" align="right" valign="top">virtual quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d00/classServer.html#ad32766e2608017d9fcd0903ab3748803">serverPort</a> () const =0</td></tr>
+<tr class="memdesc:ad32766e2608017d9fcd0903ab3748803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que informa a porta a qual o servidor está escutando.  <a href="#ad32766e2608017d9fcd0903ab3748803">More...</a><br /></td></tr>
+<tr class="separator:ad32766e2608017d9fcd0903ab3748803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clase para gerenciamento de servidor TCP. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a66eb77ac2362bdae05081591389c3cf5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QString Server::errorString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que retorna a mensagem referente ao último erro do server. </p>
+<dl class="section return"><dt>Returns</dt><dd>Mensagem de erro. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d4/d62/classServerImpl.html#aaadf6ebb053052ee61303848374e8d20">ServerImpl</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2397527620515d7e18fc599b22fb64ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +188,7 @@ Protected Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -172,6 +204,63 @@ Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d07/classWorkerThread.html" title="Interface para thread de trabalho auxiliar. ">WorkerThread</a>. </dd></dl>
 
 <p>Implemented in <a class="el" href="../../d4/d62/classServerImpl.html#a54dda38486e9964432b501f7da00ed97">ServerImpl</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2393cde56bb44076cbfba00c89412acf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Server::listen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método para escutar conexões ao server. </p>
+<p>Esse método instancia um listener em um ip e porta do computador. Caso consiga retorna verdadeiro, caso contrário, retorna falso.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/d58/classServerDialog.html" title="Classe para exibição dos dados do servidor. ">ServerDialog</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d4/d62/classServerImpl.html#a3a186b4e86c634750f8fb95f962d5ec9">ServerImpl</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad32766e2608017d9fcd0903ab3748803"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual quint16 Server::serverPort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que informa a porta a qual o servidor está escutando. </p>
+<dl class="section return"><dt>Returns</dt><dd>Porta onde o servidor está escutando. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d4/d62/classServerImpl.html#a769680151e32d74aeae35dfbb1dcbde0">ServerImpl</a>.</p>
 
 </div>
 </div>

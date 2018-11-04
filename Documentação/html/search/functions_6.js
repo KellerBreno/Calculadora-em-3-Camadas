@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mycalcwindow',['MyCalcWindow',['../d2/dd3/classMyCalcWindow.html#ac205ab2dbfbf802859774a090b066518',1,'MyCalcWindow']]],
-  ['mylogindialog',['MyLoginDialog',['../de/d21/classMyLoginDialog.html#ae20170dfe9e23fc1b794d3b5a2d2cc97',1,'MyLoginDialog']]]
+  ['listen',['listen',['../db/d00/classServer.html#a2393cde56bb44076cbfba00c89412acf',1,'Server::listen()'],['../d4/d62/classServerImpl.html#a3a186b4e86c634750f8fb95f962d5ec9',1,'ServerImpl::listen()']]],
+  ['logged',['logged',['../de/d21/classMyLoginDialog.html#acd80142b97ff032e73847b4ad54ea272',1,'MyLoginDialog']]]
 ];

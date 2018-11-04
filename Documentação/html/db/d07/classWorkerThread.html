@@ -121,13 +121,8 @@ Inheritance diagram for WorkerThread:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/da8/classWorkerThread__inherit__graph.png" border="0" usemap="#WorkerThread_inherit__map" alt="Inheritance graph"/></div>
 <map name="WorkerThread_inherit__map" id="WorkerThread_inherit__map">
-<area shape="rect" id="node3" href="../../de/da0/classWorkerThreadImpl.html" title="Implementação da interface WorkerThread para realização de operações do servidor em uma thread..." alt="" coords="5,155,135,181"/>
+<area shape="rect" id="node2" href="../../de/da0/classWorkerThreadImpl.html" title="Implementação da interface WorkerThread para realização de operações do servidor em uma thread..." alt="" coords="5,80,135,107"/>
 </map>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for WorkerThread:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/d07/classWorkerThread__coll__graph.png" border="0" usemap="#WorkerThread_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -135,10 +130,53 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a008dd6f762a2c20641afbb2a69319ca4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a008dd6f762a2c20641afbb2a69319ca4">run</a> ()=0</td></tr>
 <tr class="memdesc:a008dd6f762a2c20641afbb2a69319ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para delegação do tratamento de uma mensagem recebida e envio da respostas.  <a href="#a008dd6f762a2c20641afbb2a69319ca4">More...</a><br /></td></tr>
 <tr class="separator:a008dd6f762a2c20641afbb2a69319ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6d532dfbb27c5a435018ea697acb11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d6d532dfbb27c5a435018ea697acb11"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a4d6d532dfbb27c5a435018ea697acb11">start</a> ()=0</td></tr>
+<tr class="memdesc:a4d6d532dfbb27c5a435018ea697acb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para o inicio de execução de uma <a class="el" href="../../db/d07/classWorkerThread.html" title="Interface para thread de trabalho auxiliar. ">WorkerThread</a>. <br /></td></tr>
+<tr class="separator:a4d6d532dfbb27c5a435018ea697acb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270d44343c31516acebd9544788e3886"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a270d44343c31516acebd9544788e3886"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a270d44343c31516acebd9544788e3886">finished</a> ()=0</td></tr>
+<tr class="memdesc:a270d44343c31516acebd9544788e3886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa o fim de execução de <a class="el" href="../../db/d07/classWorkerThread.html" title="Interface para thread de trabalho auxiliar. ">WorkerThread</a>. <br /></td></tr>
+<tr class="separator:a270d44343c31516acebd9544788e3886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf55cfb94dd10a2a3b2ff3896473c11b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf55cfb94dd10a2a3b2ff3896473c11b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#abf55cfb94dd10a2a3b2ff3896473c11b">deleteLater</a> ()=0</td></tr>
+<tr class="memdesc:abf55cfb94dd10a2a3b2ff3896473c11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsavel por desalocar elementos da <a class="el" href="../../db/d07/classWorkerThread.html" title="Interface para thread de trabalho auxiliar. ">WorkerThread</a>. <br /></td></tr>
+<tr class="separator:abf55cfb94dd10a2a3b2ff3896473c11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cce841d4e0b98ebdeb0c7027045dfc4"><td class="memItemLeft" align="right" valign="top">virtual QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d07/classWorkerThread.html#a7cce841d4e0b98ebdeb0c7027045dfc4">getQObject</a> ()=0</td></tr>
+<tr class="memdesc:a7cce841d4e0b98ebdeb0c7027045dfc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método retorna uma referência a um objeto QObject correspondente a essa classe.  <a href="#a7cce841d4e0b98ebdeb0c7027045dfc4">More...</a><br /></td></tr>
+<tr class="separator:a7cce841d4e0b98ebdeb0c7027045dfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface para thread de trabalho auxiliar. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7cce841d4e0b98ebdeb0c7027045dfc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QObject* WorkerThread::getQObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método retorna uma referência a um objeto QObject correspondente a essa classe. </p>
+<dl class="section return"><dt>Returns</dt><dd>Referencia ao QObject correspondente a classe. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../de/da0/classWorkerThreadImpl.html#a30689eaffcb664bc95644bf497ea1446">WorkerThreadImpl</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a008dd6f762a2c20641afbb2a69319ca4"></a>
 <div class="memitem">
 <div class="memproto">

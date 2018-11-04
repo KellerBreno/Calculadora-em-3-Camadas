@@ -5,7 +5,7 @@ var annotated_dup =
     [ "MyCalcWindow", "d2/dd3/classMyCalcWindow.html", "d2/dd3/classMyCalcWindow" ],
     [ "MyLoginDialog", "de/d21/classMyLoginDialog.html", "de/d21/classMyLoginDialog" ],
     [ "Server", "db/d00/classServer.html", "db/d00/classServer" ],
-    [ "ServerDialog", "d2/d58/classServerDialog.html", null ],
+    [ "ServerDialog", "d2/d58/classServerDialog.html", "d2/d58/classServerDialog" ],
     [ "ServerDialogImpl", "d1/da6/classServerDialogImpl.html", "d1/da6/classServerDialogImpl" ],
     [ "ServerImpl", "d4/d62/classServerImpl.html", "d4/d62/classServerImpl" ],
     [ "WorkerThread", "db/d07/classWorkerThread.html", "db/d07/classWorkerThread" ],

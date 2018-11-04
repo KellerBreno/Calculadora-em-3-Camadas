@@ -23,9 +23,27 @@ public:
      * \sa WorkerThreadImpl::handleMessage(QJsonObject), WorkerThreadImpl::error(QTcpSocket::SocketError).
      */
     virtual void run() = 0;
+
+    /*!
+     * \brief Método para o inicio de execução de uma WorkerThread.
+     * \sa WorkerThreadImpl::finished().
+     */
     virtual void start() = 0;
+
+    /*!
+     * \brief Representa o fim de execução de WorkerThread.
+     */
     virtual void finished() = 0;
+
+    /*!
+     * \brief Responsavel por desalocar elementos da WorkerThread.
+     */
     virtual void deleteLater() = 0;
+
+    /*!
+     * \brief Método retorna uma referência a um objeto QObject correspondente a essa classe.
+     * \return Referencia ao QObject correspondente a classe.
+     */
     virtual QObject* getQObject() = 0;
 };
 

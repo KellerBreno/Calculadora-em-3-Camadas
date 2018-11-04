@@ -7,5 +7,6 @@ var searchData=
   ['databasehelperimpl_2eh',['databasehelperimpl.h',['../de/db8/databasehelperimpl_8h.html',1,'']]],
   ['databasehelperimpltest',['DatabaseHelperImplTest',['../d5/d1d/classDatabaseHelperImpl.html#adebc71025cd8245ef1624f16ffbca46b',1,'DatabaseHelperImpl']]],
   ['debug',['DEBUG',['../d5/d05/mycalcwindow_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;mycalcwindow.cpp'],['../d6/d90/mylogindialog_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;mylogindialog.cpp'],['../d3/d30/workerthreadimpl_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;workerthreadimpl.cpp']]],
+  ['deletelater',['deleteLater',['../db/d07/classWorkerThread.html#abf55cfb94dd10a2a3b2ff3896473c11b',1,'WorkerThread::deleteLater()'],['../de/da0/classWorkerThreadImpl.html#a0c7acd90839e238ff12eba997132f532',1,'WorkerThreadImpl::deleteLater()']]],
   ['dialogtest',['DialogTest',['../d1/da6/classServerDialogImpl.html#a9fe923be634f4d12f5a825141fafb85f',1,'ServerDialogImpl']]]
 ];

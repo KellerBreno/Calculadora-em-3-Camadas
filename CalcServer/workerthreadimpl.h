@@ -39,6 +39,10 @@ signals:
      * \param socketError Tipo do erro detectado.
      */
     void error(QTcpSocket::SocketError socketError);
+    /*!
+     * \brief  	Representa o fim de execução de WorkerThreadImpl.
+     * \sa WorkerThread::finished().
+     */
     virtual void finished() override;
 
 protected:

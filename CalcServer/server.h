@@ -24,8 +24,26 @@ public:
      * \sa WorkerThread.
      */
     virtual void incomingConnection(qintptr socketDescriptor) = 0;
+
+    /*!
+     * \brief Método para escutar conexões ao server.
+     *
+     * Esse método instancia um listener em um ip e porta do computador. Caso consiga retorna verdadeiro, caso contrário, retorna falso.
+     *
+     * \sa ServerDialog
+     */
     virtual bool listen() = 0;
+
+    /*!
+     * \brief Método que retorna a mensagem referente ao último erro do server.
+     * \return Mensagem de erro.
+     */
     virtual QString errorString() const = 0;
+
+    /*!
+     * \brief Método que informa a porta a qual o servidor está escutando.
+     * \return Porta onde o servidor está escutando.
+     */
     virtual quint16	serverPort() const = 0;
 };
 

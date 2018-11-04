@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['serverdialogimpl',['ServerDialogImpl',['../d1/da6/classServerDialogImpl.html#a5a5cf39e32c0559a8fcdeb372fb055b3',1,'ServerDialogImpl']]],
-  ['serverimpl',['ServerImpl',['../d4/d62/classServerImpl.html#a0c81e2a5af6cea9a1ff0445008c22e84',1,'ServerImpl']]],
-  ['setupdatabase',['setupDatabase',['../d5/d1d/classDatabaseHelperImpl.html#af1b1b1496a9027cd09ee0456010ad9bd',1,'DatabaseHelperImpl']]],
-  ['showpiechart',['showPieChart',['../d2/dd3/classMyCalcWindow.html#ade7d295cb55effe865349b7eef1a6d1a',1,'MyCalcWindow']]]
+  ['readmessage',['readMessage',['../d2/dd3/classMyCalcWindow.html#ab8fe7eab3aa5ef91d8d54a32cbc4ecf5',1,'MyCalcWindow::readMessage()'],['../de/d21/classMyLoginDialog.html#a8ab28097bd87a10588d53b99ffcfb3dd',1,'MyLoginDialog::readMessage()']]],
+  ['run',['run',['../db/d07/classWorkerThread.html#a008dd6f762a2c20641afbb2a69319ca4',1,'WorkerThread::run()'],['../de/da0/classWorkerThreadImpl.html#a24ef315ed0b7914ffd099c23a5a6e16c',1,'WorkerThreadImpl::run()']]]
 ];

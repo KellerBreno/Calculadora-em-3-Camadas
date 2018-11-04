@@ -15,6 +15,10 @@
  */
 class ServerDialog{
 public:
+    /*!
+     * \brief Método que exibe um janela de dialogo com as informações do server.
+     * \sa Server.
+     */
     virtual void show() = 0;
 };
 
