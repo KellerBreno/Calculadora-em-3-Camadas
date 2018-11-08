@@ -63,6 +63,11 @@ ServerDialogImpl::ServerDialogImpl(QWidget *parent):QWidget (parent){
     setWindowTitle(tr("CalcServer"));
 }
 
+
+ServerDialogImpl::ServerDialogImpl(const ServerDialogImpl& rhs){}
+
+ServerDialogImpl& ServerDialogImpl::operator=(const ServerDialogImpl& rhs){}
+
 /*!
  * \brief Destrutor da classe ServerDialogImpl
  */

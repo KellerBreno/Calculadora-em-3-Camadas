@@ -44,7 +44,11 @@ virtual quint16 \hyperlink{classServerImpl_a769680151e32d74aeae35dfbb1dcbde0}{se
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classServerImpl_a54dda38486e9964432b501f7da00ed97}{incoming\+Connection} (qintptr socket\+Descriptor) override
-\begin{DoxyCompactList}\small\item\em Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Método para delegar o tratamento de uma conexão a uma thread trabalhadora auxiliar. \end{DoxyCompactList}\item 
+\hyperlink{classServerImpl_ad288c40b899759a72121cbcd60817cf9}{Server\+Impl} (const \hyperlink{classServerImpl}{Server\+Impl} \&rhs)
+\begin{DoxyCompactList}\small\item\em Construtor de Cópia. \end{DoxyCompactList}\item 
+\hyperlink{classServerImpl}{Server\+Impl} \& \hyperlink{classServerImpl_aa3cc217c7588777ec4deb99132f847ef}{operator=} (const \hyperlink{classServerImpl}{Server\+Impl} \&rhs)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador =. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,7 +90,23 @@ Demanda a configuração do \hyperlink{classServer}{Server} para a classe pai e 
 
 Destrutor da classe \hyperlink{classServerImpl}{Server\+Impl}. 
 
-Apaga a referência ao helper de acesso ao banco de dados. 
+Apaga a referência ao helper de acesso ao banco de dados. \index{Server\+Impl@{Server\+Impl}!Server\+Impl@{Server\+Impl}}
+\index{Server\+Impl@{Server\+Impl}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{Server\+Impl(const Server\+Impl \&rhs)}{ServerImpl(const ServerImpl &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}Server\+Impl\+::\+Server\+Impl (
+\begin{DoxyParamCaption}
+\item[{const {\bf Server\+Impl} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classServerImpl_ad288c40b899759a72121cbcd60817cf9}{}\label{classServerImpl_ad288c40b899759a72121cbcd60817cf9}
+
+
+Construtor de Cópia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Objeto a ser copiado. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \index{Server\+Impl@{Server\+Impl}!error\+String@{error\+String}}
@@ -152,6 +172,25 @@ Esse método instancia um listener em um ip e porta do computador. Caso consiga 
 
 Implements \hyperlink{classServer_a2393cde56bb44076cbfba00c89412acf}{Server}.
 
+\index{Server\+Impl@{Server\+Impl}!operator=@{operator=}}
+\index{operator=@{operator=}!Server\+Impl@{Server\+Impl}}
+\subsubsection[{\texorpdfstring{operator=(const Server\+Impl \&rhs)}{operator=(const ServerImpl &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Impl} \& Server\+Impl\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Server\+Impl} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classServerImpl_aa3cc217c7588777ec4deb99132f847ef}{}\label{classServerImpl_aa3cc217c7588777ec4deb99132f847ef}
+
+
+Sobrecarga do operador =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Objeto a ser copiado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Novo objeto copiado. 
+\end{DoxyReturn}
 \index{Server\+Impl@{Server\+Impl}!server\+Port@{server\+Port}}
 \index{server\+Port@{server\+Port}!Server\+Impl@{Server\+Impl}}
 \subsubsection[{\texorpdfstring{server\+Port() const override}{serverPort() const override}}]{\setlength{\rightskip}{0pt plus 5cm}quint16 Server\+Impl\+::server\+Port (

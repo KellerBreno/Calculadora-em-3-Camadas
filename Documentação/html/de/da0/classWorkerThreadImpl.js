@@ -13,7 +13,7 @@ var classWorkerThreadImpl =
     [ "handleMessage", "de/da0/classWorkerThreadImpl.html#ac1ced60fd043f7dca8a7e7e1857a91cb", null ],
     [ "handleOperation", "de/da0/classWorkerThreadImpl.html#a0bcd0f706b49530ccaf7f3fc21bded7c", null ],
     [ "handleUserReport", "de/da0/classWorkerThreadImpl.html#a9ce30db393c61dd414d198b1dcb38ddb", null ],
-    [ "operator=", "de/da0/classWorkerThreadImpl.html#a6424bd714467a9cb3a38fa976501fb53", null ],
+    [ "operator=", "de/da0/classWorkerThreadImpl.html#a20a17134c17a8832fe6a59220d801dd0", null ],
     [ "run", "de/da0/classWorkerThreadImpl.html#a24ef315ed0b7914ffd099c23a5a6e16c", null ],
     [ "start", "de/da0/classWorkerThreadImpl.html#a16a04e1fd50d1bcb425e70a3ac219786", null ],
     [ "OperacoesTest", "de/da0/classWorkerThreadImpl.html#a9b782f47c630bd470969aeba01a706b2", null ],

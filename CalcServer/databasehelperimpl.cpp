@@ -13,6 +13,18 @@
  */
 DatabaseHelperImpl::DatabaseHelperImpl(){}
 
+DatabaseHelperImpl::DatabaseHelperImpl(const DatabaseHelperImpl& rhs){
+    sqlDatabase = rhs.sqlDatabase;
+}
+
+DatabaseHelperImpl& DatabaseHelperImpl::operator=(const DatabaseHelperImpl& rhs){
+    if(&rhs == this){
+        return *this;
+    }
+    sqlDatabase = rhs.sqlDatabase;
+    return *this;
+}
+
 /*!
  * \brief Destrutor padrão.
  */

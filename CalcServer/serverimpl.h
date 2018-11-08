@@ -31,6 +31,20 @@ protected:
      * \brief Referência ao helper de acesso ao banco de dados.
      */
     DatabaseHelper *databaseHelper;
+
+    /*!
+     * \brief Construtor de Cópia.
+     * \param rhs Objeto a ser copiado.
+     */
+    ServerImpl(const ServerImpl& rhs);
+
+    /*!
+     * \brief Sobrecarga do operador =.
+     * \param rhs Objeto a ser copiado.
+     * \return Novo objeto copiado.
+     */
+    ServerImpl& operator=(const ServerImpl& rhs);
+
 };
 
 #endif // SERVERIMPL_H

@@ -9,7 +9,7 @@ var classDatabaseHelperImpl =
     [ "getUserId", "d5/d1d/classDatabaseHelperImpl.html#a071ca71dc50d21a3d5749156aec99476", null ],
     [ "insertOperation", "d5/d1d/classDatabaseHelperImpl.html#a4791d584b178b71a186a843dbc8ab86e", null ],
     [ "isAdmin", "d5/d1d/classDatabaseHelperImpl.html#a3c6da9438b26955fcef6a080c85652f5", null ],
-    [ "operator=", "d5/d1d/classDatabaseHelperImpl.html#a165437593ebfabea3bdaf342d339d0cc", null ],
+    [ "operator=", "d5/d1d/classDatabaseHelperImpl.html#a48022ad027303dc93626f3293887b98e", null ],
     [ "setupDatabase", "d5/d1d/classDatabaseHelperImpl.html#af1b1b1496a9027cd09ee0456010ad9bd", null ],
     [ "DatabaseHelperImplTest", "d5/d1d/classDatabaseHelperImpl.html#adebc71025cd8245ef1624f16ffbca46b", null ],
     [ "sqlDatabase", "d5/d1d/classDatabaseHelperImpl.html#a0bc1ee11321daa34b2abe7306c6184c2", null ]

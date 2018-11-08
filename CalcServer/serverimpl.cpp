@@ -18,6 +18,18 @@ ServerImpl::ServerImpl(QObject *parent) : QTcpServer(parent){
     databaseHelper = new DatabaseHelperImpl();
 }
 
+ServerImpl::ServerImpl(const ServerImpl& rhs){
+    databaseHelper = rhs.databaseHelper;
+}
+
+ServerImpl& ServerImpl::operator=(const ServerImpl& rhs){
+    if(&rhs == this){
+        return *this;
+    }
+    databaseHelper = rhs.databaseHelper;
+    return *this;
+}
+
 /*!
  * \brief Destrutor da classe ServerImpl.
  *

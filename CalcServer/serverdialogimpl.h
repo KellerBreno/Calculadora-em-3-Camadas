@@ -52,6 +52,20 @@ private:
      * \brief Instância de Server
      */
     Server *server;
+
+    /*!
+     * \brief Construtor de Cópia.
+     * \param rhs Objeto a ser copiado.
+     */
+    ServerDialogImpl(const ServerDialogImpl& rhs);
+
+    /*!
+     * \brief Sobrecarga do operador =.
+     * \param rhs Objeto a ser copiado.
+     * \return Novo objeto copiado.
+     */
+    ServerDialogImpl& operator=(const ServerDialogImpl& rhs);
+
 };
 
 #endif // SERVERDIALOGIMPL_H

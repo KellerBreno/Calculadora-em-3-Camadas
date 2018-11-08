@@ -61,14 +61,14 @@ private:
      * \brief Construtor de Cópia.
      * \param rhs Objeto a ser copiado.
      */
-    WorkerThreadImpl(const WorkerThreadImpl& rhs){}
+    WorkerThreadImpl(const WorkerThreadImpl& rhs);
 
     /*!
      * \brief Sobrecarga do operador =.
      * \param rhs Objeto a ser copiado.
      * \return Novo objeto copiado.
      */
-    WorkerThreadImpl& operator=(const WorkerThreadImpl& rhs){}
+    WorkerThreadImpl& operator=(const WorkerThreadImpl& rhs);
 
     WorkerThreadImpl();
     QJsonObject handleMessage(QJsonObject jsonObject);

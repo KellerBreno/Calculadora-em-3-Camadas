@@ -42,6 +42,20 @@ WorkerThreadImpl::WorkerThreadImpl(qintptr socketDescriptor, QObject *parent, Da
 WorkerThreadImpl::WorkerThreadImpl(){
 }
 
+WorkerThreadImpl::WorkerThreadImpl(const WorkerThreadImpl& rhs){
+    socketDescriptor = rhs.socketDescriptor;
+    databaseHelper = rhs.databaseHelper;
+}
+
+WorkerThreadImpl& WorkerThreadImpl::operator=(const WorkerThreadImpl& rhs){
+    if(&rhs == this){
+        return *this;
+    }
+    socketDescriptor = rhs.socketDescriptor;
+    databaseHelper = rhs.databaseHelper;
+    return *this;
+}
+
 /*!
  * \brief Destrutor Padrão.
  */
