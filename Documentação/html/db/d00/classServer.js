@@ -1,7 +1,7 @@
 var classServer =
 [
-    [ "Server", "db/d00/classServer.html#a1950ac036d86af898428d7ba39bbf048", null ],
-    [ "~Server", "db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6", null ],
-    [ "incomingConnection", "db/d00/classServer.html#aa229a1587514197693274aa0d589344b", null ],
-    [ "databaseHelper", "db/d00/classServer.html#a6dedbdbd06ad8f0682a3b825b054425f", null ]
+    [ "errorString", "db/d00/classServer.html#a66eb77ac2362bdae05081591389c3cf5", null ],
+    [ "incomingConnection", "db/d00/classServer.html#a2397527620515d7e18fc599b22fb64ae", null ],
+    [ "listen", "db/d00/classServer.html#a2393cde56bb44076cbfba00c89412acf", null ],
+    [ "serverPort", "db/d00/classServer.html#ad32766e2608017d9fcd0903ab3748803", null ]
 ];

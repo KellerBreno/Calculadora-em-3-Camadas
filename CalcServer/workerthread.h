@@ -1,71 +1,50 @@
 /*!
  * \file workerthread.h
- * Arquivo contendo a declaração da Classe WorkerThread.
+ * Arquivo contendo a declaração da Interface WorkerThread.
  */
 
 #ifndef WORKERTHREAD_H
 #define WORKERTHREAD_H
 
-#include <QThread>
-#include <QTcpSocket>
-
-#include "databasehelper.h"
+#include <QObject>
 
 /*!
  * \class WorkerThread
- * \brief Classe para realização de operações do servidor em uma thread.
+ * \brief Interface para thread de trabalho auxiliar.
  */
-class WorkerThread : public QThread {
-    Q_OBJECT
-
-    /*!
-     * \brief Classe de Testes para WorkerThread
-     */
-    friend class OperacoesTest;
-
+class WorkerThread{
 public:
-    WorkerThread(int socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper);
-    virtual ~WorkerThread();
-    void run() override;
-
-signals:
     /*!
-     * \brief Signal utilizado para sinalizar erros.
-     * \param socketError Tipo do erro detectado.
+     * \brief Método para delegação do tratamento de uma mensagem recebida e envio da respostas.
+     *
+     * Este método recebe um byte array correspondente a um objeto JSON, após isso cria um objeto JSON e delega a resolução da mensagem para o
+     * método handlMessage. Por fim, recebe a resposta da mensagem, codifica ela e envia ao cliente pela rede.
+     *
+     * \sa WorkerThreadImpl::handleMessage(QJsonObject), WorkerThreadImpl::error(QTcpSocket::SocketError).
      */
-    void error(QTcpSocket::SocketError socketError);
-
-protected:
-    /*!
-     * \brief Contém as informações de configuração do socket.
-     */
-    int socketDescriptor;
+    virtual void run() = 0;
 
     /*!
-     * \brief Referência ao helper de acesso ao banco de dados.
+     * \brief Método para o inicio de execução de uma WorkerThread.
+     * \sa WorkerThreadImpl::finished().
      */
-    DatabaseHelper *databaseHelper;
-
-private:
-    /*!
-     * \brief Construtor de Cópia.
-     * \param rhs Objeto a ser copiado.
-     */
-    WorkerThread(const WorkerThread& rhs){}
+    virtual void start() = 0;
 
     /*!
-     * \brief Sobrecarga do operador =.
-     * \param rhs Objeto a ser copiado.
-     * \return Novo objeto copiado.
+     * \brief Representa o fim de execução de WorkerThread.
      */
-    WorkerThread& operator=(const WorkerThread& rhs){}
+    virtual void finished() = 0;
 
-    WorkerThread();
-    QJsonObject handleMessage(QJsonObject jsonObject);
-    QJsonObject handleAuthenticate(QJsonObject jsonObject);
-    QJsonObject handleOperation(QJsonObject jsonObject);
-    QJsonObject handleUserReport(QJsonObject jsonObject);
-    QJsonObject handleAllUsersReport(QJsonObject jsonObject);
+    /*!
+     * \brief Responsavel por desalocar elementos da WorkerThread.
+     */
+    virtual void deleteLater() = 0;
+
+    /*!
+     * \brief Método retorna uma referência a um objeto QObject correspondente a essa classe.
+     * \return Referencia ao QObject correspondente a classe.
+     */
+    virtual QObject* getQObject() = 0;
 };
 
 #endif // WORKERTHREAD_H

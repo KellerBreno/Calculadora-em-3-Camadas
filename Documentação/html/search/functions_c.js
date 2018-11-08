@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7edatabasehelperimpl',['~DatabaseHelperImpl',['../d5/d1d/classDatabaseHelperImpl.html#a14d7fa4590316828d2e802bff3512223',1,'DatabaseHelperImpl']]],
-  ['_7emycalcwindow',['~MyCalcWindow',['../d2/dd3/classMyCalcWindow.html#a6226362b86860c067418d16b7da1e1e2',1,'MyCalcWindow']]],
-  ['_7eserver',['~Server',['../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]],
-  ['_7eworkerthread',['~WorkerThread',['../db/d07/classWorkerThread.html#a5aa554e7d73f0f185a850ca0ef145d6d',1,'WorkerThread']]]
+  ['workerthreadimpl',['WorkerThreadImpl',['../de/da0/classWorkerThreadImpl.html#a61d57c319668cbf86ad1642e8471b6db',1,'WorkerThreadImpl::WorkerThreadImpl(qintptr socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)'],['../de/da0/classWorkerThreadImpl.html#adebf1655473918cb3ff77fbac14ca7d3',1,'WorkerThreadImpl::WorkerThreadImpl(const WorkerThreadImpl &amp;rhs)'],['../de/da0/classWorkerThreadImpl.html#a6656b99702598782c9c49ee9e4437388',1,'WorkerThreadImpl::WorkerThreadImpl()']]]
 ];

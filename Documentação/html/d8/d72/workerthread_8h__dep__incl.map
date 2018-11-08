@@ -1,4 +1,5 @@
 <map id="CalcServer/workerthread.h" name="CalcServer/workerthread.h">
-<area shape="rect" id="node2" href="$df/dd7/server_8cpp.html" title="CalcServer/server.cpp" alt="" coords="5,80,157,107"/>
-<area shape="rect" id="node3" href="$da/d63/workerthread_8cpp.html" title="CalcServer/workerthread.cpp" alt="" coords="182,80,373,107"/>
+<area shape="rect" id="node2" href="$dc/d9f/workerthreadimpl_8h.html" title="CalcServer/workerthreadimpl.h" alt="" coords="102,80,303,107"/>
+<area shape="rect" id="node3" href="$d6/d27/serverimpl_8cpp.html" title="CalcServer/serverimpl.cpp" alt="" coords="5,155,181,181"/>
+<area shape="rect" id="node4" href="$d3/d30/workerthreadimpl_8cpp.html" title="CalcServer/workerthreadimpl.cpp" alt="" coords="206,155,421,181"/>
 </map>

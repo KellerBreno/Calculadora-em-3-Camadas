@@ -1,5 +1,8 @@
 <map id="CalcServer/server.h" name="CalcServer/server.h">
-<area shape="rect" id="node2" href="$d1/dc9/dialog_8h.html" title="CalcServer/dialog.h" alt="" coords="13,80,149,107"/>
-<area shape="rect" id="node4" href="$df/dd7/server_8cpp.html" title="CalcServer/server.cpp" alt="" coords="173,80,325,107"/>
-<area shape="rect" id="node3" href="$de/dfa/dialog_8cpp.html" title="CalcServer/dialog.cpp" alt="" coords="5,155,156,181"/>
+<area shape="rect" id="node2" href="$dc/d77/serverdialogimpl_8h.html" title="CalcServer/serverdialogimpl.h" alt="" coords="13,80,209,107"/>
+<area shape="rect" id="node4" href="$de/d90/serverimpl_8h.html" title="CalcServer/serverimpl.h" alt="" coords="233,80,396,107"/>
+<area shape="rect" id="node6" href="$dc/d9f/workerthreadimpl_8h.html" title="CalcServer/workerthreadimpl.h" alt="" coords="421,80,622,107"/>
+<area shape="rect" id="node3" href="$d5/db9/serverdialogimpl_8cpp.html" title="CalcServer/serverdialogimpl.cpp" alt="" coords="5,155,216,181"/>
+<area shape="rect" id="node5" href="$d6/d27/serverimpl_8cpp.html" title="CalcServer/serverimpl.cpp" alt="" coords="240,155,416,181"/>
+<area shape="rect" id="node7" href="$d3/d30/workerthreadimpl_8cpp.html" title="CalcServer/workerthreadimpl.cpp" alt="" coords="441,155,655,181"/>
 </map>

@@ -24,17 +24,20 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-    workerthread.cpp \
-    server.cpp \
-    dialog.cpp \
-    databasehelperimpl.cpp
+    databasehelperimpl.cpp \
+    workerthreadimpl.cpp \
+    serverimpl.cpp \
+    serverdialogimpl.cpp
 
 HEADERS += \
-    workerthread.h \
-    server.h \
-    dialog.h \
     databasehelper.h \
-    databasehelperimpl.h
+    databasehelperimpl.h \
+    workerthreadimpl.h \
+    workerthread.h \
+    serverimpl.h \
+    server.h \
+    serverdialogimpl.h \
+    serverdialog.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

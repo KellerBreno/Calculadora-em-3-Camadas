@@ -42,14 +42,14 @@ private:
      * \brief Construtor de Cópia.
      * \param rhs Objeto a ser copiado.
      */
-    DatabaseHelperImpl(const DatabaseHelperImpl& rhs){}
+    DatabaseHelperImpl(const DatabaseHelperImpl& rhs);
 
     /*!
      * \brief Sobrecarga do operador =.
      * \param rhs Objeto a ser copiado.
      * \return Novo objeto copiado.
      */
-    DatabaseHelperImpl& operator=(const DatabaseHelperImpl& rhs){}
+    DatabaseHelperImpl& operator=(const DatabaseHelperImpl& rhs);
     void setupDatabase();
 };
 
