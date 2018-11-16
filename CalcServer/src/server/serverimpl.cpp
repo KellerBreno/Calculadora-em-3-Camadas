@@ -5,7 +5,7 @@
 
 #include "serverimpl.h"
 #include "workerthreadimpl.h"
-#include "databasehelperimpl.h"
+#include "database/databasehelperimpl.h"
 
 /*!
  * \brief Construtor padrão da classe ServerImpl.

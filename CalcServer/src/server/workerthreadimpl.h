@@ -9,7 +9,7 @@
 #include <QThread>
 #include <QTcpSocket>
 
-#include "databasehelper.h"
+#include "database/databasehelper.h"
 #include "server.h"
 #include "workerthread.h"
 

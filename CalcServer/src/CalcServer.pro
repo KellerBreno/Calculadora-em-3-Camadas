@@ -23,21 +23,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-    databasehelperimpl.cpp \
-    workerthreadimpl.cpp \
-    serverimpl.cpp \
-    serverdialogimpl.cpp
+    main.cpp \
+    database/databasehelperimpl.cpp \
+    server/workerthreadimpl.cpp \
+    server/serverimpl.cpp \
+    gui/serverdialogimpl.cpp
 
 HEADERS += \
-    databasehelper.h \
-    databasehelperimpl.h \
-    workerthreadimpl.h \
-    workerthread.h \
-    serverimpl.h \
-    server.h \
-    serverdialogimpl.h \
-    serverdialog.h
+    database/databasehelper.h \
+    database/databasehelperimpl.h \
+    server/workerthreadimpl.h \
+    server/workerthread.h \
+    server/serverimpl.h \
+    server/server.h \
+    gui/serverdialogimpl.h \
+    gui/serverdialog.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

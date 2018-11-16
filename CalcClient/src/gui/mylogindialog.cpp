@@ -18,10 +18,11 @@
 #include <QSqlQuery>
 #include <QDialog>
 #include <QDebug>
-#include <QJsonObject>
 #include <QJsonDocument>
 
 #include <iostream>
+
+#include <control/networkmanagerimpl.h>
 
 using namespace std;
 
@@ -37,7 +38,6 @@ using namespace std;
 MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){
     setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
-    connect(&tcpSocket, &QIODevice::readyRead, this, &MyLoginDialog::readMessage);
 }
 
 /*!
@@ -59,24 +59,10 @@ void MyLoginDialog::on_login_button_clicked(){
         return;
     }
 
-    tcpSocket.connectToHost(ip, port.toInt());
-
-    QJsonObject jsonObject;
-    jsonObject.insert("operationType", 1);
-    jsonObject.insert("username", username);
-    jsonObject.insert("password", password);
-
-    QJsonDocument jsonDocument(jsonObject);
-    QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
-    QByteArray jsonData = jsonString.toUtf8();
-
-#ifdef DEBUG
-    qDebug() << "=========== Mensagem Enviada ===========";
-    qDebug() << "Msg: " << jsonData;
-    qDebug() << "========================================";
-#endif
-
-    tcpSocket.write(jsonData);
+    NetworkManager *networkManager = NetworkManager::getInstance();
+    networkManager->configure(ip,port.toInt());
+    connect(networkManager->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
+    networkManager->login(username,password);
 }
 
 /*!
@@ -97,19 +83,12 @@ void MyLoginDialog::on_cancel_button_clicked(){
  *
  * \sa MyLoginDialog::on_login_button_clicked(), MyLoginDialog::logged(QString,bool,QString,int).
  */
-void MyLoginDialog::readMessage(){
-    tcpSocket.waitForReadyRead(-1);
-
-    QByteArray jsonData = tcpSocket.readLine();
-    QString jsonString = QString::fromStdString(jsonData.toStdString());
-
-#ifdef DEBUG
-    qDebug() << "========== Mensagem Recebida ===========";
-    qDebug() << "Msg: " << jsonString;
-#endif
-
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
-    QJsonObject jsonObject = jsonDocument.object();
+void MyLoginDialog::readMessage(QJsonObject jsonObject){
+    int answerType = jsonObject.value("answerType").toInt();
+    if(answerType!=0){
+        QMessageBox::critical(this, "Login", "Ocorreu um erro, por favor tente novamente", QMessageBox::Ok);
+        return;
+    }
 
     bool valid = jsonObject.value("valid").toBool();
 
@@ -125,7 +104,8 @@ void MyLoginDialog::readMessage(){
         bool adminLevel = jsonObject.value("adminLevel").toBool();
         QMessageBox::information(this, "Login", "Seja Bem Vindo, " + username, QMessageBox::Ok);
         // Abre a calculadora
-        emit logged(username, adminLevel, ip, port.toInt());
+        disconnect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
+        emit logged(username, adminLevel);
         close();
     } else {
         QMessageBox::information(this, "Login", "Credenciais Incorretas", QMessageBox::Ok);

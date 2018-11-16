@@ -168,6 +168,7 @@ QJsonObject WorkerThreadImpl::handleAuthenticate(QJsonObject jsonObject){
 #endif
 
     QJsonObject answerResult;
+    answerResult.insert("answerType", 0);
     vector<pair<QString, QString> > users = databaseHelper->getAllUsers();
     for (vector<pair<QString, QString> >::iterator it = users.begin(); it != users.end(); ++it){
         QString usernameDB = (*it).first;

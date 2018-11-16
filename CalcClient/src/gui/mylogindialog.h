@@ -8,6 +8,7 @@
 
 #include <QWidget>
 #include <QTcpSocket>
+#include <QJsonObject>
 
 #include "ui_logindialog.h"
 
@@ -32,7 +33,7 @@ public:
 public slots:
     void on_login_button_clicked(void);
     void on_cancel_button_clicked(void);
-    void readMessage(void);
+    void readMessage(QJsonObject jsonObject);
 
 signals:
     /*!
@@ -42,7 +43,7 @@ signals:
      * \param ip IP onde o servidor está localizado.
      * \param port Porta onde o servidor está escutando.
      */
-    void logged(QString username, bool adminLevel, QString ip, int port);
+    void logged(QString username, bool adminLevel);
 
     /*!
      * \brief Signal emitido para finalizar a aplicação.

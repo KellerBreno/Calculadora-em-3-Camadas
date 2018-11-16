@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #include "serverdialogimpl.h"
-#include "serverimpl.h"
+#include "server/serverimpl.h"
 
 /*!
  * \brief Construtor padrão da classe ServerDialogImpl

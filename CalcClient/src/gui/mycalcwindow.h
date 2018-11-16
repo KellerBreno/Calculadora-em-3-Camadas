@@ -12,6 +12,7 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
 
+#include <QJsonObject>
 #include <utility>
 #include <vector>
 
@@ -52,9 +53,9 @@ public slots:
     void on_radioButtonDiv_clicked(void);
     void on_actionByUser_triggered(void);
     void on_actionAllUsers_triggered(void);
-    void onUserLogin(QString username, bool adminLevel, QString ip, int port);
+    void onUserLogin(QString username, bool adminLevel);
     void onQuit(void);
-    void readMessage(void);
+    void readMessage(QJsonObject jsonObject);
 
 private:
     void execute(void);
@@ -64,16 +65,6 @@ private:
      * \brief Username do usuário conectado.
      */
     QString username;
-
-    /*!
-     * \brief IP onde o servidor está localizado.
-     */
-    QString ip;
-
-    /*!
-     * \brief Porta a qual o servidor está escutando.
-     */
-    int port;
 
     /*!
      * \brief TCPSocket utilizado pela aplicação para comunicar com servidor.

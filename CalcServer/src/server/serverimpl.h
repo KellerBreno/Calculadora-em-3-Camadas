@@ -6,7 +6,7 @@
 #ifndef SERVERIMPL_H
 #define SERVERIMPL_H
 
-#include "databasehelper.h"
+#include "database/databasehelper.h"
 #include "server.h"
 #include <QTcpServer>
 

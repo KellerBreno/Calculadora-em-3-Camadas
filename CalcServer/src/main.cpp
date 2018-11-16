@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#include "serverdialogimpl.h"
+#include "gui/serverdialogimpl.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);

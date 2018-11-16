@@ -23,14 +23,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Input
 HEADERS += \
-    mylogindialog.h \
-    mycalcwindow.h
+    gui/mylogindialog.h \
+    gui/mycalcwindow.h \
+    control/networkmanager.h \
+    control/networkmanagerimpl.h
 
 FORMS += \
-    logindialog.ui \
-    calcwindow.ui
+    gui/logindialog.ui \
+    gui/calcwindow.ui
 
 SOURCES += \
     main.cpp \
-    mylogindialog.cpp \
-    mycalcwindow.cpp
+    gui/mylogindialog.cpp \
+    gui/mycalcwindow.cpp \
+    control/networkmanagerimpl.cpp

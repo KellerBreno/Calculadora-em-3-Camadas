@@ -20,6 +20,8 @@
 #include <sstream>
 #include <iostream>
 
+#include <control/networkmanager.h>
+
 #include "mycalcwindow.h"
 #include "ui_calcwindow.h"
 
@@ -35,7 +37,6 @@
 MyCalcWindow::MyCalcWindow(QWidget *parent) : QMainWindow (parent), chartWindow(nullptr){
    setupUi(this);
    setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
-   connect(&tcpSocket, &QIODevice::readyRead, this, &MyCalcWindow::readMessage);
    connect(exitButton, SIGNAL(clicked()), this, SLOT(onQuit()));
 }
 
@@ -74,27 +75,8 @@ void MyCalcWindow::execute(){
        opCode = 4;
    }
 
-   tcpSocket.connectToHost(ip, port);
-
-   QJsonObject jsonObject;
-   jsonObject.insert("operationType", 2);
-   jsonObject.insert("username", username);
-   jsonObject.insert("v1", parcela1);
-   jsonObject.insert("opCode", opCode);
-   jsonObject.insert("v2", parcela2);
-
-   QJsonDocument jsonDocument(jsonObject);
-   QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
-
-   QByteArray jsonData = jsonString.toUtf8();
-
-#ifdef DEBUG
-   qDebug() << "=========== Mensagem Enviada ===========";
-   qDebug() << "Msg: " << jsonData;
-   qDebug() << "========================================";
-#endif
-
-   tcpSocket.write(jsonData);
+   NetworkManager *networkManager = NetworkManager::getInstance();
+   networkManager->doOperation(username,parcela1,parcela2,opCode);
 }
 
 /*!
@@ -149,13 +131,13 @@ void MyCalcWindow::on_radioButtonDiv_clicked(void){
  * \param ip IP onde o servidor está localizado.
  * \param port Porta onde o servidor está escutando.
  */
-void MyCalcWindow::onUserLogin(QString username, bool adminLevel, QString ip, int port){
+void MyCalcWindow::onUserLogin(QString username, bool adminLevel){
    setEnabled(true);
    this->username = username;
-   this->ip = ip;
-   this->port = port;
    this->adminLevel = adminLevel;
    actionAllUsers->setVisible(adminLevel);
+   connect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
+
 }
 
 /*!
@@ -175,21 +157,7 @@ void MyCalcWindow::onQuit(void){
  *
  * \sa MyCalcWindow::execute(), MyCalcWindow::on_actionAllUsers_triggered(), MyCalcWindow::on_actionByUser_triggered().
  */
-void MyCalcWindow::readMessage(){
-   tcpSocket.waitForReadyRead(-1);
-
-   QByteArray jsonData = tcpSocket.readLine();
-   QString jsonString = QString::fromStdString(jsonData.toStdString());
-
-#ifdef DEBUG
-   qDebug() << "========== Mensagem Recebida ===========";
-   qDebug() << "Msg: " << jsonString;
-   qDebug() << "========================================";
-#endif
-
-   QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonString.toUtf8());
-   QJsonObject jsonObject = jsonDocument.object();
-
+void MyCalcWindow::readMessage(QJsonObject jsonObject){
    int answerType = jsonObject.value("answerType").toInt();
    switch (answerType) {
    case 1:
@@ -248,24 +216,8 @@ void MyCalcWindow::readMessage(){
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionByUser_triggered(void){
-   tcpSocket.connectToHost(ip, port);
-
-   QJsonObject jsonObject;
-   jsonObject.insert("operationType", 3);
-   jsonObject.insert("username", username);
-
-   QJsonDocument jsonDocument(jsonObject);
-   QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
-
-   QByteArray jsonData = jsonString.toUtf8();
-
-#ifdef DEBUG
-   qDebug() << "=========== Mensagem Enviada ===========";
-   qDebug() << "Msg: " << jsonData;
-   qDebug() << "========================================";
-#endif
-
-   tcpSocket.write(jsonData);
+    NetworkManager *networkManager = NetworkManager::getInstance();
+    networkManager->reportByUser(username);
 }
 
 /*!
@@ -279,24 +231,8 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
    if(!adminLevel){
        return;
    }
-   tcpSocket.connectToHost(ip, port);
-
-   QJsonObject jsonObject;
-   jsonObject.insert("operationType", 4);
-   jsonObject.insert("username", username);
-
-   QJsonDocument jsonDocument(jsonObject);
-   QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
-
-   QByteArray jsonData = jsonString.toUtf8();
-
-#ifdef DEBUG
-   qDebug() << "=========== Mensagem Enviada ===========";
-   qDebug() << "Msg: " << jsonData;
-   qDebug() << "========================================";
-#endif
-
-   tcpSocket.write(jsonData);
+   NetworkManager *networkManager = NetworkManager::getInstance();
+   networkManager->reportAllUsers(username);
 }
 
 /*!

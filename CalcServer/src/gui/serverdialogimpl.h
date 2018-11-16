@@ -6,7 +6,7 @@
 #ifndef SERVERDIALOGIMPL_H
 #define SERVERDIALOGIMPL_H
 
-#include "server.h"
+#include "server/server.h"
 #include "serverdialog.h"
 
 class QLabel;
