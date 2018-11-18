@@ -1,5 +1,5 @@
-<map id="CalcServer/workerthreadimpl.h" name="CalcServer/workerthreadimpl.h">
-<area shape="rect" id="node4" href="$d5/db8/databasehelper_8h.html" title="databasehelper.h" alt="" coords="315,80,437,107"/>
-<area shape="rect" id="node8" href="$d8/dc3/server_8h.html" title="server.h" alt="" coords="221,80,291,107"/>
-<area shape="rect" id="node9" href="$d3/d31/workerthread_8h.html" title="workerthread.h" alt="" coords="461,80,569,107"/>
+<map id="CalcServer/src/server/workerthreadimpl.h" name="CalcServer/src/server/workerthreadimpl.h">
+<area shape="rect" id="node4" href="$d5/db8/databasehelper_8h.html" title="database/databasehelper.h" alt="" coords="315,95,493,121"/>
+<area shape="rect" id="node8" href="$d8/dc3/server_8h.html" title="server.h" alt="" coords="221,95,291,121"/>
+<area shape="rect" id="node9" href="$d3/d31/workerthread_8h.html" title="workerthread.h" alt="" coords="518,95,626,121"/>
 </map>

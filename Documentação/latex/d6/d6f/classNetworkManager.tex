@@ -1,0 +1,240 @@
+\hypertarget{classNetworkManager}{}\section{Network\+Manager Class Reference}
+\label{classNetworkManager}\index{Network\+Manager@{Network\+Manager}}
+
+
+Classe para gerenciar comunicações entre a gui e o server pela rede.  
+
+
+
+
+{\ttfamily \#include $<$networkmanager.\+h$>$}
+
+
+
+Inheritance diagram for Network\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{d5/da1/classNetworkManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{d5/d38/classNetworkManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classNetworkManager_ae7b073b1deb224a6cb7af0e4d3d158de}{configure} (Q\+String ip, quint16 port)=0
+\begin{DoxyCompactList}\small\item\em Método para configurar o \hyperlink{classNetworkManager}{Network\+Manager}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classNetworkManager_ad39555f78185618bb5e6e906a9ef0c40}{login} (Q\+String username, Q\+String password)=0
+\begin{DoxyCompactList}\small\item\em Método para realizar um login. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classNetworkManager_a7477e7bdee53e76ead1b711d2976e1e1}{do\+Operation} (Q\+String username, double factor1, double factor2, int op\+Code)=0
+\begin{DoxyCompactList}\small\item\em Método para realizar operações matematicas. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}{report\+By\+User} (Q\+String username)=0
+\begin{DoxyCompactList}\small\item\em Método para recuperar o relatorio de operações do usuário. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}{report\+All\+Users} (Q\+String username)=0
+\begin{DoxyCompactList}\small\item\em Método para recuperar o relatorio de operações de todos os usuários. \end{DoxyCompactList}\item 
+virtual Q\+Object $\ast$ \hyperlink{classNetworkManager_a437755d5e84ea8522515283ba11f4b77}{get\+Q\+Object} ()=0
+\begin{DoxyCompactList}\small\item\em Retorna um Q\+Object referente a \hyperlink{classNetworkManager}{Network\+Manager}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classNetworkManager_a5200afa56c88ff5d5779a39fec1ab33c}{message\+Receive} (Q\+Json\+Object json\+Object)=0
+\begin{DoxyCompactList}\small\item\em Método que recebe como parametro o Json correspondente da resposta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classNetworkManager}{Network\+Manager} $\ast$ \hyperlink{classNetworkManager_a160c056e7177dbe9686310e4896326d6}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Este método retorna uma instancia de \hyperlink{classNetworkManager}{Network\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classNetworkManager}{Network\+Manager} $\ast$ \hyperlink{classNetworkManager_a1bf872fb0f00ebc5ed6fecd2016874e2}{instance} = nullptr\hypertarget{classNetworkManager_a1bf872fb0f00ebc5ed6fecd2016874e2}{}\label{classNetworkManager_a1bf872fb0f00ebc5ed6fecd2016874e2}
+
+\begin{DoxyCompactList}\small\item\em Instancia única da classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe para gerenciar comunicações entre a gui e o server pela rede. 
+
+\subsection{Member Function Documentation}
+\index{Network\+Manager@{Network\+Manager}!configure@{configure}}
+\index{configure@{configure}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{configure(\+Q\+String ip, quint16 port)=0}{configure(QString ip, quint16 port)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::configure (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{ip, }
+\item[{quint16}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_ae7b073b1deb224a6cb7af0e4d3d158de}{}\label{classNetworkManager_ae7b073b1deb224a6cb7af0e4d3d158de}
+
+
+Método para configurar o \hyperlink{classNetworkManager}{Network\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Ip do Servidor \\
+\hline
+{\em port} & Porta do Servidor \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_a4ad2bada544bc02ea1f9921f3f6f62c2}{Network\+Manager\+Impl}.
+
+\index{Network\+Manager@{Network\+Manager}!do\+Operation@{do\+Operation}}
+\index{do\+Operation@{do\+Operation}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{do\+Operation(\+Q\+String username, double factor1, double factor2, int op\+Code)=0}{doOperation(QString username, double factor1, double factor2, int opCode)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::do\+Operation (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username, }
+\item[{double}]{factor1, }
+\item[{double}]{factor2, }
+\item[{int}]{op\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_a7477e7bdee53e76ead1b711d2976e1e1}{}\label{classNetworkManager_a7477e7bdee53e76ead1b711d2976e1e1}
+
+
+Método para realizar operações matematicas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário \\
+\hline
+{\em factor1} & Primeiro fator da operação \\
+\hline
+{\em factor2} & Segundo fator da operação \\
+\hline
+{\em op\+Code} & Código da operação \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_a18fcb6129bcaa5f7f225d92ac5d6cd1c}{Network\+Manager\+Impl}.
+
+\index{Network\+Manager@{Network\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Instance()}{getInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Network\+Manager} $\ast$ Network\+Manager\+::get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classNetworkManager_a160c056e7177dbe9686310e4896326d6}{}\label{classNetworkManager_a160c056e7177dbe9686310e4896326d6}
+
+
+Este método retorna uma instancia de \hyperlink{classNetworkManager}{Network\+Manager}. 
+
+\begin{DoxyReturn}{Returns}
+Instancia de Network\+Manager$\ast$ 
+\end{DoxyReturn}
+\index{Network\+Manager@{Network\+Manager}!get\+Q\+Object@{get\+Q\+Object}}
+\index{get\+Q\+Object@{get\+Q\+Object}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Q\+Object()=0}{getQObject()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+Object$\ast$ Network\+Manager\+::get\+Q\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_a437755d5e84ea8522515283ba11f4b77}{}\label{classNetworkManager_a437755d5e84ea8522515283ba11f4b77}
+
+
+Retorna um Q\+Object referente a \hyperlink{classNetworkManager}{Network\+Manager}. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Object correspondente 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_a3340057281dadf1861d94d8aba9e976e}{Network\+Manager\+Impl}.
+
+\index{Network\+Manager@{Network\+Manager}!login@{login}}
+\index{login@{login}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{login(\+Q\+String username, Q\+String password)=0}{login(QString username, QString password)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::login (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username, }
+\item[{Q\+String}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_ad39555f78185618bb5e6e906a9ef0c40}{}\label{classNetworkManager_ad39555f78185618bb5e6e906a9ef0c40}
+
+
+Método para realizar um login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário \\
+\hline
+{\em password} & Senha do usuário \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_aa468744d773aacf43763fde8e8bd95df}{Network\+Manager\+Impl}.
+
+\index{Network\+Manager@{Network\+Manager}!message\+Receive@{message\+Receive}}
+\index{message\+Receive@{message\+Receive}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{message\+Receive(\+Q\+Json\+Object json\+Object)=0}{messageReceive(QJsonObject jsonObject)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::message\+Receive (
+\begin{DoxyParamCaption}
+\item[{Q\+Json\+Object}]{json\+Object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_a5200afa56c88ff5d5779a39fec1ab33c}{}\label{classNetworkManager_a5200afa56c88ff5d5779a39fec1ab33c}
+
+
+Método que recebe como parametro o Json correspondente da resposta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Object} & Resposta recebida do servidor \\
+\hline
+\end{DoxyParams}
+\index{Network\+Manager@{Network\+Manager}!report\+All\+Users@{report\+All\+Users}}
+\index{report\+All\+Users@{report\+All\+Users}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{report\+All\+Users(\+Q\+String username)=0}{reportAllUsers(QString username)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::report\+All\+Users (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}{}\label{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}
+
+
+Método para recuperar o relatorio de operações de todos os usuários. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário solicitando \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}{Network\+Manager\+::report\+By\+User()} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_a2131e26c9804d50c6e1ab6d5b7ccec94}{Network\+Manager\+Impl}.
+
+\index{Network\+Manager@{Network\+Manager}!report\+By\+User@{report\+By\+User}}
+\index{report\+By\+User@{report\+By\+User}!Network\+Manager@{Network\+Manager}}
+\subsubsection[{\texorpdfstring{report\+By\+User(\+Q\+String username)=0}{reportByUser(QString username)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Network\+Manager\+::report\+By\+User (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}{}\label{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}
+
+
+Método para recuperar o relatorio de operações do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário a ser gerado o relatorio \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}{Network\+Manager\+::report\+All\+Users()} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classNetworkManagerImpl_aba85b7a85efee5cc28995c0df82bef5a}{Network\+Manager\+Impl}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Client/src/control/\hyperlink{networkmanager_8h}{networkmanager.\+h}\item 
+Calc\+Client/src/control/\hyperlink{networkmanagerimpl_8cpp}{networkmanagerimpl.\+cpp}\end{DoxyCompactItemize}

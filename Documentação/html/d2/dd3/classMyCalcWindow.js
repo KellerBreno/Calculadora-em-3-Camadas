@@ -11,15 +11,13 @@ var classMyCalcWindow =
     [ "on_radioButtonSoma_clicked", "d2/dd3/classMyCalcWindow.html#a751fb8b918aa9e737268bae50010681d", null ],
     [ "on_radioButtonSub_clicked", "d2/dd3/classMyCalcWindow.html#a01fac328f5546feb830a67a7d35cc7f5", null ],
     [ "onQuit", "d2/dd3/classMyCalcWindow.html#a809b1da213d1424ba098c1f0ee2d0bd5", null ],
-    [ "onUserLogin", "d2/dd3/classMyCalcWindow.html#a35f3b06bb33f0dbbfb238e6944f31074", null ],
-    [ "readMessage", "d2/dd3/classMyCalcWindow.html#ab8fe7eab3aa5ef91d8d54a32cbc4ecf5", null ],
+    [ "onUserLogin", "d2/dd3/classMyCalcWindow.html#afb652f194d2ece60f37232f23bf05ec9", null ],
+    [ "readMessage", "d2/dd3/classMyCalcWindow.html#aaa868eba4e3ee5a52d28c0c34bbbd8cd", null ],
     [ "showPieChart", "d2/dd3/classMyCalcWindow.html#ade7d295cb55effe865349b7eef1a6d1a", null ],
     [ "MyCalcWindowTest", "d2/dd3/classMyCalcWindow.html#a5eaf2f81c93e423d3a80f10bd41e84f8", null ],
     [ "MyLoginDialogTest", "d2/dd3/classMyCalcWindow.html#aec613ce0d143a48322f72a2b90819fcb", null ],
     [ "adminLevel", "d2/dd3/classMyCalcWindow.html#a80f22185e35ea4a28825b0d2518df67c", null ],
     [ "chartWindow", "d2/dd3/classMyCalcWindow.html#a98ecf548e0cb3586ff4afc33bdfacb7a", null ],
-    [ "ip", "d2/dd3/classMyCalcWindow.html#a9b84a818b4419182b414bfa93cfe9d66", null ],
-    [ "port", "d2/dd3/classMyCalcWindow.html#a48dd1d98f83d224a788c8592929cd6a5", null ],
     [ "tcpSocket", "d2/dd3/classMyCalcWindow.html#aa07c81871dc4b11ab83324b544d66733", null ],
     [ "username", "d2/dd3/classMyCalcWindow.html#aaa828b24dd233138d200de623762e95c", null ]
 ];

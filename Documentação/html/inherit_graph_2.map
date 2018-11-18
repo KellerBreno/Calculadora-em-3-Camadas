@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$d4/d62/classServerImpl.html" title="Implementação da interface Server. " alt="" coords="145,31,231,57"/>
-<area shape="rect" id="node3" href="$db/d00/classServer.html" title="Clase para gerenciamento de servidor TCP. " alt="" coords="21,56,81,83"/>
+<area shape="rect" id="node1" href="$d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. " alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$d5/dc5/classNetworkManagerImpl.html" title="NetworkManagerImpl" alt="" coords="175,31,321,57"/>
 </map>

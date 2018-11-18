@@ -1,6 +1,6 @@
-<map id="CalcServer/workerthreadimpl.cpp" name="CalcServer/workerthreadimpl.cpp">
-<area shape="rect" id="node2" href="$dc/d9f/workerthreadimpl_8h.html" title="workerthreadimpl.h" alt="" coords="190,80,322,107"/>
-<area shape="rect" id="node5" href="$d5/db8/databasehelper_8h.html" title="databasehelper.h" alt="" coords="315,155,437,181"/>
-<area shape="rect" id="node9" href="$d8/dc3/server_8h.html" title="server.h" alt="" coords="221,155,291,181"/>
-<area shape="rect" id="node10" href="$d3/d31/workerthread_8h.html" title="workerthread.h" alt="" coords="461,155,569,181"/>
+<map id="CalcServer/src/server/workerthreadimpl.cpp" name="CalcServer/src/server/workerthreadimpl.cpp">
+<area shape="rect" id="node2" href="$dc/d9f/workerthreadimpl_8h.html" title="workerthreadimpl.h" alt="" coords="190,95,322,121"/>
+<area shape="rect" id="node5" href="$d5/db8/databasehelper_8h.html" title="database/databasehelper.h" alt="" coords="315,169,493,196"/>
+<area shape="rect" id="node9" href="$d8/dc3/server_8h.html" title="server.h" alt="" coords="221,169,291,196"/>
+<area shape="rect" id="node10" href="$d3/d31/workerthread_8h.html" title="workerthread.h" alt="" coords="518,169,626,196"/>
 </map>

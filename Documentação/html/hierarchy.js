@@ -9,8 +9,14 @@ var hierarchy =
     [ "LoginDialog", null, [
       [ "MyLoginDialog", "de/d21/classMyLoginDialog.html", null ]
     ] ],
+    [ "NetworkManager", "d6/d6f/classNetworkManager.html", [
+      [ "NetworkManagerImpl", "d5/dc5/classNetworkManagerImpl.html", null ]
+    ] ],
     [ "QMainWindow", null, [
       [ "MyCalcWindow", "d2/dd3/classMyCalcWindow.html", null ]
+    ] ],
+    [ "QObject", null, [
+      [ "NetworkManagerImpl", "d5/dc5/classNetworkManagerImpl.html", null ]
     ] ],
     [ "QTcpServer", null, [
       [ "ServerImpl", "d4/d62/classServerImpl.html", null ]

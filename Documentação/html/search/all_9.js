@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['messagereceive',['messageReceive',['../d6/d6f/classNetworkManager.html#a5200afa56c88ff5d5779a39fec1ab33c',1,'NetworkManager']]],
   ['mycalcwindow',['MyCalcWindow',['../d2/dd3/classMyCalcWindow.html',1,'MyCalcWindow'],['../d2/dd3/classMyCalcWindow.html#ac205ab2dbfbf802859774a090b066518',1,'MyCalcWindow::MyCalcWindow()']]],
   ['mycalcwindow_2ecpp',['mycalcwindow.cpp',['../d5/d05/mycalcwindow_8cpp.html',1,'']]],
   ['mycalcwindow_2eh',['mycalcwindow.h',['../df/d6c/mycalcwindow_8h.html',1,'']]],

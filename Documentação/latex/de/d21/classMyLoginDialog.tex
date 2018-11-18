@@ -11,7 +11,8 @@ Classe para gerenciar as requisições de login.
 
 
 
-Inheritance diagram for My\+Login\+Dialog\+:\nopagebreak
+Inheritance diagram for My\+Login\+Dialog\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for My\+Login\+Dialog\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for My\+Login\+Dialog\+:\nopagebreak
+Collaboration diagram for My\+Login\+Dialog\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,12 +36,12 @@ void \hyperlink{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{on\+\_\+lo
 \begin{DoxyCompactList}\small\item\em Slot chamado para realizar a operação de login. \end{DoxyCompactList}\item 
 void \hyperlink{classMyLoginDialog_a98b534e1f3e50217b7d0d603846f6fa3}{on\+\_\+cancel\+\_\+button\+\_\+clicked} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado para finalizar a aplicação. \end{DoxyCompactList}\item 
-void \hyperlink{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{read\+Message} (void)
+void \hyperlink{classMyLoginDialog_a6def7158f19720b26ac23274b38ddc2d}{read\+Message} (Q\+Json\+Object json\+Object)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando o socket recebe uma mensagem de resposta do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{logged} (Q\+String username, bool admin\+Level, Q\+String ip, int port)
+void \hyperlink{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}{logged} (Q\+String username, bool admin\+Level)
 \begin{DoxyCompactList}\small\item\em Signal emitido quando a operação de login é realizada com sucesso. \end{DoxyCompactList}\item 
 void \hyperlink{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{quit} (void)\hypertarget{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{}\label{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}
 
@@ -95,11 +97,9 @@ Inicializa o atributo parent, configura a interface por meio do método \textquo
 \subsubsection[{\texorpdfstring{logged}{logged}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::logged (
 \begin{DoxyParamCaption}
 \item[{Q\+String}]{username, }
-\item[{bool}]{admin\+Level, }
-\item[{Q\+String}]{ip, }
-\item[{int}]{port}
+\item[{bool}]{admin\+Level}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{}\label{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}{}\label{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}
 
 
 Signal emitido quando a operação de login é realizada com sucesso. 
@@ -109,10 +109,6 @@ Signal emitido quando a operação de login é realizada com sucesso.
 {\em username} & Nome do usuário. \\
 \hline
 {\em admin\+Level} & Flag identificando se o usuário é administrador. \\
-\hline
-{\em ip} & IP onde o servidor está localizado. \\
-\hline
-{\em port} & Porta onde o servidor está escutando. \\
 \hline
 \end{DoxyParams}
 \index{My\+Login\+Dialog@{My\+Login\+Dialog}!on\+\_\+cancel\+\_\+button\+\_\+clicked@{on\+\_\+cancel\+\_\+button\+\_\+clicked}}
@@ -143,15 +139,15 @@ Slot chamado para realizar a operação de login.
 Recupera as informações da interface e realiza um requisição de autenticação ao servidor.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{My\+Login\+Dialog\+::read\+Message()}. 
+\hyperlink{classMyLoginDialog_a6def7158f19720b26ac23274b38ddc2d}{My\+Login\+Dialog\+::read\+Message()}. 
 \end{DoxySeeAlso}
 \index{My\+Login\+Dialog@{My\+Login\+Dialog}!read\+Message@{read\+Message}}
 \index{read\+Message@{read\+Message}!My\+Login\+Dialog@{My\+Login\+Dialog}}
 \subsubsection[{\texorpdfstring{read\+Message}{readMessage}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::read\+Message (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+\item[{Q\+Json\+Object}]{json\+Object}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}{}\label{classMyLoginDialog_a8ab28097bd87a10588d53b99ffcfb3dd}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyLoginDialog_a6def7158f19720b26ac23274b38ddc2d}{}\label{classMyLoginDialog_a6def7158f19720b26ac23274b38ddc2d}
 
 
 Slot chamado quando o socket recebe uma mensagem de resposta do servidor. 
@@ -159,11 +155,11 @@ Slot chamado quando o socket recebe uma mensagem de resposta do servidor.
 Esse método recebe uma resposta do servidor sobre a tentativa de login. Caso positivo emite um signal informando que o usuário foi autenticado. Caso contrário mostra uma janela de erro.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{My\+Login\+Dialog\+::on\+\_\+login\+\_\+button\+\_\+clicked()}, \hyperlink{classMyLoginDialog_acd80142b97ff032e73847b4ad54ea272}{My\+Login\+Dialog\+::logged(\+Q\+String,bool,\+Q\+String,int)}. 
+\hyperlink{classMyLoginDialog_ab850edc55bc360a5271f8da572d9b84b}{My\+Login\+Dialog\+::on\+\_\+login\+\_\+button\+\_\+clicked()}, My\+Login\+Dialog\+::logged(\+Q\+String,bool,\+Q\+String,int). 
 \end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Calc\+Client/\hyperlink{mylogindialog_8h}{mylogindialog.\+h}\item 
-Calc\+Client/\hyperlink{mylogindialog_8cpp}{mylogindialog.\+cpp}\end{DoxyCompactItemize}
+Calc\+Client/src/gui/\hyperlink{mylogindialog_8h}{mylogindialog.\+h}\item 
+Calc\+Client/src/gui/\hyperlink{mylogindialog_8cpp}{mylogindialog.\+cpp}\end{DoxyCompactItemize}
