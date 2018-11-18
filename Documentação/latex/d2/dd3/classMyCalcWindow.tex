@@ -11,7 +11,8 @@ Classe para gerenciar as ações de uma calculadora.
 
 
 
-Inheritance diagram for My\+Calc\+Window\+:\nopagebreak
+Inheritance diagram for My\+Calc\+Window\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for My\+Calc\+Window\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for My\+Calc\+Window\+:\nopagebreak
+Collaboration diagram for My\+Calc\+Window\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,12 +46,12 @@ void \hyperlink{classMyCalcWindow_ad018832daea504f486bc1cb26f5cb0ec}{on\+\_\+act
 \begin{DoxyCompactList}\small\item\em Slot chamado quando selecionada a opção do menu \textquotesingle{}Por Usuário\textquotesingle{}. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_ab50a651bb1983993008960ad39d93ed6}{on\+\_\+action\+All\+Users\+\_\+triggered} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando selecionada a opção do menu \textquotesingle{}Todos os Usuários\textquotesingle{}. \end{DoxyCompactList}\item 
-void \hyperlink{classMyCalcWindow_a35f3b06bb33f0dbbfb238e6944f31074}{on\+User\+Login} (Q\+String \hyperlink{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{username}, bool \hyperlink{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}{admin\+Level}, Q\+String \hyperlink{classMyCalcWindow_a9b84a818b4419182b414bfa93cfe9d66}{ip}, int \hyperlink{classMyCalcWindow_a48dd1d98f83d224a788c8592929cd6a5}{port})
+void \hyperlink{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}{on\+User\+Login} (Q\+String \hyperlink{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{username}, bool \hyperlink{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}{admin\+Level})
 \begin{DoxyCompactList}\small\item\em Slot chamado para se configurar a calculadora sobre informações de rede e usuário. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}{on\+Quit} (void)\hypertarget{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}{}\label{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}
 
 \begin{DoxyCompactList}\small\item\em Slot chamado ao se clicar no botão \textquotesingle{}Sair\textquotesingle{}. \end{DoxyCompactList}\item 
-void \hyperlink{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}{read\+Message} (void)
+void \hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{read\+Message} (Q\+Json\+Object json\+Object)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando o socket recebe uma mensagem de resposta do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -71,12 +73,6 @@ void \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{show\+Pie\+
 Q\+String \hyperlink{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{username}\hypertarget{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{}\label{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}
 
 \begin{DoxyCompactList}\small\item\em Username do usuário conectado. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{classMyCalcWindow_a9b84a818b4419182b414bfa93cfe9d66}{ip}\hypertarget{classMyCalcWindow_a9b84a818b4419182b414bfa93cfe9d66}{}\label{classMyCalcWindow_a9b84a818b4419182b414bfa93cfe9d66}
-
-\begin{DoxyCompactList}\small\item\em IP onde o servidor está localizado. \end{DoxyCompactList}\item 
-int \hyperlink{classMyCalcWindow_a48dd1d98f83d224a788c8592929cd6a5}{port}\hypertarget{classMyCalcWindow_a48dd1d98f83d224a788c8592929cd6a5}{}\label{classMyCalcWindow_a48dd1d98f83d224a788c8592929cd6a5}
-
-\begin{DoxyCompactList}\small\item\em Porta a qual o servidor está escutando. \end{DoxyCompactList}\item 
 Q\+Tcp\+Socket \hyperlink{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}{tcp\+Socket}\hypertarget{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}{}\label{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}
 
 \begin{DoxyCompactList}\small\item\em T\+C\+P\+Socket utilizado pela aplicação para comunicar com servidor. \end{DoxyCompactList}\item 
@@ -146,10 +142,10 @@ Esse destrutor é utilizado para deletar a referência contida em chart\+Window.
 
 Método privado para coleta dos dados e envio ao servidor para realização de operações. 
 
-Este método extrai os dados da interface, encapsula eles em um objeto J\+S\+ON e envia ao servidor para ser realizada.
+Este método extrai os dados da interface e solicita a execução da operação para o \hyperlink{classNetworkManager}{Network\+Manager}.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyCalcWindow_a6fdaf67619d3127503232c656e712656}{My\+Calc\+Window\+::on\+\_\+exec\+Button\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Soma\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a01fac328f5546feb830a67a7d35cc7f5}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Sub\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a553593de7766d99faf23a2053ddb4281}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Mult\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a1ac314ac5a743effc49465a295f796a4}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Div\+\_\+clicked()}, \hyperlink{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}{My\+Calc\+Window\+::read\+Message()}. 
+\hyperlink{classMyCalcWindow_a6fdaf67619d3127503232c656e712656}{My\+Calc\+Window\+::on\+\_\+exec\+Button\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Soma\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a01fac328f5546feb830a67a7d35cc7f5}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Sub\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a553593de7766d99faf23a2053ddb4281}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Mult\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a1ac314ac5a743effc49465a295f796a4}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Div\+\_\+clicked()}, \hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{My\+Calc\+Window\+::read\+Message()}. 
 \end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+action\+All\+Users\+\_\+triggered@{on\+\_\+action\+All\+Users\+\_\+triggered}}
 \index{on\+\_\+action\+All\+Users\+\_\+triggered@{on\+\_\+action\+All\+Users\+\_\+triggered}!My\+Calc\+Window@{My\+Calc\+Window}}
@@ -162,10 +158,10 @@ Este método extrai os dados da interface, encapsula eles em um objeto J\+S\+ON 
 
 Slot chamado quando selecionada a opção do menu \textquotesingle{}Todos os Usuários\textquotesingle{}. 
 
-Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas por todos os usuários.
+Esse slot faz uma requisição ao \hyperlink{classNetworkManager}{Network\+Manager} dos dados de todas as operações realizadas por todos os usuários.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}{My\+Calc\+Window\+::read\+Message()}, \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{My\+Calc\+Window\+::show\+Pie\+Chart(\+Q\+String, vector$<$pair$<$\+Q\+String, int$>$$>$)}. 
+\hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{My\+Calc\+Window\+::read\+Message()}, \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{My\+Calc\+Window\+::show\+Pie\+Chart(\+Q\+String, vector$<$pair$<$\+Q\+String, int$>$$>$)}. 
 \end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+action\+By\+User\+\_\+triggered@{on\+\_\+action\+By\+User\+\_\+triggered}}
 \index{on\+\_\+action\+By\+User\+\_\+triggered@{on\+\_\+action\+By\+User\+\_\+triggered}!My\+Calc\+Window@{My\+Calc\+Window}}
@@ -178,10 +174,10 @@ Esse slot faz uma requisição ao servidor dos dados de todas as operações rea
 
 Slot chamado quando selecionada a opção do menu \textquotesingle{}Por Usuário\textquotesingle{}. 
 
-Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas pelo usuário.
+Esse slot faz uma requisição ao \hyperlink{classNetworkManager}{Network\+Manager} dos dados de todas as operações realizadas pelo usuário.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}{My\+Calc\+Window\+::read\+Message()}, \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{My\+Calc\+Window\+::show\+Pie\+Chart(\+Q\+String, vector$<$pair$<$\+Q\+String, int$>$$>$)}. 
+\hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{My\+Calc\+Window\+::read\+Message()}, \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{My\+Calc\+Window\+::show\+Pie\+Chart(\+Q\+String, vector$<$pair$<$\+Q\+String, int$>$$>$)}. 
 \end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+exec\+Button\+\_\+clicked@{on\+\_\+exec\+Button\+\_\+clicked}}
 \index{on\+\_\+exec\+Button\+\_\+clicked@{on\+\_\+exec\+Button\+\_\+clicked}!My\+Calc\+Window@{My\+Calc\+Window}}
@@ -258,11 +254,9 @@ Slot chamado quando se clica no radio button da operação subtração.
 \subsubsection[{\texorpdfstring{on\+User\+Login}{onUserLogin}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+User\+Login (
 \begin{DoxyParamCaption}
 \item[{Q\+String}]{username, }
-\item[{bool}]{admin\+Level, }
-\item[{Q\+String}]{ip, }
-\item[{int}]{port}
+\item[{bool}]{admin\+Level}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_a35f3b06bb33f0dbbfb238e6944f31074}{}\label{classMyCalcWindow_a35f3b06bb33f0dbbfb238e6944f31074}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}{}\label{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}
 
 
 Slot chamado para se configurar a calculadora sobre informações de rede e usuário. 
@@ -273,23 +267,19 @@ Slot chamado para se configurar a calculadora sobre informações de rede e usu�
 \hline
 {\em admin\+Level} & Flag determinando se o usuário é administrador ou não. \\
 \hline
-{\em ip} & IP onde o servidor está localizado. \\
-\hline
-{\em port} & Porta onde o servidor está escutando. \\
-\hline
 \end{DoxyParams}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!read\+Message@{read\+Message}}
 \index{read\+Message@{read\+Message}!My\+Calc\+Window@{My\+Calc\+Window}}
 \subsubsection[{\texorpdfstring{read\+Message}{readMessage}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::read\+Message (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+\item[{Q\+Json\+Object}]{json\+Object}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}{}\label{classMyCalcWindow_ab8fe7eab3aa5ef91d8d54a32cbc4ecf5}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{}\label{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}
 
 
 Slot chamado quando o socket recebe uma mensagem de resposta do servidor. 
 
-Ao receber uma resposta do servidor, este método extrai as informações da mensagem e realiza a operação correspondente.
+Ao receber uma resposta do \hyperlink{classNetworkManager}{Network\+Manager}, este método extrai as informações da mensagem e realiza a operação correspondente.
 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}, \hyperlink{classMyCalcWindow_ab50a651bb1983993008960ad39d93ed6}{My\+Calc\+Window\+::on\+\_\+action\+All\+Users\+\_\+triggered()}, \hyperlink{classMyCalcWindow_ad018832daea504f486bc1cb26f5cb0ec}{My\+Calc\+Window\+::on\+\_\+action\+By\+User\+\_\+triggered()}. 
@@ -320,5 +310,5 @@ Método é utilizado para se gerar exibições em gráfico pizza das operações
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Calc\+Client/\hyperlink{mycalcwindow_8h}{mycalcwindow.\+h}\item 
-Calc\+Client/\hyperlink{mycalcwindow_8cpp}{mycalcwindow.\+cpp}\end{DoxyCompactItemize}
+Calc\+Client/src/gui/\hyperlink{mycalcwindow_8h}{mycalcwindow.\+h}\item 
+Calc\+Client/src/gui/\hyperlink{mycalcwindow_8cpp}{mycalcwindow.\+cpp}\end{DoxyCompactItemize}

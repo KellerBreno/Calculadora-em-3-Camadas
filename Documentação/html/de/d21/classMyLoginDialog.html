@@ -124,11 +124,15 @@ $(document).ready(function(){initNavTree('de/d21/classMyLoginDialog.html','../..
 Inheritance diagram for MyLoginDialog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d81/classMyLoginDialog__inherit__graph.png" border="0" usemap="#MyLoginDialog_inherit__map" alt="Inheritance graph"/></div>
+<map name="MyLoginDialog_inherit__map" id="MyLoginDialog_inherit__map">
+</map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for MyLoginDialog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d47/classMyLoginDialog__coll__graph.png" border="0" usemap="#MyLoginDialog_coll__map" alt="Collaboration graph"/></div>
+<map name="MyLoginDialog_coll__map" id="MyLoginDialog_coll__map">
+</map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -139,15 +143,15 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a98b534e1f3e50217b7d0d603846f6fa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a98b534e1f3e50217b7d0d603846f6fa3">on_cancel_button_clicked</a> (void)</td></tr>
 <tr class="memdesc:a98b534e1f3e50217b7d0d603846f6fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot chamado para finalizar a aplicação.  <a href="#a98b534e1f3e50217b7d0d603846f6fa3">More...</a><br /></td></tr>
 <tr class="separator:a98b534e1f3e50217b7d0d603846f6fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ab28097bd87a10588d53b99ffcfb3dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a8ab28097bd87a10588d53b99ffcfb3dd">readMessage</a> (void)</td></tr>
-<tr class="memdesc:a8ab28097bd87a10588d53b99ffcfb3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot chamado quando o socket recebe uma mensagem de resposta do servidor.  <a href="#a8ab28097bd87a10588d53b99ffcfb3dd">More...</a><br /></td></tr>
-<tr class="separator:a8ab28097bd87a10588d53b99ffcfb3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6def7158f19720b26ac23274b38ddc2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a6def7158f19720b26ac23274b38ddc2d">readMessage</a> (QJsonObject jsonObject)</td></tr>
+<tr class="memdesc:a6def7158f19720b26ac23274b38ddc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot chamado quando o socket recebe uma mensagem de resposta do servidor.  <a href="#a6def7158f19720b26ac23274b38ddc2d">More...</a><br /></td></tr>
+<tr class="separator:a6def7158f19720b26ac23274b38ddc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:acd80142b97ff032e73847b4ad54ea272"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#acd80142b97ff032e73847b4ad54ea272">logged</a> (QString username, bool adminLevel, QString ip, int port)</td></tr>
-<tr class="memdesc:acd80142b97ff032e73847b4ad54ea272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido quando a operação de login é realizada com sucesso.  <a href="#acd80142b97ff032e73847b4ad54ea272">More...</a><br /></td></tr>
-<tr class="separator:acd80142b97ff032e73847b4ad54ea272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34aa4fb816da6adb7813ced2779cc3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#af34aa4fb816da6adb7813ced2779cc3e">logged</a> (QString username, bool adminLevel)</td></tr>
+<tr class="memdesc:af34aa4fb816da6adb7813ced2779cc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido quando a operação de login é realizada com sucesso.  <a href="#af34aa4fb816da6adb7813ced2779cc3e">More...</a><br /></td></tr>
+<tr class="separator:af34aa4fb816da6adb7813ced2779cc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b2fde13842c6557400e0e35b9dd1e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81b2fde13842c6557400e0e35b9dd1e0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a81b2fde13842c6557400e0e35b9dd1e0">quit</a> (void)</td></tr>
 <tr class="memdesc:a81b2fde13842c6557400e0e35b9dd1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido para finalizar a aplicação. <br /></td></tr>
@@ -203,7 +207,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acd80142b97ff032e73847b4ad54ea272"></a>
+<a class="anchor" id="af34aa4fb816da6adb7813ced2779cc3e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -220,19 +224,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>adminLevel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>ip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramname"><em>adminLevel</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -252,8 +244,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
   <table class="params">
     <tr><td class="paramname">username</td><td>Nome do usuário. </td></tr>
     <tr><td class="paramname">adminLevel</td><td>Flag identificando se o usuário é administrador. </td></tr>
-    <tr><td class="paramname">ip</td><td>IP onde o servidor está localizado. </td></tr>
-    <tr><td class="paramname">port</td><td>Porta onde o servidor está escutando. </td></tr>
   </table>
   </dd>
 </dl>
@@ -311,11 +301,11 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 
 <p>Slot chamado para realizar a operação de login. </p>
 <p>Recupera as informações da interface e realiza um requisição de autenticação ao servidor.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d21/classMyLoginDialog.html#a8ab28097bd87a10588d53b99ffcfb3dd" title="Slot chamado quando o socket recebe uma mensagem de resposta do servidor. ">MyLoginDialog::readMessage()</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d21/classMyLoginDialog.html#a6def7158f19720b26ac23274b38ddc2d" title="Slot chamado quando o socket recebe uma mensagem de resposta do servidor. ">MyLoginDialog::readMessage()</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8ab28097bd87a10588d53b99ffcfb3dd"></a>
+<a class="anchor" id="a6def7158f19720b26ac23274b38ddc2d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -325,8 +315,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
         <tr>
           <td class="memname">void MyLoginDialog::readMessage </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">QJsonObject&#160;</td>
+          <td class="paramname"><em>jsonObject</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -339,13 +329,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 
 <p>Slot chamado quando o socket recebe uma mensagem de resposta do servidor. </p>
 <p>Esse método recebe uma resposta do servidor sobre a tentativa de login. Caso positivo emite um signal informando que o usuário foi autenticado. Caso contrário mostra uma janela de erro.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d21/classMyLoginDialog.html#ab850edc55bc360a5271f8da572d9b84b" title="Slot chamado para realizar a operação de login. ">MyLoginDialog::on_login_button_clicked()</a>, <a class="el" href="../../de/d21/classMyLoginDialog.html#acd80142b97ff032e73847b4ad54ea272" title="Signal emitido quando a operação de login é realizada com sucesso. ">MyLoginDialog::logged(QString,bool,QString,int)</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d21/classMyLoginDialog.html#ab850edc55bc360a5271f8da572d9b84b" title="Slot chamado para realizar a operação de login. ">MyLoginDialog::on_login_button_clicked()</a>, MyLoginDialog::logged(QString,bool,QString,int). </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>CalcClient/<a class="el" href="../../d8/df9/mylogindialog_8h_source.html">mylogindialog.h</a></li>
-<li>CalcClient/<a class="el" href="../../d6/d90/mylogindialog_8cpp.html">mylogindialog.cpp</a></li>
+<li>CalcClient/src/gui/<a class="el" href="../../d8/df9/mylogindialog_8h_source.html">mylogindialog.h</a></li>
+<li>CalcClient/src/gui/<a class="el" href="../../d6/d90/mylogindialog_8cpp.html">mylogindialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,9 +1,14 @@
+/*!
+ * \file networkmanagerimpl.cpp
+ * Arquivo contendo a Implementação da Classe NetworkManagerImpl
+ */
+
 #define DEBUG
 
 #include "networkmanagerimpl.h"
 #include <QJsonDocument>
 
-NetworkManager* NetworkManager::instance =nullptr;
+NetworkManager* NetworkManager::instance = nullptr;
 
 NetworkManager* NetworkManager::getInstance(){
     if(instance == nullptr){

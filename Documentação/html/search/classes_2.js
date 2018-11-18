@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['server',['Server',['../db/d00/classServer.html',1,'']]],
-  ['serverdialog',['ServerDialog',['../d2/d58/classServerDialog.html',1,'']]],
-  ['serverdialogimpl',['ServerDialogImpl',['../d1/da6/classServerDialogImpl.html',1,'']]],
-  ['serverimpl',['ServerImpl',['../d4/d62/classServerImpl.html',1,'']]]
+  ['networkmanager',['NetworkManager',['../d6/d6f/classNetworkManager.html',1,'']]],
+  ['networkmanagerimpl',['NetworkManagerImpl',['../d5/dc5/classNetworkManagerImpl.html',1,'']]]
 ];

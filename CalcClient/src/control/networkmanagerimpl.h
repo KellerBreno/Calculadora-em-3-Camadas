@@ -1,3 +1,8 @@
+/*!
+ * \file networkmanagerimpl.h
+ * Arquivo contendo a Declaração da Classe NetworkManagerImpl
+ */
+
 #ifndef NETWORKMANAGERIMPL_H
 #define NETWORKMANAGERIMPL_H
 
@@ -24,8 +29,19 @@ signals:
     void messageReceive(QJsonObject jsonObject) override;
 
 private:
+    /*!
+     * \brief IP do servidor
+     */
     QString ip;
+
+    /*!
+     * \brief Porta do servidor
+     */
     quint16 port;
+
+    /*!
+     * \brief Socket TCP utilizado para conexões
+     */
     QTcpSocket tcpSocket;
 };
 

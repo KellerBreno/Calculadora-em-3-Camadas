@@ -55,7 +55,7 @@ MyCalcWindow::~MyCalcWindow(){
 /*!
  * \brief Método privado para coleta dos dados e envio ao servidor para realização de operações.
  *
- * Este método extrai os dados da interface, encapsula eles em um objeto JSON e envia ao servidor para ser realizada.
+ * Este método extrai os dados da interface e solicita a execução da operação para o NetworkManager.
  *
  * \sa MyCalcWindow::on_execButton_clicked(), MyCalcWindow::on_radioButtonSoma_clicked(), MyCalcWindow::on_radioButtonSub_clicked(),
  * MyCalcWindow::on_radioButtonMult_clicked(), MyCalcWindow::on_radioButtonDiv_clicked(), MyCalcWindow::readMessage().
@@ -128,8 +128,6 @@ void MyCalcWindow::on_radioButtonDiv_clicked(void){
  * \brief Slot chamado para se configurar a calculadora sobre informações de rede e usuário.
  * \param username Username do usuário logado.
  * \param adminLevel Flag determinando se o usuário é administrador ou não.
- * \param ip IP onde o servidor está localizado.
- * \param port Porta onde o servidor está escutando.
  */
 void MyCalcWindow::onUserLogin(QString username, bool adminLevel){
    setEnabled(true);
@@ -153,7 +151,7 @@ void MyCalcWindow::onQuit(void){
 /*!
  * \brief Slot chamado quando o socket recebe uma mensagem de resposta do servidor.
  *
- * Ao receber uma resposta do servidor, este método extrai as informações da mensagem e realiza a operação correspondente.
+ * Ao receber uma resposta do NetworkManager, este método extrai as informações da mensagem e realiza a operação correspondente.
  *
  * \sa MyCalcWindow::execute(), MyCalcWindow::on_actionAllUsers_triggered(), MyCalcWindow::on_actionByUser_triggered().
  */
@@ -211,7 +209,7 @@ void MyCalcWindow::readMessage(QJsonObject jsonObject){
 /*!
  * \brief Slot chamado quando selecionada a opção do menu 'Por Usuário'.
  *
- * Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas pelo usuário.
+ * Esse slot faz uma requisição ao NetworkManager dos dados de todas as operações realizadas pelo usuário.
  *
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
@@ -223,7 +221,7 @@ void MyCalcWindow::on_actionByUser_triggered(void){
 /*!
  * \brief Slot chamado quando selecionada a opção do menu 'Todos os Usuários'.
  *
- * Esse slot faz uma requisição ao servidor dos dados de todas as operações realizadas por todos os usuários.
+ * Esse slot faz uma requisição ao NetworkManager dos dados de todas as operações realizadas por todos os usuários.
  *
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */

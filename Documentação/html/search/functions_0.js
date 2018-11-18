@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['databasehelperimpl',['DatabaseHelperImpl',['../d5/d1d/classDatabaseHelperImpl.html#a60f67f9c6183e02ffab826bf254fef10',1,'DatabaseHelperImpl::DatabaseHelperImpl()'],['../d5/d1d/classDatabaseHelperImpl.html#a88e80bd1c92b35e3e8a4fe1238215245',1,'DatabaseHelperImpl::DatabaseHelperImpl(const DatabaseHelperImpl &amp;rhs)']]],
-  ['deletelater',['deleteLater',['../db/d07/classWorkerThread.html#abf55cfb94dd10a2a3b2ff3896473c11b',1,'WorkerThread::deleteLater()'],['../de/da0/classWorkerThreadImpl.html#a0c7acd90839e238ff12eba997132f532',1,'WorkerThreadImpl::deleteLater()']]]
+  ['configure',['configure',['../d6/d6f/classNetworkManager.html#ae7b073b1deb224a6cb7af0e4d3d158de',1,'NetworkManager::configure()'],['../d5/dc5/classNetworkManagerImpl.html#a4ad2bada544bc02ea1f9921f3f6f62c2',1,'NetworkManagerImpl::configure()']]]
 ];

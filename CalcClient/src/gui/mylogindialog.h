@@ -40,8 +40,6 @@ signals:
      * \brief Signal emitido quando a operação de login é realizada com sucesso.
      * \param username Nome do usuário.
      * \param adminLevel Flag identificando se o usuário é administrador.
-     * \param ip IP onde o servidor está localizado.
-     * \param port Porta onde o servidor está escutando.
      */
     void logged(QString username, bool adminLevel);
 

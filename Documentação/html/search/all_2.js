@@ -8,5 +8,6 @@ var searchData=
   ['databasehelperimpltest',['DatabaseHelperImplTest',['../d5/d1d/classDatabaseHelperImpl.html#adebc71025cd8245ef1624f16ffbca46b',1,'DatabaseHelperImpl']]],
   ['debug',['DEBUG',['../d5/d05/mycalcwindow_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;mycalcwindow.cpp'],['../d6/d90/mylogindialog_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;mylogindialog.cpp'],['../d3/d30/workerthreadimpl_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'DEBUG():&#160;workerthreadimpl.cpp']]],
   ['deletelater',['deleteLater',['../db/d07/classWorkerThread.html#abf55cfb94dd10a2a3b2ff3896473c11b',1,'WorkerThread::deleteLater()'],['../de/da0/classWorkerThreadImpl.html#a0c7acd90839e238ff12eba997132f532',1,'WorkerThreadImpl::deleteLater()']]],
-  ['dialogtest',['DialogTest',['../d1/da6/classServerDialogImpl.html#a9fe923be634f4d12f5a825141fafb85f',1,'ServerDialogImpl']]]
+  ['dialogtest',['DialogTest',['../d1/da6/classServerDialogImpl.html#a9fe923be634f4d12f5a825141fafb85f',1,'ServerDialogImpl']]],
+  ['dooperation',['doOperation',['../d6/d6f/classNetworkManager.html#a7477e7bdee53e76ead1b711d2976e1e1',1,'NetworkManager::doOperation()'],['../d5/dc5/classNetworkManagerImpl.html#a18fcb6129bcaa5f7f225d92ac5d6cd1c',1,'NetworkManagerImpl::doOperation()']]]
 ];
