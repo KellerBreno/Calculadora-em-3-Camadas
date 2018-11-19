@@ -26,7 +26,7 @@ Collaboration diagram for My\+Login\+Dialog\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=236pt]{db/d47/classMyLoginDialog__coll__graph}
+\includegraphics[width=293pt]{db/d47/classMyLoginDialog__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
@@ -41,7 +41,7 @@ void \hyperlink{classMyLoginDialog_a6def7158f19720b26ac23274b38ddc2d}{read\+Mess
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}{logged} (Q\+String username, bool admin\+Level)
+void \hyperlink{classMyLoginDialog_ab3abd797b7dafbb9b28672d9092c7bec}{logged} (\hyperlink{classUser}{User} $\ast$\hyperlink{classMyLoginDialog_a0827b7a88e7c312902a07cc17b0c9887}{user})
 \begin{DoxyCompactList}\small\item\em Signal emitido quando a operação de login é realizada com sucesso. \end{DoxyCompactList}\item 
 void \hyperlink{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{quit} (void)\hypertarget{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{}\label{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}
 
@@ -56,7 +56,10 @@ void \hyperlink{classMyLoginDialog_a81b2fde13842c6557400e0e35b9dd1e0}{quit} (voi
 \item 
 Q\+Tcp\+Socket \hyperlink{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}{tcp\+Socket}\hypertarget{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}{}\label{classMyLoginDialog_aea07f561f3a3e17b6596da377a538e4f}
 
-\begin{DoxyCompactList}\small\item\em T\+C\+P\+Socket utilizado pela aplicação para comunicar com servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em T\+C\+P\+Socket utilizado pela aplicação para comunicar com servidor. \end{DoxyCompactList}\item 
+\hyperlink{classUser}{User} $\ast$ \hyperlink{classMyLoginDialog_a0827b7a88e7c312902a07cc17b0c9887}{user}\hypertarget{classMyLoginDialog_a0827b7a88e7c312902a07cc17b0c9887}{}\label{classMyLoginDialog_a0827b7a88e7c312902a07cc17b0c9887}
+
+\begin{DoxyCompactList}\small\item\em Referencia ao usuário da aplicação. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -96,19 +99,16 @@ Inicializa o atributo parent, configura a interface por meio do método \textquo
 \index{logged@{logged}!My\+Login\+Dialog@{My\+Login\+Dialog}}
 \subsubsection[{\texorpdfstring{logged}{logged}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Login\+Dialog\+::logged (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username, }
-\item[{bool}]{admin\+Level}
+\item[{{\bf User} $\ast$}]{user}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}{}\label{classMyLoginDialog_af34aa4fb816da6adb7813ced2779cc3e}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{classMyLoginDialog_ab3abd797b7dafbb9b28672d9092c7bec}{}\label{classMyLoginDialog_ab3abd797b7dafbb9b28672d9092c7bec}
 
 
 Signal emitido quando a operação de login é realizada com sucesso. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Nome do usuário. \\
-\hline
-{\em admin\+Level} & Flag identificando se o usuário é administrador. \\
+{\em user} & Referencia ao usuário da aplicação. \\
 \hline
 \end{DoxyParams}
 \index{My\+Login\+Dialog@{My\+Login\+Dialog}!on\+\_\+cancel\+\_\+button\+\_\+clicked@{on\+\_\+cancel\+\_\+button\+\_\+clicked}}

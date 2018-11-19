@@ -1,3 +1,8 @@
+/*!
+ * \file userimpl.h
+ * Arquivo contendo a Declaração da Classe UserImpl
+ */
+
 #ifndef USERIMPL_H
 #define USERIMPL_H
 
@@ -7,6 +12,10 @@
 
 using namespace std;
 
+/*!
+ * \class UserImpl
+ * \brief Implementação da interface User
+ */
 class UserImpl: public User{
 public:
     UserImpl();
@@ -18,8 +27,19 @@ public:
     virtual Role* asRole(QString name) override;
 
 private:
+    /*!
+     * \brief Nome do usuário
+     */
     QString username;
+
+    /*!
+     * \brief Senha do usuário
+     */
     QString password;
+
+    /*!
+     * \brief Array contendo os papeis do usuário
+     */
     vector<Role*> roles;
 };
 

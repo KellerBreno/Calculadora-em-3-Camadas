@@ -17,6 +17,9 @@ NetworkManager* NetworkManager::getInstance(){
     return instance;
 }
 
+/*!
+ * \brief Construtor padrão
+ */
 NetworkManagerImpl::NetworkManagerImpl(){
     ip = "";
     port = 0;

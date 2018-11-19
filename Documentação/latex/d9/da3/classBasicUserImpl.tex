@@ -1,0 +1,158 @@
+\hypertarget{classBasicUserImpl}{}\section{Basic\+User\+Impl Class Reference}
+\label{classBasicUserImpl}\index{Basic\+User\+Impl@{Basic\+User\+Impl}}
+
+
+Implementação da interface \hyperlink{classBasicUser}{Basic\+User}.  
+
+
+
+
+{\ttfamily \#include $<$basicuserimpl.\+h$>$}
+
+
+
+Inheritance diagram for Basic\+User\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{de/d1f/classBasicUserImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+User\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{d7/dcb/classBasicUserImpl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBasicUserImpl_a833561b430281e72ab7ba48ab3d7b749}{Basic\+User\+Impl} ()\hypertarget{classBasicUserImpl_a833561b430281e72ab7ba48ab3d7b749}{}\label{classBasicUserImpl_a833561b430281e72ab7ba48ab3d7b749}
+
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+virtual Q\+String \hyperlink{classBasicUserImpl_aaf68b785533f15a61fa30cdef3c82145}{get\+Role\+Name} () override
+\begin{DoxyCompactList}\small\item\em Método para acessar o nome papel. \end{DoxyCompactList}\item 
+virtual \hyperlink{classUser}{User} $\ast$ \hyperlink{classBasicUserImpl_ace1ba87379b0b3817a089d6933dc0dd7}{get\+User} () override
+\begin{DoxyCompactList}\small\item\em Método para acessar o usuário correspondente ao papel. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classBasicUserImpl_af94875b3b06f1f1effc3a58fce087e5d}{set\+User} (\hyperlink{classUser}{User} $\ast$\hyperlink{classBasicUserImpl_a1c6cfd2fe227c0eae9bdded2afecf1ec}{user}) override
+\begin{DoxyCompactList}\small\item\em Método para associar um usuário a um papel. \end{DoxyCompactList}\item 
+virtual Q\+String \hyperlink{classBasicUserImpl_ad5c2ba5c4d7b179e12f25ad843544de0}{get\+Username} () override
+\begin{DoxyCompactList}\small\item\em Acessa o nome do usuário. \end{DoxyCompactList}\item 
+virtual Q\+String \hyperlink{classBasicUserImpl_a94c89958edd477672063ba246ef77f8a}{get\+Password} () override
+\begin{DoxyCompactList}\small\item\em Acessa a senha do usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUser}{User} $\ast$ \hyperlink{classBasicUserImpl_a1c6cfd2fe227c0eae9bdded2afecf1ec}{user}\hypertarget{classBasicUserImpl_a1c6cfd2fe227c0eae9bdded2afecf1ec}{}\label{classBasicUserImpl_a1c6cfd2fe227c0eae9bdded2afecf1ec}
+
+\begin{DoxyCompactList}\small\item\em Ponteiro para o usuário correspondente a este papel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementação da interface \hyperlink{classBasicUser}{Basic\+User}. 
+
+\subsection{Member Function Documentation}
+\index{Basic\+User\+Impl@{Basic\+User\+Impl}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!Basic\+User\+Impl@{Basic\+User\+Impl}}
+\subsubsection[{\texorpdfstring{get\+Password() override}{getPassword() override}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Basic\+User\+Impl\+::get\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBasicUserImpl_a94c89958edd477672063ba246ef77f8a}{}\label{classBasicUserImpl_a94c89958edd477672063ba246ef77f8a}
+
+
+Acessa a senha do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Senha do usuário 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBasicUser_a240bd2f9974357c921a79499355b1e18}{Basic\+User}.
+
+\index{Basic\+User\+Impl@{Basic\+User\+Impl}!get\+Role\+Name@{get\+Role\+Name}}
+\index{get\+Role\+Name@{get\+Role\+Name}!Basic\+User\+Impl@{Basic\+User\+Impl}}
+\subsubsection[{\texorpdfstring{get\+Role\+Name() override}{getRoleName() override}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Basic\+User\+Impl\+::get\+Role\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBasicUserImpl_aaf68b785533f15a61fa30cdef3c82145}{}\label{classBasicUserImpl_aaf68b785533f15a61fa30cdef3c82145}
+
+
+Método para acessar o nome papel. 
+
+\begin{DoxyReturn}{Returns}
+Nome do papel 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classRole_a295daeaed997d10f9bd3d03e972318c1}{Role}.
+
+\index{Basic\+User\+Impl@{Basic\+User\+Impl}!get\+User@{get\+User}}
+\index{get\+User@{get\+User}!Basic\+User\+Impl@{Basic\+User\+Impl}}
+\subsubsection[{\texorpdfstring{get\+User() override}{getUser() override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf User} $\ast$ Basic\+User\+Impl\+::get\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBasicUserImpl_ace1ba87379b0b3817a089d6933dc0dd7}{}\label{classBasicUserImpl_ace1ba87379b0b3817a089d6933dc0dd7}
+
+
+Método para acessar o usuário correspondente ao papel. 
+
+\begin{DoxyReturn}{Returns}
+Usuário associado ao papel 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classRole_abad7de00bc38b11eaae8a79069773221}{Role}.
+
+\index{Basic\+User\+Impl@{Basic\+User\+Impl}!get\+Username@{get\+Username}}
+\index{get\+Username@{get\+Username}!Basic\+User\+Impl@{Basic\+User\+Impl}}
+\subsubsection[{\texorpdfstring{get\+Username() override}{getUsername() override}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Basic\+User\+Impl\+::get\+Username (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBasicUserImpl_ad5c2ba5c4d7b179e12f25ad843544de0}{}\label{classBasicUserImpl_ad5c2ba5c4d7b179e12f25ad843544de0}
+
+
+Acessa o nome do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Nome do usuário 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classBasicUser_ae5ed7101550b9c9d280df5adf030975d}{Basic\+User}.
+
+\index{Basic\+User\+Impl@{Basic\+User\+Impl}!set\+User@{set\+User}}
+\index{set\+User@{set\+User}!Basic\+User\+Impl@{Basic\+User\+Impl}}
+\subsubsection[{\texorpdfstring{set\+User(\+User $\ast$user) override}{setUser(User *user) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+User\+Impl\+::set\+User (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classBasicUserImpl_af94875b3b06f1f1effc3a58fce087e5d}{}\label{classBasicUserImpl_af94875b3b06f1f1effc3a58fce087e5d}
+
+
+Método para associar um usuário a um papel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Usuário a ser associado \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classRole_ab5581d91192fa578070e80b0247dde5a}{Role}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Client/src/data/\hyperlink{basicuserimpl_8h}{basicuserimpl.\+h}\item 
+Calc\+Client/src/data/\hyperlink{basicuserimpl_8cpp}{basicuserimpl.\+cpp}\end{DoxyCompactItemize}

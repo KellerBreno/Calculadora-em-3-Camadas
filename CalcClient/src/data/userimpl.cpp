@@ -1,5 +1,13 @@
+/*!
+ * \file userimpl.cpp
+ * Arquivo contendo a Implementação da Classe UserImpl
+ */
+
 #include "userimpl.h"
 
+/*!
+ * \brief Construtor padrão
+ */
 UserImpl::UserImpl(){
 
 }

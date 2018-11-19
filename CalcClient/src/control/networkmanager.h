@@ -39,14 +39,13 @@ public:
 
     /*!
      * \brief Método para realizar um login
-     * \param username Nome do usuário
-     * \param password Senha do usuário
+     * \param basicUser Objeto representando um usuário basico do sistema
      */
     virtual void login(BasicUser *basicUser) = 0;
 
     /*!
      * \brief Método para realizar operações matematicas
-     * \param username Nome do usuário
+     * \param basicUser Objeto representando um usuário basico do sistema
      * \param factor1 Primeiro fator da operação
      * \param factor2 Segundo fator da operação
      * \param opCode Código da operação
@@ -55,14 +54,14 @@ public:
 
     /*!
      * \brief Método para recuperar o relatorio de operações do usuário
-     * \param username Nome do usuário a ser gerado o relatorio
+     * \param basicUser Objeto representando um usuário basico do sistema
      * \sa NetworkManager::reportAllUsers()
      */
     virtual void reportByUser(BasicUser *basicUser) = 0;
 
     /*!
      * \brief Método para recuperar o relatorio de operações de todos os usuários
-     * \param username Nome do usuário solicitando
+     * \param adminUser Objeto representando um usuário administrador do sistema
      * \sa NetworkManager::reportByUser()
      */
     virtual void reportAllUsers(AdminUser *adminUser) = 0;

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['error',['error',['../de/da0/classWorkerThreadImpl.html#ae260562530b71dc55a6d360d5e4d896d',1,'WorkerThreadImpl']]],
-  ['errorstring',['errorString',['../db/d00/classServer.html#a66eb77ac2362bdae05081591389c3cf5',1,'Server::errorString()'],['../d4/d62/classServerImpl.html#aaadf6ebb053052ee61303848374e8d20',1,'ServerImpl::errorString()']]],
-  ['execute',['execute',['../d2/dd3/classMyCalcWindow.html#a734b9dd51ee199d930855444695625c7',1,'MyCalcWindow']]]
+  ['configure',['configure',['../d6/d6f/classNetworkManager.html#ae7b073b1deb224a6cb7af0e4d3d158de',1,'NetworkManager::configure()'],['../d5/dc5/classNetworkManagerImpl.html#a4ad2bada544bc02ea1f9921f3f6f62c2',1,'NetworkManagerImpl::configure()']]]
 ];

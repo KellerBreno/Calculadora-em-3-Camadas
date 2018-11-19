@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['chartwindow',['chartWindow',['../d2/dd3/classMyCalcWindow.html#a98ecf548e0cb3586ff4afc33bdfacb7a',1,'MyCalcWindow']]]
+  ['basic_5fuser_5fname',['BASIC_USER_NAME',['../d4/d79/classBasicUser.html#aaaea5b09e42b753e0ea0331797a48a3f',1,'BasicUser']]]
 ];

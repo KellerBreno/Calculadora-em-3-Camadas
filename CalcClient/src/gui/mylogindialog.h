@@ -40,8 +40,7 @@ public slots:
 signals:
     /*!
      * \brief Signal emitido quando a operação de login é realizada com sucesso.
-     * \param username Nome do usuário.
-     * \param adminLevel Flag identificando se o usuário é administrador.
+     * \param user Referencia ao usuário da aplicação.
      */
     void logged(User *user);
 
@@ -56,6 +55,9 @@ private:
      */
     QTcpSocket tcpSocket;
 
+    /*!
+     * \brief Referencia ao usuário da aplicação
+     */
     User *user;
 };
 

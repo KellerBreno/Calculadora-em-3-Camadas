@@ -26,7 +26,7 @@ Collaboration diagram for My\+Calc\+Window\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=266pt]{d6/dbc/classMyCalcWindow__coll__graph}
+\includegraphics[width=322pt]{d6/dbc/classMyCalcWindow__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
@@ -34,7 +34,7 @@ Collaboration diagram for My\+Calc\+Window\+:
 \item 
 void \hyperlink{classMyCalcWindow_a6fdaf67619d3127503232c656e712656}{on\+\_\+exec\+Button\+\_\+clicked} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando se clica no botão \textquotesingle{}Executar\textquotesingle{} e executa uma operação. \end{DoxyCompactList}\item 
-void \hyperlink{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}{on\+\_\+radio\+Button\+Soma\+\_\+clicked} (void)
+void \hyperlink{classMyCalcWindow_ae1c714a5ad30c0fc67b9944481b30a05}{on\+\_\+radio\+Button\+Add\+\_\+clicked} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando se clica no radio button da operação soma. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_a01fac328f5546feb830a67a7d35cc7f5}{on\+\_\+radio\+Button\+Sub\+\_\+clicked} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando se clica no radio button da operação subtração. \end{DoxyCompactList}\item 
@@ -46,7 +46,9 @@ void \hyperlink{classMyCalcWindow_ad018832daea504f486bc1cb26f5cb0ec}{on\+\_\+act
 \begin{DoxyCompactList}\small\item\em Slot chamado quando selecionada a opção do menu \textquotesingle{}Por Usuário\textquotesingle{}. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_ab50a651bb1983993008960ad39d93ed6}{on\+\_\+action\+All\+Users\+\_\+triggered} (void)
 \begin{DoxyCompactList}\small\item\em Slot chamado quando selecionada a opção do menu \textquotesingle{}Todos os Usuários\textquotesingle{}. \end{DoxyCompactList}\item 
-void \hyperlink{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}{on\+User\+Login} (Q\+String \hyperlink{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{username}, bool \hyperlink{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}{admin\+Level})
+void \hyperlink{classMyCalcWindow_ae563c8fa18e6d1c3a7c2c1014a133e66}{on\+\_\+user\+Role\+\_\+current\+Index\+Changed} (int)
+\begin{DoxyCompactList}\small\item\em Método para delegar a atualização da interface dado uma mudança de papel do usuário. \end{DoxyCompactList}\item 
+void \hyperlink{classMyCalcWindow_aa04caeaafdba97eeb25d3dd92be4d545}{on\+User\+Login} (\hyperlink{classUser}{User} $\ast$\hyperlink{classMyCalcWindow_a730189195d0831ae9fee62f7c519e439}{user})
 \begin{DoxyCompactList}\small\item\em Slot chamado para se configurar a calculadora sobre informações de rede e usuário. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}{on\+Quit} (void)\hypertarget{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}{}\label{classMyCalcWindow_a809b1da213d1424ba098c1f0ee2d0bd5}
 
@@ -66,22 +68,30 @@ virtual \hyperlink{classMyCalcWindow_a6226362b86860c067418d16b7da1e1e2}{$\sim$\+
 void \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{execute} (void)
 \begin{DoxyCompactList}\small\item\em Método privado para coleta dos dados e envio ao servidor para realização de operações. \end{DoxyCompactList}\item 
 void \hyperlink{classMyCalcWindow_ade7d295cb55effe865349b7eef1a6d1a}{show\+Pie\+Chart} (Q\+String title, vector$<$ pair$<$ Q\+String, int $>$$>$ operations)
-\begin{DoxyCompactList}\small\item\em Método é utilizado para se gerar exibições em gráfico pizza das operações realizadas, sejam por todos os usuários ou somente um deles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Método é utilizado para se gerar exibições em gráfico pizza das operações realizadas, sejam por todos os usuários ou somente um deles. \end{DoxyCompactList}\item 
+void \hyperlink{classMyCalcWindow_a9e1e6c80336ba383e2d2a8419446e1f9}{setup\+User\+Ui} (int role\+Code)
+\begin{DoxyCompactList}\small\item\em Método para alterar a interface baseado no papel do usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Q\+String \hyperlink{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{username}\hypertarget{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}{}\label{classMyCalcWindow_aaa828b24dd233138d200de623762e95c}
+\hyperlink{classUser}{User} $\ast$ \hyperlink{classMyCalcWindow_a730189195d0831ae9fee62f7c519e439}{user}\hypertarget{classMyCalcWindow_a730189195d0831ae9fee62f7c519e439}{}\label{classMyCalcWindow_a730189195d0831ae9fee62f7c519e439}
 
-\begin{DoxyCompactList}\small\item\em Username do usuário conectado. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Referencia ao usuário da aplicação. \end{DoxyCompactList}\item 
 Q\+Tcp\+Socket \hyperlink{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}{tcp\+Socket}\hypertarget{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}{}\label{classMyCalcWindow_aa07c81871dc4b11ab83324b544d66733}
 
 \begin{DoxyCompactList}\small\item\em T\+C\+P\+Socket utilizado pela aplicação para comunicar com servidor. \end{DoxyCompactList}\item 
-bool \hyperlink{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}{admin\+Level}\hypertarget{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}{}\label{classMyCalcWindow_a80f22185e35ea4a28825b0d2518df67c}
-
-\begin{DoxyCompactList}\small\item\em Flag representando que o usuário é ou não administrador. \end{DoxyCompactList}\item 
 Q\+Main\+Window $\ast$ \hyperlink{classMyCalcWindow_a98ecf548e0cb3586ff4afc33bdfacb7a}{chart\+Window}\hypertarget{classMyCalcWindow_a98ecf548e0cb3586ff4afc33bdfacb7a}{}\label{classMyCalcWindow_a98ecf548e0cb3586ff4afc33bdfacb7a}
 
 \begin{DoxyCompactList}\small\item\em Main\+Window auxiliar para exibição de gráficos de operações. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classMyCalcWindow_a5aad7da85f794398e01c5b553eff0fae}{U\+S\+ER} = 0\hypertarget{classMyCalcWindow_a5aad7da85f794398e01c5b553eff0fae}{}\label{classMyCalcWindow_a5aad7da85f794398e01c5b553eff0fae}
+
+\begin{DoxyCompactList}\small\item\em Flag numerica representando o papel usuário. \end{DoxyCompactList}\item 
+static const int \hyperlink{classMyCalcWindow_ac29d883c4ff53cc9d01c3e2add2fec52}{A\+D\+M\+IN} = 1\hypertarget{classMyCalcWindow_ac29d883c4ff53cc9d01c3e2add2fec52}{}\label{classMyCalcWindow_ac29d883c4ff53cc9d01c3e2add2fec52}
+
+\begin{DoxyCompactList}\small\item\em Flag numerica representando o papel administrador. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -145,7 +155,7 @@ Método privado para coleta dos dados e envio ao servidor para realização de o
 Este método extrai os dados da interface e solicita a execução da operação para o \hyperlink{classNetworkManager}{Network\+Manager}.
 
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classMyCalcWindow_a6fdaf67619d3127503232c656e712656}{My\+Calc\+Window\+::on\+\_\+exec\+Button\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Soma\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a01fac328f5546feb830a67a7d35cc7f5}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Sub\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a553593de7766d99faf23a2053ddb4281}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Mult\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a1ac314ac5a743effc49465a295f796a4}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Div\+\_\+clicked()}, \hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{My\+Calc\+Window\+::read\+Message()}. 
+\hyperlink{classMyCalcWindow_a6fdaf67619d3127503232c656e712656}{My\+Calc\+Window\+::on\+\_\+exec\+Button\+\_\+clicked()}, My\+Calc\+Window\+::on\+\_\+radio\+Button\+Soma\+\_\+clicked(), \hyperlink{classMyCalcWindow_a01fac328f5546feb830a67a7d35cc7f5}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Sub\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a553593de7766d99faf23a2053ddb4281}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Mult\+\_\+clicked()}, \hyperlink{classMyCalcWindow_a1ac314ac5a743effc49465a295f796a4}{My\+Calc\+Window\+::on\+\_\+radio\+Button\+Div\+\_\+clicked()}, \hyperlink{classMyCalcWindow_aaa868eba4e3ee5a52d28c0c34bbbd8cd}{My\+Calc\+Window\+::read\+Message()}. 
 \end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+action\+All\+Users\+\_\+triggered@{on\+\_\+action\+All\+Users\+\_\+triggered}}
 \index{on\+\_\+action\+All\+Users\+\_\+triggered@{on\+\_\+action\+All\+Users\+\_\+triggered}!My\+Calc\+Window@{My\+Calc\+Window}}
@@ -193,6 +203,20 @@ Slot chamado quando se clica no botão \textquotesingle{}Executar\textquotesingl
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}. 
 \end{DoxySeeAlso}
+\index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+radio\+Button\+Add\+\_\+clicked@{on\+\_\+radio\+Button\+Add\+\_\+clicked}}
+\index{on\+\_\+radio\+Button\+Add\+\_\+clicked@{on\+\_\+radio\+Button\+Add\+\_\+clicked}!My\+Calc\+Window@{My\+Calc\+Window}}
+\subsubsection[{\texorpdfstring{on\+\_\+radio\+Button\+Add\+\_\+clicked}{on_radioButtonAdd_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+\_\+radio\+Button\+Add\+\_\+clicked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_ae1c714a5ad30c0fc67b9944481b30a05}{}\label{classMyCalcWindow_ae1c714a5ad30c0fc67b9944481b30a05}
+
+
+Slot chamado quando se clica no radio button da operação soma. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}. 
+\end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+radio\+Button\+Div\+\_\+clicked@{on\+\_\+radio\+Button\+Div\+\_\+clicked}}
 \index{on\+\_\+radio\+Button\+Div\+\_\+clicked@{on\+\_\+radio\+Button\+Div\+\_\+clicked}!My\+Calc\+Window@{My\+Calc\+Window}}
 \subsubsection[{\texorpdfstring{on\+\_\+radio\+Button\+Div\+\_\+clicked}{on_radioButtonDiv_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+\_\+radio\+Button\+Div\+\_\+clicked (
@@ -221,20 +245,6 @@ Slot chamado quando se clica no radio button da operação multiplicação.
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}. 
 \end{DoxySeeAlso}
-\index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+radio\+Button\+Soma\+\_\+clicked@{on\+\_\+radio\+Button\+Soma\+\_\+clicked}}
-\index{on\+\_\+radio\+Button\+Soma\+\_\+clicked@{on\+\_\+radio\+Button\+Soma\+\_\+clicked}!My\+Calc\+Window@{My\+Calc\+Window}}
-\subsubsection[{\texorpdfstring{on\+\_\+radio\+Button\+Soma\+\_\+clicked}{on_radioButtonSoma_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+\_\+radio\+Button\+Soma\+\_\+clicked (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}{}\label{classMyCalcWindow_a751fb8b918aa9e737268bae50010681d}
-
-
-Slot chamado quando se clica no radio button da operação soma. 
-
-\begin{DoxySeeAlso}{See also}
-\hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}. 
-\end{DoxySeeAlso}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+radio\+Button\+Sub\+\_\+clicked@{on\+\_\+radio\+Button\+Sub\+\_\+clicked}}
 \index{on\+\_\+radio\+Button\+Sub\+\_\+clicked@{on\+\_\+radio\+Button\+Sub\+\_\+clicked}!My\+Calc\+Window@{My\+Calc\+Window}}
 \subsubsection[{\texorpdfstring{on\+\_\+radio\+Button\+Sub\+\_\+clicked}{on_radioButtonSub_clicked}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+\_\+radio\+Button\+Sub\+\_\+clicked (
@@ -249,23 +259,36 @@ Slot chamado quando se clica no radio button da operação subtração.
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}. 
 \end{DoxySeeAlso}
+\index{My\+Calc\+Window@{My\+Calc\+Window}!on\+\_\+user\+Role\+\_\+current\+Index\+Changed@{on\+\_\+user\+Role\+\_\+current\+Index\+Changed}}
+\index{on\+\_\+user\+Role\+\_\+current\+Index\+Changed@{on\+\_\+user\+Role\+\_\+current\+Index\+Changed}!My\+Calc\+Window@{My\+Calc\+Window}}
+\subsubsection[{\texorpdfstring{on\+\_\+user\+Role\+\_\+current\+Index\+Changed}{on_userRole_currentIndexChanged}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+\_\+user\+Role\+\_\+current\+Index\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_ae563c8fa18e6d1c3a7c2c1014a133e66}{}\label{classMyCalcWindow_ae563c8fa18e6d1c3a7c2c1014a133e66}
+
+
+Método para delegar a atualização da interface dado uma mudança de papel do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Opção selecionada no combo box \\
+\hline
+\end{DoxyParams}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!on\+User\+Login@{on\+User\+Login}}
 \index{on\+User\+Login@{on\+User\+Login}!My\+Calc\+Window@{My\+Calc\+Window}}
 \subsubsection[{\texorpdfstring{on\+User\+Login}{onUserLogin}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::on\+User\+Login (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username, }
-\item[{bool}]{admin\+Level}
+\item[{{\bf User} $\ast$}]{user}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}{}\label{classMyCalcWindow_afb652f194d2ece60f37232f23bf05ec9}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{classMyCalcWindow_aa04caeaafdba97eeb25d3dd92be4d545}{}\label{classMyCalcWindow_aa04caeaafdba97eeb25d3dd92be4d545}
 
 
 Slot chamado para se configurar a calculadora sobre informações de rede e usuário. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Username do usuário logado. \\
-\hline
-{\em admin\+Level} & Flag determinando se o usuário é administrador ou não. \\
+{\em user} & Referencia ao usuário da aplicação. \\
 \hline
 \end{DoxyParams}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!read\+Message@{read\+Message}}
@@ -284,6 +307,22 @@ Ao receber uma resposta do \hyperlink{classNetworkManager}{Network\+Manager}, es
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classMyCalcWindow_a734b9dd51ee199d930855444695625c7}{My\+Calc\+Window\+::execute()}, \hyperlink{classMyCalcWindow_ab50a651bb1983993008960ad39d93ed6}{My\+Calc\+Window\+::on\+\_\+action\+All\+Users\+\_\+triggered()}, \hyperlink{classMyCalcWindow_ad018832daea504f486bc1cb26f5cb0ec}{My\+Calc\+Window\+::on\+\_\+action\+By\+User\+\_\+triggered()}. 
 \end{DoxySeeAlso}
+\index{My\+Calc\+Window@{My\+Calc\+Window}!setup\+User\+Ui@{setup\+User\+Ui}}
+\index{setup\+User\+Ui@{setup\+User\+Ui}!My\+Calc\+Window@{My\+Calc\+Window}}
+\subsubsection[{\texorpdfstring{setup\+User\+Ui(int role\+Code)}{setupUserUi(int roleCode)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::setup\+User\+Ui (
+\begin{DoxyParamCaption}
+\item[{int}]{role\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classMyCalcWindow_a9e1e6c80336ba383e2d2a8419446e1f9}{}\label{classMyCalcWindow_a9e1e6c80336ba383e2d2a8419446e1f9}
+
+
+Método para alterar a interface baseado no papel do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role\+Code} & código do papel do usuário \\
+\hline
+\end{DoxyParams}
 \index{My\+Calc\+Window@{My\+Calc\+Window}!show\+Pie\+Chart@{show\+Pie\+Chart}}
 \index{show\+Pie\+Chart@{show\+Pie\+Chart}!My\+Calc\+Window@{My\+Calc\+Window}}
 \subsubsection[{\texorpdfstring{show\+Pie\+Chart(\+Q\+String title, vector$<$ pair$<$ Q\+String, int $>$$>$ operations)}{showPieChart(QString title, vector< pair< QString, int >> operations)}}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Calc\+Window\+::show\+Pie\+Chart (

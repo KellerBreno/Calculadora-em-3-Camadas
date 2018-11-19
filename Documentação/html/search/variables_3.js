@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['instance',['instance',['../d6/d6f/classNetworkManager.html#a1bf872fb0f00ebc5ed6fecd2016874e2',1,'NetworkManager']]],
-  ['ip',['ip',['../d5/dc5/classNetworkManagerImpl.html#ac5d5c68c8000d8afef7632259e19f788',1,'NetworkManagerImpl']]]
+  ['databasehelper',['databaseHelper',['../d4/d62/classServerImpl.html#af78b294c790b327b0023f295c5d7508c',1,'ServerImpl::databaseHelper()'],['../de/da0/classWorkerThreadImpl.html#a6a64f8daf91e56abf94c5a92bfc0fb88',1,'WorkerThreadImpl::databaseHelper()']]]
 ];

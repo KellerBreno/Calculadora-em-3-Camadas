@@ -1,5 +1,12 @@
 <map id="CalcClient/src/gui/mylogindialog.cpp" name="CalcClient/src/gui/mylogindialog.cpp">
-<area shape="rect" id="node2" href="$d8/df9/mylogindialog_8h.html" title="mylogindialog.h" alt="" coords="154,95,266,121"/>
-<area shape="rect" id="node15" href="$d7/d81/networkmanagerimpl_8h.html" title="control/networkmanagerimpl.h" alt="" coords="341,95,537,121"/>
-<area shape="rect" id="node16" href="$d7/d8a/networkmanager_8h.html" title="networkmanager.h" alt="" coords="408,169,537,196"/>
+<area shape="rect" id="node2" href="$d8/df9/mylogindialog_8h.html" title="mylogindialog.h" alt="" coords="309,95,421,121"/>
+<area shape="rect" id="node16" href="$d7/d81/networkmanagerimpl_8h.html" title="control/networkmanagerimpl.h" alt="" coords="88,95,284,121"/>
+<area shape="rect" id="node22" href="$dd/d24/adminuserimpl_8h.html" title="data/adminuserimpl.h" alt="" coords="495,95,642,121"/>
+<area shape="rect" id="node23" href="$d5/d2b/basicuserimpl_8h.html" title="data/basicuserimpl.h" alt="" coords="667,95,809,121"/>
+<area shape="rect" id="node24" href="$d2/d00/userimpl_8h.html" title="data/userimpl.h" alt="" coords="833,95,944,121"/>
+<area shape="rect" id="node6" href="$d8/ddb/user_8h.html" title="data/user.h" alt="" coords="613,169,700,196"/>
+<area shape="rect" id="node17" href="$d7/d8a/networkmanager_8h.html" title="networkmanager.h" alt="" coords="5,169,135,196"/>
+<area shape="rect" id="node19" href="$d9/dcf/adminuser_8h.html" title="data/adminuser.h" alt="" coords="499,244,622,271"/>
+<area shape="rect" id="node21" href="$dd/dcd/basicuser_8h.html" title="data/basicuser.h" alt="" coords="647,244,765,271"/>
+<area shape="rect" id="node20" href="$df/df3/role_8h.html" title="role.h" alt="" coords="720,319,775,345"/>
 </map>

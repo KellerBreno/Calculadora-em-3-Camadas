@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['chartwindow',['chartWindow',['../d2/dd3/classMyCalcWindow.html#a98ecf548e0cb3586ff4afc33bdfacb7a',1,'MyCalcWindow']]],
-  ['configure',['configure',['../d6/d6f/classNetworkManager.html#ae7b073b1deb224a6cb7af0e4d3d158de',1,'NetworkManager::configure()'],['../d5/dc5/classNetworkManagerImpl.html#a4ad2bada544bc02ea1f9921f3f6f62c2',1,'NetworkManagerImpl::configure()']]],
-  ['calculadora_20em_203_20camadas',['Calculadora em 3 Camadas',['../index.html',1,'']]]
+  ['basic_5fuser_5fname',['BASIC_USER_NAME',['../d4/d79/classBasicUser.html#aaaea5b09e42b753e0ea0331797a48a3f',1,'BasicUser']]],
+  ['basicuser',['BasicUser',['../d4/d79/classBasicUser.html',1,'']]],
+  ['basicuser_2eh',['basicuser.h',['../dd/dcd/basicuser_8h.html',1,'']]],
+  ['basicuserimpl',['BasicUserImpl',['../d9/da3/classBasicUserImpl.html',1,'BasicUserImpl'],['../d9/da3/classBasicUserImpl.html#a833561b430281e72ab7ba48ab3d7b749',1,'BasicUserImpl::BasicUserImpl()']]],
+  ['basicuserimpl_2ecpp',['basicuserimpl.cpp',['../da/dad/basicuserimpl_8cpp.html',1,'']]],
+  ['basicuserimpl_2eh',['basicuserimpl.h',['../d5/d2b/basicuserimpl_8h.html',1,'']]]
 ];

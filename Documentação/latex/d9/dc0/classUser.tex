@@ -1,0 +1,166 @@
+\hypertarget{classUser}{}\section{User Class Reference}
+\label{classUser}\index{User@{User}}
+
+
+Interface correspondente a qualquer usuário do sistema.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for User\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{dd/de7/classUser__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Q\+String \hyperlink{classUser_ae468e9100cfb4ab518863393d3d15bbd}{get\+Username} ()=0
+\begin{DoxyCompactList}\small\item\em Consulta o nome do usuário. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUser_af026df21b06a8cab417707cbce3a4f8b}{set\+Username} (Q\+String username)=0
+\begin{DoxyCompactList}\small\item\em Altera o nome do usuário. \end{DoxyCompactList}\item 
+virtual Q\+String \hyperlink{classUser_a552814f109b3892d39e1d43a411bb89e}{get\+Password} ()=0
+\begin{DoxyCompactList}\small\item\em Consulta a senha do usuário. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUser_a4bcb0c01280d285d35efe7bfc35c1641}{set\+Password} (Q\+String password)=0
+\begin{DoxyCompactList}\small\item\em Altera o nome do usuário. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUser_a0a41c08c3c4a4b5fc778fc3137fd6a8c}{add\+Role} (\hyperlink{classRole}{Role} $\ast$role)=0
+\begin{DoxyCompactList}\small\item\em Adiciona um novo papel ao usuário, caso ele já não tenha essa atribuição. \end{DoxyCompactList}\item 
+virtual \hyperlink{classRole}{Role} $\ast$ \hyperlink{classUser_a4a67b5285f21c7f33e9efe4326f608e4}{as\+Role} (Q\+String name)=0
+\begin{DoxyCompactList}\small\item\em Retorna o papel correspondente ao name solicitado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface correspondente a qualquer usuário do sistema. 
+
+\subsection{Member Function Documentation}
+\index{User@{User}!add\+Role@{add\+Role}}
+\index{add\+Role@{add\+Role}!User@{User}}
+\subsubsection[{\texorpdfstring{add\+Role(\+Role $\ast$role)=0}{addRole(Role *role)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\+::add\+Role (
+\begin{DoxyParamCaption}
+\item[{{\bf Role} $\ast$}]{role}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_a0a41c08c3c4a4b5fc778fc3137fd6a8c}{}\label{classUser_a0a41c08c3c4a4b5fc778fc3137fd6a8c}
+
+
+Adiciona um novo papel ao usuário, caso ele já não tenha essa atribuição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em role} & Novo papel do usuário \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classUserImpl_a80b1ee2caff4b1ae1c67076096f1acf5}{User\+Impl}.
+
+\index{User@{User}!as\+Role@{as\+Role}}
+\index{as\+Role@{as\+Role}!User@{User}}
+\subsubsection[{\texorpdfstring{as\+Role(\+Q\+String name)=0}{asRole(QString name)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Role}$\ast$ User\+::as\+Role (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_a4a67b5285f21c7f33e9efe4326f608e4}{}\label{classUser_a4a67b5285f21c7f33e9efe4326f608e4}
+
+
+Retorna o papel correspondente ao name solicitado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nome do papel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Papel correspondente 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUserImpl_a7ee6cdd620e02d565b78f1655aa1b980}{User\+Impl}.
+
+\index{User@{User}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!User@{User}}
+\subsubsection[{\texorpdfstring{get\+Password()=0}{getPassword()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String User\+::get\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_a552814f109b3892d39e1d43a411bb89e}{}\label{classUser_a552814f109b3892d39e1d43a411bb89e}
+
+
+Consulta a senha do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Senha do usuário 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUserImpl_a38f1527c6ca0b75401bddd68858050bd}{User\+Impl}.
+
+\index{User@{User}!get\+Username@{get\+Username}}
+\index{get\+Username@{get\+Username}!User@{User}}
+\subsubsection[{\texorpdfstring{get\+Username()=0}{getUsername()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Q\+String User\+::get\+Username (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_ae468e9100cfb4ab518863393d3d15bbd}{}\label{classUser_ae468e9100cfb4ab518863393d3d15bbd}
+
+
+Consulta o nome do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Nome do usuário 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classUserImpl_abefec7a8158c1304813d0304cf28d79f}{User\+Impl}.
+
+\index{User@{User}!set\+Password@{set\+Password}}
+\index{set\+Password@{set\+Password}!User@{User}}
+\subsubsection[{\texorpdfstring{set\+Password(\+Q\+String password)=0}{setPassword(QString password)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\+::set\+Password (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_a4bcb0c01280d285d35efe7bfc35c1641}{}\label{classUser_a4bcb0c01280d285d35efe7bfc35c1641}
+
+
+Altera o nome do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & Senha do usuário \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classUserImpl_ae25b0e053e4a3f6b6d4ddf601cb9d7d1}{User\+Impl}.
+
+\index{User@{User}!set\+Username@{set\+Username}}
+\index{set\+Username@{set\+Username}!User@{User}}
+\subsubsection[{\texorpdfstring{set\+Username(\+Q\+String username)=0}{setUsername(QString username)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\+::set\+Username (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classUser_af026df21b06a8cab417707cbce3a4f8b}{}\label{classUser_af026df21b06a8cab417707cbce3a4f8b}
+
+
+Altera o nome do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nome do usuário \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classUserImpl_aeaf34ca2e23f1a673a6997cae77f7452}{User\+Impl}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Calc\+Client/src/data/\hyperlink{user_8h}{user.\+h}\end{DoxyCompactItemize}

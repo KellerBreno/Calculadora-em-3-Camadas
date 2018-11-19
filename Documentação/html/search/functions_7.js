@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['listen',['listen',['../db/d00/classServer.html#a2393cde56bb44076cbfba00c89412acf',1,'Server::listen()'],['../d4/d62/classServerImpl.html#a3a186b4e86c634750f8fb95f962d5ec9',1,'ServerImpl::listen()']]],
-  ['logged',['logged',['../de/d21/classMyLoginDialog.html#af34aa4fb816da6adb7813ced2779cc3e',1,'MyLoginDialog']]],
-  ['login',['login',['../d6/d6f/classNetworkManager.html#ad39555f78185618bb5e6e906a9ef0c40',1,'NetworkManager::login()'],['../d5/dc5/classNetworkManagerImpl.html#aa468744d773aacf43763fde8e8bd95df',1,'NetworkManagerImpl::login()']]]
+  ['handleallusersreport',['handleAllUsersReport',['../de/da0/classWorkerThreadImpl.html#a31f8bcb7340bc4a2497d12e5bbf4c203',1,'WorkerThreadImpl']]],
+  ['handleauthenticate',['handleAuthenticate',['../de/da0/classWorkerThreadImpl.html#a72b7f275f170171a49725a508e071f71',1,'WorkerThreadImpl']]],
+  ['handlemessage',['handleMessage',['../de/da0/classWorkerThreadImpl.html#ac1ced60fd043f7dca8a7e7e1857a91cb',1,'WorkerThreadImpl']]],
+  ['handleoperation',['handleOperation',['../de/da0/classWorkerThreadImpl.html#a0bcd0f706b49530ccaf7f3fc21bded7c',1,'WorkerThreadImpl']]],
+  ['handleuserreport',['handleUserReport',['../de/da0/classWorkerThreadImpl.html#a9ce30db393c61dd414d198b1dcb38ddb',1,'WorkerThreadImpl']]]
 ];

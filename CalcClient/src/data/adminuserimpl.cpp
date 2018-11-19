@@ -1,7 +1,15 @@
+/*!
+ * \file adminuserimpl.cpp
+ * Arquivo contendo a Implementação da Classe AdminUserImpl
+ */
+
 #include "adminuserimpl.h"
 
 const QString AdminUser::ADMIN_USER_NAME = "Admin";
 
+/*!
+ * \brief Construtor padrão
+ */
 AdminUserImpl::AdminUserImpl():user(nullptr){
 
 }

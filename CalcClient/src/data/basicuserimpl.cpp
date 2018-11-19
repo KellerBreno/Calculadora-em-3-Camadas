@@ -1,11 +1,18 @@
+/*!
+ * \file basicuserimpl.cpp
+ * Arquivo contendo a Implementação da Classe BasicUserImpl
+ */
+
 #include "basicuserimpl.h"
 
 const QString BasicUser::BASIC_USER_NAME = "User";
 
+/*!
+ * \brief Construtor padrão
+ */
 BasicUserImpl::BasicUserImpl():user(nullptr){
 
 }
-
 
 QString BasicUserImpl::getRoleName(){
     return BasicUser::BASIC_USER_NAME;

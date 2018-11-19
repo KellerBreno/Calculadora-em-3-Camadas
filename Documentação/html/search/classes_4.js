@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['workerthread',['WorkerThread',['../db/d07/classWorkerThread.html',1,'']]],
-  ['workerthreadimpl',['WorkerThreadImpl',['../de/da0/classWorkerThreadImpl.html',1,'']]]
+  ['networkmanager',['NetworkManager',['../d6/d6f/classNetworkManager.html',1,'']]],
+  ['networkmanagerimpl',['NetworkManagerImpl',['../d5/dc5/classNetworkManagerImpl.html',1,'']]]
 ];

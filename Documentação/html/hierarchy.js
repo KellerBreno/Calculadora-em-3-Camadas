@@ -28,11 +28,22 @@ var hierarchy =
       [ "MyLoginDialog", "de/d21/classMyLoginDialog.html", null ],
       [ "ServerDialogImpl", "d1/da6/classServerDialogImpl.html", null ]
     ] ],
+    [ "Role", "dd/d84/classRole.html", [
+      [ "AdminUser", "d6/d08/classAdminUser.html", [
+        [ "AdminUserImpl", "d7/da8/classAdminUserImpl.html", null ]
+      ] ],
+      [ "BasicUser", "d4/d79/classBasicUser.html", [
+        [ "BasicUserImpl", "d9/da3/classBasicUserImpl.html", null ]
+      ] ]
+    ] ],
     [ "Server", "db/d00/classServer.html", [
       [ "ServerImpl", "d4/d62/classServerImpl.html", null ]
     ] ],
     [ "ServerDialog", "d2/d58/classServerDialog.html", [
       [ "ServerDialogImpl", "d1/da6/classServerDialogImpl.html", null ]
+    ] ],
+    [ "User", "d9/dc0/classUser.html", [
+      [ "UserImpl", "d5/d20/classUserImpl.html", null ]
     ] ],
     [ "WorkerThread", "db/d07/classWorkerThread.html", [
       [ "WorkerThreadImpl", "de/da0/classWorkerThreadImpl.html", null ]

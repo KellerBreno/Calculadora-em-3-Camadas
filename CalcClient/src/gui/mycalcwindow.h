@@ -64,6 +64,9 @@ private:
     void showPieChart(QString title, vector<pair<QString, int>> operations);
     void setupUserUi(int roleCode);
 
+    /*!
+     * \brief Referencia ao usuário da aplicação
+     */
     User *user;
 
     /*!

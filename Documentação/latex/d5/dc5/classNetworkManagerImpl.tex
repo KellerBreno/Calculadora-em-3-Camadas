@@ -2,6 +2,15 @@
 \label{classNetworkManagerImpl}\index{Network\+Manager\+Impl@{Network\+Manager\+Impl}}
 
 
+Implementação da Interface \hyperlink{classNetworkManager}{Network\+Manager}.  
+
+
+
+
+{\ttfamily \#include $<$networkmanagerimpl.\+h$>$}
+
+
+
 Inheritance diagram for Network\+Manager\+Impl\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,27 +32,29 @@ Collaboration diagram for Network\+Manager\+Impl\+:
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries read\+Message} ()\hypertarget{classNetworkManagerImpl_a607626213287dc476d3c7bd01c076b4e}{}\label{classNetworkManagerImpl_a607626213287dc476d3c7bd01c076b4e}
+void \hyperlink{classNetworkManagerImpl_a607626213287dc476d3c7bd01c076b4e}{read\+Message} ()\hypertarget{classNetworkManagerImpl_a607626213287dc476d3c7bd01c076b4e}{}\label{classNetworkManagerImpl_a607626213287dc476d3c7bd01c076b4e}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Slot para encaminhamento das mensagens recebidas pelo servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void {\bfseries message\+Receive} (Q\+Json\+Object json\+Object) override\hypertarget{classNetworkManagerImpl_ae375fb6f5addc6325cb3a037bd9eca39}{}\label{classNetworkManagerImpl_ae375fb6f5addc6325cb3a037bd9eca39}
-
-\end{DoxyCompactItemize}
+void \hyperlink{classNetworkManagerImpl_ae375fb6f5addc6325cb3a037bd9eca39}{message\+Receive} (Q\+Json\+Object json\+Object) override
+\begin{DoxyCompactList}\small\item\em Conversão do método da super classe em um signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classNetworkManagerImpl_ada113469ada30f72d3c36fac3f7ea4f2}{Network\+Manager\+Impl} ()\hypertarget{classNetworkManagerImpl_ada113469ada30f72d3c36fac3f7ea4f2}{}\label{classNetworkManagerImpl_ada113469ada30f72d3c36fac3f7ea4f2}
+
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classNetworkManagerImpl_a4ad2bada544bc02ea1f9921f3f6f62c2}{configure} (Q\+String \hyperlink{classNetworkManagerImpl_ac5d5c68c8000d8afef7632259e19f788}{ip}, quint16 \hyperlink{classNetworkManagerImpl_a4723f928e10d6d90987ff673b36c434d}{port}) override
 \begin{DoxyCompactList}\small\item\em Método para configurar o \hyperlink{classNetworkManager}{Network\+Manager}. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classNetworkManagerImpl_aa468744d773aacf43763fde8e8bd95df}{login} (Q\+String username, Q\+String password) override
+virtual void \hyperlink{classNetworkManagerImpl_a59dfa1a94c491fadbd62197a36c806b6}{login} (\hyperlink{classBasicUser}{Basic\+User} $\ast$basic\+User) override
 \begin{DoxyCompactList}\small\item\em Método para realizar um login. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classNetworkManagerImpl_a18fcb6129bcaa5f7f225d92ac5d6cd1c}{do\+Operation} (Q\+String username, double factor1, double factor2, int op\+Code) override
+virtual void \hyperlink{classNetworkManagerImpl_a890d3968345656de525f042dbc281507}{do\+Operation} (\hyperlink{classBasicUser}{Basic\+User} $\ast$basic\+User, double factor1, double factor2, int op\+Code) override
 \begin{DoxyCompactList}\small\item\em Método para realizar operações matematicas. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classNetworkManagerImpl_aba85b7a85efee5cc28995c0df82bef5a}{report\+By\+User} (Q\+String username) override
+virtual void \hyperlink{classNetworkManagerImpl_afa21ec0a3c38b1b1a48e5c58249c6374}{report\+By\+User} (\hyperlink{classBasicUser}{Basic\+User} $\ast$basic\+User) override
 \begin{DoxyCompactList}\small\item\em Método para recuperar o relatorio de operações do usuário. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classNetworkManagerImpl_a2131e26c9804d50c6e1ab6d5b7ccec94}{report\+All\+Users} (Q\+String username) override
+virtual void \hyperlink{classNetworkManagerImpl_adc5cac6558c54ef4207cbb56fadd93bf}{report\+All\+Users} (\hyperlink{classAdminUser}{Admin\+User} $\ast$admin\+User) override
 \begin{DoxyCompactList}\small\item\em Método para recuperar o relatorio de operações de todos os usuários. \end{DoxyCompactList}\item 
 virtual Q\+Object $\ast$ \hyperlink{classNetworkManagerImpl_a3340057281dadf1861d94d8aba9e976e}{get\+Q\+Object} () override
 \begin{DoxyCompactList}\small\item\em Retorna um Q\+Object referente a \hyperlink{classNetworkManager}{Network\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -61,6 +72,9 @@ Q\+Tcp\+Socket \hyperlink{classNetworkManagerImpl_a5b0a29db0e48c67051ec36235b1df
 \begin{DoxyCompactList}\small\item\em Socket T\+CP utilizado para conexões. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Implementação da Interface \hyperlink{classNetworkManager}{Network\+Manager}. 
 
 \subsection{Member Function Documentation}
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!configure@{configure}}
@@ -88,21 +102,21 @@ Implements \hyperlink{classNetworkManager_ae7b073b1deb224a6cb7af0e4d3d158de}{Net
 
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!do\+Operation@{do\+Operation}}
 \index{do\+Operation@{do\+Operation}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
-\subsubsection[{\texorpdfstring{do\+Operation(\+Q\+String username, double factor1, double factor2, int op\+Code) override}{doOperation(QString username, double factor1, double factor2, int opCode) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::do\+Operation (
+\subsubsection[{\texorpdfstring{do\+Operation(\+Basic\+User $\ast$basic\+User, double factor1, double factor2, int op\+Code) override}{doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::do\+Operation (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username, }
+\item[{{\bf Basic\+User} $\ast$}]{basic\+User, }
 \item[{double}]{factor1, }
 \item[{double}]{factor2, }
 \item[{int}]{op\+Code}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_a18fcb6129bcaa5f7f225d92ac5d6cd1c}{}\label{classNetworkManagerImpl_a18fcb6129bcaa5f7f225d92ac5d6cd1c}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_a890d3968345656de525f042dbc281507}{}\label{classNetworkManagerImpl_a890d3968345656de525f042dbc281507}
 
 
 Método para realizar operações matematicas. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Nome do usuário \\
+{\em basic\+User} & Objeto representando um usuário basico do sistema \\
 \hline
 {\em factor1} & Primeiro fator da operação \\
 \hline
@@ -113,7 +127,7 @@ Método para realizar operações matematicas.
 \end{DoxyParams}
 
 
-Implements \hyperlink{classNetworkManager_a7477e7bdee53e76ead1b711d2976e1e1}{Network\+Manager}.
+Implements \hyperlink{classNetworkManager_acf9c749d6bd57e7e1e4f542a33657425}{Network\+Manager}.
 
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!get\+Q\+Object@{get\+Q\+Object}}
 \index{get\+Q\+Object@{get\+Q\+Object}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
@@ -135,72 +149,85 @@ Implements \hyperlink{classNetworkManager_a437755d5e84ea8522515283ba11f4b77}{Net
 
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!login@{login}}
 \index{login@{login}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
-\subsubsection[{\texorpdfstring{login(\+Q\+String username, Q\+String password) override}{login(QString username, QString password) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::login (
+\subsubsection[{\texorpdfstring{login(\+Basic\+User $\ast$basic\+User) override}{login(BasicUser *basicUser) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::login (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username, }
-\item[{Q\+String}]{password}
+\item[{{\bf Basic\+User} $\ast$}]{basic\+User}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_aa468744d773aacf43763fde8e8bd95df}{}\label{classNetworkManagerImpl_aa468744d773aacf43763fde8e8bd95df}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_a59dfa1a94c491fadbd62197a36c806b6}{}\label{classNetworkManagerImpl_a59dfa1a94c491fadbd62197a36c806b6}
 
 
 Método para realizar um login. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Nome do usuário \\
-\hline
-{\em password} & Senha do usuário \\
+{\em basic\+User} & Objeto representando um usuário basico do sistema \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{classNetworkManager_ad39555f78185618bb5e6e906a9ef0c40}{Network\+Manager}.
+Implements \hyperlink{classNetworkManager_ae0f54c8b721ad7ab34e4ce414e23f90f}{Network\+Manager}.
 
+\index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!message\+Receive@{message\+Receive}}
+\index{message\+Receive@{message\+Receive}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
+\subsubsection[{\texorpdfstring{message\+Receive}{messageReceive}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::message\+Receive (
+\begin{DoxyParamCaption}
+\item[{Q\+Json\+Object}]{json\+Object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [signal]}}\hypertarget{classNetworkManagerImpl_ae375fb6f5addc6325cb3a037bd9eca39}{}\label{classNetworkManagerImpl_ae375fb6f5addc6325cb3a037bd9eca39}
+
+
+Conversão do método da super classe em um signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Object} & Resposta recebida do servidor \\
+\hline
+\end{DoxyParams}
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!report\+All\+Users@{report\+All\+Users}}
 \index{report\+All\+Users@{report\+All\+Users}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
-\subsubsection[{\texorpdfstring{report\+All\+Users(\+Q\+String username) override}{reportAllUsers(QString username) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::report\+All\+Users (
+\subsubsection[{\texorpdfstring{report\+All\+Users(\+Admin\+User $\ast$admin\+User) override}{reportAllUsers(AdminUser *adminUser) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::report\+All\+Users (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username}
+\item[{{\bf Admin\+User} $\ast$}]{admin\+User}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_a2131e26c9804d50c6e1ab6d5b7ccec94}{}\label{classNetworkManagerImpl_a2131e26c9804d50c6e1ab6d5b7ccec94}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_adc5cac6558c54ef4207cbb56fadd93bf}{}\label{classNetworkManagerImpl_adc5cac6558c54ef4207cbb56fadd93bf}
 
 
 Método para recuperar o relatorio de operações de todos os usuários. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Nome do usuário solicitando \\
+{\em admin\+User} & Objeto representando um usuário administrador do sistema \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}{Network\+Manager\+::report\+By\+User()} 
+\hyperlink{classNetworkManager_a2a1c3b3d0bc298a621820e723e3141af}{Network\+Manager\+::report\+By\+User()} 
 \end{DoxySeeAlso}
 
 
-Implements \hyperlink{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}{Network\+Manager}.
+Implements \hyperlink{classNetworkManager_adc90f12e3f926a79382aefbceb3aecfc}{Network\+Manager}.
 
 \index{Network\+Manager\+Impl@{Network\+Manager\+Impl}!report\+By\+User@{report\+By\+User}}
 \index{report\+By\+User@{report\+By\+User}!Network\+Manager\+Impl@{Network\+Manager\+Impl}}
-\subsubsection[{\texorpdfstring{report\+By\+User(\+Q\+String username) override}{reportByUser(QString username) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::report\+By\+User (
+\subsubsection[{\texorpdfstring{report\+By\+User(\+Basic\+User $\ast$basic\+User) override}{reportByUser(BasicUser *basicUser) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Network\+Manager\+Impl\+::report\+By\+User (
 \begin{DoxyParamCaption}
-\item[{Q\+String}]{username}
+\item[{{\bf Basic\+User} $\ast$}]{basic\+User}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_aba85b7a85efee5cc28995c0df82bef5a}{}\label{classNetworkManagerImpl_aba85b7a85efee5cc28995c0df82bef5a}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classNetworkManagerImpl_afa21ec0a3c38b1b1a48e5c58249c6374}{}\label{classNetworkManagerImpl_afa21ec0a3c38b1b1a48e5c58249c6374}
 
 
 Método para recuperar o relatorio de operações do usuário. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em username} & Nome do usuário a ser gerado o relatorio \\
+{\em basic\+User} & Objeto representando um usuário basico do sistema \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classNetworkManager_a8c788f00be9ce6736cf3a1deac0b0906}{Network\+Manager\+::report\+All\+Users()} 
+\hyperlink{classNetworkManager_adc90f12e3f926a79382aefbceb3aecfc}{Network\+Manager\+::report\+All\+Users()} 
 \end{DoxySeeAlso}
 
 
-Implements \hyperlink{classNetworkManager_a1d37ebe528cb047d40bbacd950e0ef83}{Network\+Manager}.
+Implements \hyperlink{classNetworkManager_a2a1c3b3d0bc298a621820e723e3141af}{Network\+Manager}.
 
 
 

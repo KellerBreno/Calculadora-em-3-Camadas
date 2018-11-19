@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['databasehelper',['DatabaseHelper',['../d3/daa/classDatabaseHelper.html',1,'']]],
-  ['databasehelperimpl',['DatabaseHelperImpl',['../d5/d1d/classDatabaseHelperImpl.html',1,'']]]
+  ['adminuser',['AdminUser',['../d6/d08/classAdminUser.html',1,'']]],
+  ['adminuserimpl',['AdminUserImpl',['../d7/da8/classAdminUserImpl.html',1,'']]]
 ];

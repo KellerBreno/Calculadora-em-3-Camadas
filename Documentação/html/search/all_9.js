@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['messagereceive',['messageReceive',['../d6/d6f/classNetworkManager.html#a5200afa56c88ff5d5779a39fec1ab33c',1,'NetworkManager']]],
-  ['mycalcwindow',['MyCalcWindow',['../d2/dd3/classMyCalcWindow.html',1,'MyCalcWindow'],['../d2/dd3/classMyCalcWindow.html#ac205ab2dbfbf802859774a090b066518',1,'MyCalcWindow::MyCalcWindow()']]],
-  ['mycalcwindow_2ecpp',['mycalcwindow.cpp',['../d5/d05/mycalcwindow_8cpp.html',1,'']]],
-  ['mycalcwindow_2eh',['mycalcwindow.h',['../df/d6c/mycalcwindow_8h.html',1,'']]],
-  ['mycalcwindowtest',['MyCalcWindowTest',['../d2/dd3/classMyCalcWindow.html#a5eaf2f81c93e423d3a80f10bd41e84f8',1,'MyCalcWindow']]],
-  ['mylogindialog',['MyLoginDialog',['../de/d21/classMyLoginDialog.html',1,'MyLoginDialog'],['../de/d21/classMyLoginDialog.html#ae20170dfe9e23fc1b794d3b5a2d2cc97',1,'MyLoginDialog::MyLoginDialog()']]],
-  ['mylogindialog_2ecpp',['mylogindialog.cpp',['../d6/d90/mylogindialog_8cpp.html',1,'']]],
-  ['mylogindialog_2eh',['mylogindialog.h',['../d8/df9/mylogindialog_8h.html',1,'']]],
-  ['mylogindialogtest',['MyLoginDialogTest',['../d2/dd3/classMyCalcWindow.html#aec613ce0d143a48322f72a2b90819fcb',1,'MyCalcWindow::MyLoginDialogTest()'],['../de/d21/classMyLoginDialog.html#aec613ce0d143a48322f72a2b90819fcb',1,'MyLoginDialog::MyLoginDialogTest()']]]
+  ['listen',['listen',['../db/d00/classServer.html#a2393cde56bb44076cbfba00c89412acf',1,'Server::listen()'],['../d4/d62/classServerImpl.html#a3a186b4e86c634750f8fb95f962d5ec9',1,'ServerImpl::listen()']]],
+  ['logged',['logged',['../de/d21/classMyLoginDialog.html#ab3abd797b7dafbb9b28672d9092c7bec',1,'MyLoginDialog']]],
+  ['login',['login',['../d6/d6f/classNetworkManager.html#ae0f54c8b721ad7ab34e4ce414e23f90f',1,'NetworkManager::login()'],['../d5/dc5/classNetworkManagerImpl.html#a59dfa1a94c491fadbd62197a36c806b6',1,'NetworkManagerImpl::login()']]]
 ];

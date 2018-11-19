@@ -1,0 +1,5 @@
+<map id="AdminUserImpl" name="AdminUserImpl">
+<area shape="rect" id="node2" href="$d6/d08/classAdminUser.html" title="Interface correspondente ao papel de administrador do sistema. " alt="" coords="5,81,92,108"/>
+<area shape="rect" id="node3" href="$dd/d84/classRole.html" title="Superclasse correspondente aos papeis que podem ser assumidos no sistema. " alt="" coords="24,5,73,32"/>
+<area shape="rect" id="node4" href="$d9/dc0/classUser.html" title="Interface correspondente a qualquer usuário do sistema. " alt="" coords="117,81,167,108"/>
+</map>

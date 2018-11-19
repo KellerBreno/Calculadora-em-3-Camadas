@@ -36,6 +36,8 @@ Após clonar o projeto para a sua máquina, você pode acessar as versões do pr
 
 - [V3a](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V3a) - Versão 3a: Projeto com GUI e lógica de negócio separadas.
 
+- [V4](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V4) - Versão 4: Utilizando Actor-Role.
+
 Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 
 ### Exemplo 

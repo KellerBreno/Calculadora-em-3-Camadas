@@ -127,8 +127,7 @@ void MyCalcWindow::on_radioButtonDiv_clicked(void){
 
 /*!
  * \brief Slot chamado para se configurar a calculadora sobre informações de rede e usuário.
- * \param username Username do usuário logado.
- * \param adminLevel Flag determinando se o usuário é administrador ou não.
+ * \param user Referencia ao usuário da aplicação.
  */
 void MyCalcWindow::onUserLogin(User* user){
     setEnabled(true); 
@@ -239,6 +238,10 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
     networkManager->reportAllUsers(adminUser);
 }
 
+/*!
+ * \brief Método para delegar a atualização da interface dado uma mudança de papel do usuário
+ * \param position Opção selecionada no combo box
+ */
 void MyCalcWindow::on_userRole_currentIndexChanged(int position){
     switch (position) {
     case 0:
