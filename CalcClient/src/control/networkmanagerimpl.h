@@ -16,10 +16,10 @@ public:
     NetworkManagerImpl();
     virtual ~NetworkManagerImpl();
     virtual void configure(QString ip, quint16 port) override;
-    virtual void login(QString username, QString password) override;
-    virtual void doOperation(QString username, double factor1, double factor2, int opCode) override;
-    virtual void reportByUser(QString username) override;
-    virtual void reportAllUsers(QString username) override;
+    virtual void login(BasicUser *basicUser) override;
+    virtual void doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode) override;
+    virtual void reportByUser(BasicUser *basicUser) override;
+    virtual void reportAllUsers(AdminUser *adminUser) override;
     virtual QObject* getQObject() override;
 
 public slots:

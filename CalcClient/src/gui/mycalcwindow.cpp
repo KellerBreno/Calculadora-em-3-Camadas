@@ -76,7 +76,8 @@ void MyCalcWindow::execute(){
     }
 
     NetworkManager *networkManager = NetworkManager::getInstance();
-    networkManager->doOperation(username,parcela1,parcela2,opCode);
+    BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
+    networkManager->doOperation(basicUser,parcela1,parcela2,opCode);
 }
 
 /*!
@@ -129,11 +130,11 @@ void MyCalcWindow::on_radioButtonDiv_clicked(void){
  * \param username Username do usuário logado.
  * \param adminLevel Flag determinando se o usuário é administrador ou não.
  */
-void MyCalcWindow::onUserLogin(QString username, bool adminLevel){
-    setEnabled(true);
-    this->username = username;
-    this->adminLevel = adminLevel;
-    if(adminLevel){
+void MyCalcWindow::onUserLogin(User* user){
+    setEnabled(true); 
+    this->user = user;
+    AdminUser *adminUser = (AdminUser*) this->user->asRole(AdminUser::ADMIN_USER_NAME);
+    if(adminUser!=nullptr){
         setupUserUi(ADMIN);
     }else{
         setupUserUi(USER);
@@ -185,7 +186,7 @@ void MyCalcWindow::readMessage(QJsonObject jsonObject){
         operations.push_back(make_pair("Multiplicação", jsonObject.value("Multiplicação").toInt()));
         operations.push_back(make_pair("Divisão", jsonObject.value("Divisão").toInt()));
 
-        showPieChart("Operações feitas pelo Usuário: " + username, operations);
+        showPieChart("Operações feitas pelo Usuário: " + user->getUsername(), operations);
     }
         break;
     case 3:
@@ -218,7 +219,8 @@ void MyCalcWindow::readMessage(QJsonObject jsonObject){
  */
 void MyCalcWindow::on_actionByUser_triggered(void){
     NetworkManager *networkManager = NetworkManager::getInstance();
-    networkManager->reportByUser(username);
+    BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
+    networkManager->reportByUser(basicUser);
 }
 
 /*!
@@ -229,11 +231,12 @@ void MyCalcWindow::on_actionByUser_triggered(void){
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionAllUsers_triggered(void){
-    if(!adminLevel){
+    AdminUser *adminUser = (AdminUser*) user->asRole(AdminUser::ADMIN_USER_NAME);
+    if(adminUser == nullptr){
         return;
     }
     NetworkManager *networkManager = NetworkManager::getInstance();
-    networkManager->reportAllUsers(username);
+    networkManager->reportAllUsers(adminUser);
 }
 
 void MyCalcWindow::on_userRole_currentIndexChanged(int position){
@@ -242,7 +245,8 @@ void MyCalcWindow::on_userRole_currentIndexChanged(int position){
         setupUserUi(USER);
         break;
     case 1:
-        if(!adminLevel){
+        AdminUser *adminUser = (AdminUser*) user->asRole(AdminUser::ADMIN_USER_NAME);
+        if(adminUser == nullptr){
             QMessageBox::critical(this, "CalcWindow", "Você não pode realizar essa operação", QMessageBox::Ok);
             setupUserUi(USER);
             return;
@@ -298,7 +302,6 @@ void MyCalcWindow::setupUserUi(int roleCode){
         resultEdit->setEnabled(true);
         groupBox->setEnabled(true);
         execButton->setEnabled(true);
-        exitButton->setEnabled(true);
         userRole->setCurrentIndex(0);
         break;
     case ADMIN:
@@ -309,7 +312,6 @@ void MyCalcWindow::setupUserUi(int roleCode){
         resultEdit->setEnabled(false);
         groupBox->setEnabled(false);
         execButton->setEnabled(false);
-        exitButton->setEnabled(false);
         userRole->setCurrentIndex(1);
         break;
     }

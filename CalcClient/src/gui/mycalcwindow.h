@@ -11,6 +11,7 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include <data/user.h>
 
 #include <QJsonObject>
 #include <utility>
@@ -54,7 +55,7 @@ public slots:
     void on_actionByUser_triggered(void);
     void on_actionAllUsers_triggered(void);
     void on_userRole_currentIndexChanged(int);
-    void onUserLogin(QString username, bool adminLevel);
+    void onUserLogin(User *user);
     void onQuit(void);
     void readMessage(QJsonObject jsonObject);
 
@@ -63,20 +64,12 @@ private:
     void showPieChart(QString title, vector<pair<QString, int>> operations);
     void setupUserUi(int roleCode);
 
-    /*!
-     * \brief Username do usuário conectado.
-     */
-    QString username;
+    User *user;
 
     /*!
      * \brief TCPSocket utilizado pela aplicação para comunicar com servidor.
      */
     QTcpSocket tcpSocket;
-
-    /*!
-     * \brief Flag representando que o usuário é ou não administrador.
-     */
-    bool adminLevel;
 
     /*!
      * \brief MainWindow auxiliar para exibição de gráficos de operações.
