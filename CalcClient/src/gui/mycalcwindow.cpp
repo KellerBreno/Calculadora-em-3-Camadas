@@ -35,9 +35,9 @@
  *
  */
 MyCalcWindow::MyCalcWindow(QWidget *parent) : QMainWindow (parent), chartWindow(nullptr){
-   setupUi(this);
-   setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
-   connect(exitButton, SIGNAL(clicked()), this, SLOT(onQuit()));
+    setupUi(this);
+    setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+    connect(exitButton, SIGNAL(clicked()), this, SLOT(onQuit()));
 }
 
 /*!
@@ -47,9 +47,9 @@ MyCalcWindow::MyCalcWindow(QWidget *parent) : QMainWindow (parent), chartWindow(
  *
  */
 MyCalcWindow::~MyCalcWindow(){
-   if(chartWindow != nullptr){
-       delete chartWindow;
-   }
+    if(chartWindow != nullptr){
+        delete chartWindow;
+    }
 }
 
 /*!
@@ -61,22 +61,23 @@ MyCalcWindow::~MyCalcWindow(){
  * MyCalcWindow::on_radioButtonMult_clicked(), MyCalcWindow::on_radioButtonDiv_clicked(), MyCalcWindow::readMessage().
  */
 void MyCalcWindow::execute(){
-   double parcela1 = input1->value();
-   double parcela2 = input2->value();
+    double parcela1 = input1->value();
+    double parcela2 = input2->value();
 
-   int opCode;
-   if(radioButtonSoma->isChecked()){
-       opCode = 1;
-   } else if(radioButtonSub->isChecked()){
-       opCode = 2;
-   } else if(radioButtonMult->isChecked()){
-       opCode = 3;
-   } else if(radioButtonDiv->isChecked()){
-       opCode = 4;
-   }
+    int opCode;
+    if(radioButtonAdd->isChecked()){
+        opCode = 1;
+    } else if(radioButtonSub->isChecked()){
+        opCode = 2;
+    } else if(radioButtonMult->isChecked()){
+        opCode = 3;
+    } else if(radioButtonDiv->isChecked()){
+        opCode = 4;
+    }
 
-   NetworkManager *networkManager = NetworkManager::getInstance();
-   networkManager->doOperation(username,parcela1,parcela2,opCode);
+    NetworkManager *networkManager = NetworkManager::getInstance();
+    BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
+    networkManager->doOperation(basicUser,parcela1,parcela2,opCode);
 }
 
 /*!
@@ -85,7 +86,7 @@ void MyCalcWindow::execute(){
  * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_execButton_clicked(void){
-   execute();
+    execute();
 }
 
 /*!
@@ -93,8 +94,8 @@ void MyCalcWindow::on_execButton_clicked(void){
  *
  * \sa MyCalcWindow::execute().
  */
-void MyCalcWindow::on_radioButtonSoma_clicked(void){
-   execute();
+void MyCalcWindow::on_radioButtonAdd_clicked(void){
+    execute();
 }
 
 /*!
@@ -103,7 +104,7 @@ void MyCalcWindow::on_radioButtonSoma_clicked(void){
  * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonSub_clicked(void){
-   execute();
+    execute();
 }
 
 /*!
@@ -112,7 +113,7 @@ void MyCalcWindow::on_radioButtonSub_clicked(void){
  * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonMult_clicked(void){
-   execute();
+    execute();
 }
 
 /*!
@@ -121,31 +122,33 @@ void MyCalcWindow::on_radioButtonMult_clicked(void){
  * \sa MyCalcWindow::execute().
  */
 void MyCalcWindow::on_radioButtonDiv_clicked(void){
-   execute();
+    execute();
 }
 
 /*!
  * \brief Slot chamado para se configurar a calculadora sobre informações de rede e usuário.
- * \param username Username do usuário logado.
- * \param adminLevel Flag determinando se o usuário é administrador ou não.
+ * \param user Referencia ao usuário da aplicação.
  */
-void MyCalcWindow::onUserLogin(QString username, bool adminLevel){
-   setEnabled(true);
-   this->username = username;
-   this->adminLevel = adminLevel;
-   actionAllUsers->setVisible(adminLevel);
-   connect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
-
+void MyCalcWindow::onUserLogin(User* user){
+    setEnabled(true); 
+    this->user = user;
+    AdminUser *adminUser = (AdminUser*) this->user->asRole(AdminUser::ADMIN_USER_NAME);
+    if(adminUser!=nullptr){
+        setupUserUi(ADMIN);
+    }else{
+        setupUserUi(USER);
+    }
+    connect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
 }
 
 /*!
  * \brief Slot chamado ao se clicar no botão 'Sair'.
  */
 void MyCalcWindow::onQuit(void){
-   close();
-   if(chartWindow != nullptr){
-       chartWindow->close();
-   }
+    close();
+    if(chartWindow != nullptr){
+        chartWindow->close();
+    }
 }
 
 /*!
@@ -156,53 +159,53 @@ void MyCalcWindow::onQuit(void){
  * \sa MyCalcWindow::execute(), MyCalcWindow::on_actionAllUsers_triggered(), MyCalcWindow::on_actionByUser_triggered().
  */
 void MyCalcWindow::readMessage(QJsonObject jsonObject){
-   int answerType = jsonObject.value("answerType").toInt();
-   switch (answerType) {
-   case 1:
-   {
-       double resultado = jsonObject.value("result").toDouble();
+    int answerType = jsonObject.value("answerType").toInt();
+    switch (answerType) {
+    case 1:
+    {
+        double resultado = jsonObject.value("result").toDouble();
 
 #ifdef DEBUG
-       qDebug() << "============== Resultado ==============";
-       qDebug() << "Result: " << resultado;
-       qDebug() << "========================================";
+        qDebug() << "============== Resultado ==============";
+        qDebug() << "Result: " << resultado;
+        qDebug() << "========================================";
 #endif
 
-       QString resultString;
-       resultString.setNum(resultado);
-       textEditResult->setText(resultString);
-   }
-       break;
-   case 2:
-   {
-       vector<pair<QString, int>> operations;
+        QString resultString;
+        resultString.setNum(resultado);
+        resultEdit->setText(resultString);
+    }
+        break;
+    case 2:
+    {
+        vector<pair<QString, int>> operations;
 
-       operations.push_back(make_pair("Adição", jsonObject.value("Adição").toInt()));
-       operations.push_back(make_pair("Subtração", jsonObject.value("Subtração").toInt()));
-       operations.push_back(make_pair("Multiplicação", jsonObject.value("Multiplicação").toInt()));
-       operations.push_back(make_pair("Divisão", jsonObject.value("Divisão").toInt()));
+        operations.push_back(make_pair("Adição", jsonObject.value("Adição").toInt()));
+        operations.push_back(make_pair("Subtração", jsonObject.value("Subtração").toInt()));
+        operations.push_back(make_pair("Multiplicação", jsonObject.value("Multiplicação").toInt()));
+        operations.push_back(make_pair("Divisão", jsonObject.value("Divisão").toInt()));
 
-       showPieChart("Operações feitas pelo Usuário: " + username, operations);
-   }
-       break;
-   case 3:
-   {
-       vector<pair<QString, int>> operations;
+        showPieChart("Operações feitas pelo Usuário: " + user->getUsername(), operations);
+    }
+        break;
+    case 3:
+    {
+        vector<pair<QString, int>> operations;
 
-       operations.push_back(make_pair("Adição", jsonObject.value("Adição").toInt()));
-       operations.push_back(make_pair("Subtração", jsonObject.value("Subtração").toInt()));
-       operations.push_back(make_pair("Multiplicação", jsonObject.value("Multiplicação").toInt()));
-       operations.push_back(make_pair("Divisão", jsonObject.value("Divisão").toInt()));
+        operations.push_back(make_pair("Adição", jsonObject.value("Adição").toInt()));
+        operations.push_back(make_pair("Subtração", jsonObject.value("Subtração").toInt()));
+        operations.push_back(make_pair("Multiplicação", jsonObject.value("Multiplicação").toInt()));
+        operations.push_back(make_pair("Divisão", jsonObject.value("Divisão").toInt()));
 
-       showPieChart("Operações feitas por Todos Usuários", operations);
-   }
-       break;
-   case 4:
-   {
-       QMessageBox::information(this, "CalcWindow", "O seu usuário não tem permissão para realizar essa ação", QMessageBox::Ok);
-   }
-       break;
-   }
+        showPieChart("Operações feitas por Todos Usuários", operations);
+    }
+        break;
+    case 4:
+    {
+        QMessageBox::information(this, "CalcWindow", "O seu usuário não tem permissão para realizar essa ação", QMessageBox::Ok);
+    }
+        break;
+    }
 
 }
 
@@ -215,7 +218,8 @@ void MyCalcWindow::readMessage(QJsonObject jsonObject){
  */
 void MyCalcWindow::on_actionByUser_triggered(void){
     NetworkManager *networkManager = NetworkManager::getInstance();
-    networkManager->reportByUser(username);
+    BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
+    networkManager->reportByUser(basicUser);
 }
 
 /*!
@@ -226,11 +230,33 @@ void MyCalcWindow::on_actionByUser_triggered(void){
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionAllUsers_triggered(void){
-   if(!adminLevel){
-       return;
-   }
-   NetworkManager *networkManager = NetworkManager::getInstance();
-   networkManager->reportAllUsers(username);
+    AdminUser *adminUser = (AdminUser*) user->asRole(AdminUser::ADMIN_USER_NAME);
+    if(adminUser == nullptr){
+        return;
+    }
+    NetworkManager *networkManager = NetworkManager::getInstance();
+    networkManager->reportAllUsers(adminUser);
+}
+
+/*!
+ * \brief Método para delegar a atualização da interface dado uma mudança de papel do usuário
+ * \param position Opção selecionada no combo box
+ */
+void MyCalcWindow::on_userRole_currentIndexChanged(int position){
+    switch (position) {
+    case 0:
+        setupUserUi(USER);
+        break;
+    case 1:
+        AdminUser *adminUser = (AdminUser*) user->asRole(AdminUser::ADMIN_USER_NAME);
+        if(adminUser == nullptr){
+            QMessageBox::critical(this, "CalcWindow", "Você não pode realizar essa operação", QMessageBox::Ok);
+            setupUserUi(USER);
+            return;
+        }
+        setupUserUi(ADMIN);
+        break;
+    }
 }
 
 /*!
@@ -241,26 +267,55 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
  * \sa MyCalcWindow::on_actionByUser_triggered(), MyCalcWindow::on_actionAllUser_triggered().
  */
 void MyCalcWindow::showPieChart(QString title, vector<pair<QString, int>> operations){
-   if(chartWindow != nullptr){
-       chartWindow->close();
-       delete chartWindow;
-       chartWindow = nullptr;
-   }
-   QPieSeries *series = new QPieSeries();
+    if(chartWindow != nullptr){
+        chartWindow->close();
+        delete chartWindow;
+        chartWindow = nullptr;
+    }
+    QPieSeries *series = new QPieSeries();
 
-   for(vector<pair<QString, int>>::iterator it = operations.begin(); it != operations.end(); ++it){
-       series->append((*it).first, (*it).second);
-   }
+    for(vector<pair<QString, int>>::iterator it = operations.begin(); it != operations.end(); ++it){
+        series->append((*it).first, (*it).second);
+    }
 
-   QChart *chart = new QChart();
-   chart->addSeries(series);
-   chart->setTitle(title);
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle(title);
 
-   QChartView *chartView = new QChartView(chart);
-   chartView->setRenderHint(QPainter::Antialiasing);
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
 
-   chartWindow = new QMainWindow();
-   chartWindow ->setCentralWidget(chartView);
-   chartWindow ->resize(400, 300);
-   chartWindow ->show();
+    chartWindow = new QMainWindow();
+    chartWindow ->setCentralWidget(chartView);
+    chartWindow ->resize(400, 300);
+    chartWindow ->show();
+}
+
+/*!
+ * \brief Método para alterar a interface baseado no papel do usuário
+ * \param roleCode código do papel do usuário
+ */
+void MyCalcWindow::setupUserUi(int roleCode){
+    switch (roleCode) {
+    case USER:
+        actionAllUsers->setEnabled(false);
+        actionByUser->setEnabled(true);
+        input1->setEnabled(true);
+        input2->setEnabled(true);
+        resultEdit->setEnabled(true);
+        groupBox->setEnabled(true);
+        execButton->setEnabled(true);
+        userRole->setCurrentIndex(0);
+        break;
+    case ADMIN:
+        actionAllUsers->setEnabled(true);
+        actionByUser->setEnabled(false);
+        input1->setEnabled(false);
+        input2->setEnabled(false);
+        resultEdit->setEnabled(false);
+        groupBox->setEnabled(false);
+        execButton->setEnabled(false);
+        userRole->setCurrentIndex(1);
+        break;
+    }
 }

@@ -11,6 +11,7 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include <data/user.h>
 
 #include <QJsonObject>
 #include <utility>
@@ -47,24 +48,26 @@ public:
 
 public slots:
     void on_execButton_clicked(void);
-    void on_radioButtonSoma_clicked(void);
+    void on_radioButtonAdd_clicked(void);
     void on_radioButtonSub_clicked(void);
     void on_radioButtonMult_clicked(void);
     void on_radioButtonDiv_clicked(void);
     void on_actionByUser_triggered(void);
     void on_actionAllUsers_triggered(void);
-    void onUserLogin(QString username, bool adminLevel);
+    void on_userRole_currentIndexChanged(int);
+    void onUserLogin(User *user);
     void onQuit(void);
     void readMessage(QJsonObject jsonObject);
 
 private:
     void execute(void);
     void showPieChart(QString title, vector<pair<QString, int>> operations);
+    void setupUserUi(int roleCode);
 
     /*!
-     * \brief Username do usuário conectado.
+     * \brief Referencia ao usuário da aplicação
      */
-    QString username;
+    User *user;
 
     /*!
      * \brief TCPSocket utilizado pela aplicação para comunicar com servidor.
@@ -72,14 +75,19 @@ private:
     QTcpSocket tcpSocket;
 
     /*!
-     * \brief Flag representando que o usuário é ou não administrador.
-     */
-    bool adminLevel;
-
-    /*!
      * \brief MainWindow auxiliar para exibição de gráficos de operações.
      */
     QMainWindow* chartWindow;
+
+    /*!
+     * \brief Flag numerica representando o papel usuário
+     */
+    static const int USER = 0;
+
+    /*!
+     * \brief Flag numerica representando o papel administrador
+     */
+    static const int ADMIN = 1;
 };
 
 #endif // MYCALCEXAMPLE_H

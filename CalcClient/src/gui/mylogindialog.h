@@ -10,6 +10,8 @@
 #include <QTcpSocket>
 #include <QJsonObject>
 
+#include <data/user.h>
+
 #include "ui_logindialog.h"
 
 /*!
@@ -38,10 +40,9 @@ public slots:
 signals:
     /*!
      * \brief Signal emitido quando a operação de login é realizada com sucesso.
-     * \param username Nome do usuário.
-     * \param adminLevel Flag identificando se o usuário é administrador.
+     * \param user Referencia ao usuário da aplicação.
      */
-    void logged(QString username, bool adminLevel);
+    void logged(User *user);
 
     /*!
      * \brief Signal emitido para finalizar a aplicação.
@@ -54,6 +55,10 @@ private:
      */
     QTcpSocket tcpSocket;
 
+    /*!
+     * \brief Referencia ao usuário da aplicação
+     */
+    User *user;
 };
 
 #endif // MYLOGINDIALOG_H

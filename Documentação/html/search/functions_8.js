@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['messagereceive',['messageReceive',['../d6/d6f/classNetworkManager.html#a5200afa56c88ff5d5779a39fec1ab33c',1,'NetworkManager']]],
-  ['mycalcwindow',['MyCalcWindow',['../d2/dd3/classMyCalcWindow.html#ac205ab2dbfbf802859774a090b066518',1,'MyCalcWindow']]],
-  ['mylogindialog',['MyLoginDialog',['../de/d21/classMyLoginDialog.html#ae20170dfe9e23fc1b794d3b5a2d2cc97',1,'MyLoginDialog']]]
+  ['incomingconnection',['incomingConnection',['../db/d00/classServer.html#a2397527620515d7e18fc599b22fb64ae',1,'Server::incomingConnection()'],['../d4/d62/classServerImpl.html#a54dda38486e9964432b501f7da00ed97',1,'ServerImpl::incomingConnection()']]],
+  ['insertoperation',['insertOperation',['../d3/daa/classDatabaseHelper.html#aaff1d6157ea2d4fa7edb6744e8ce7daf',1,'DatabaseHelper::insertOperation()'],['../d5/d1d/classDatabaseHelperImpl.html#a4791d584b178b71a186a843dbc8ab86e',1,'DatabaseHelperImpl::insertOperation()']]],
+  ['isadmin',['isAdmin',['../d3/daa/classDatabaseHelper.html#aca0024be103d394caf3a6eef7899c714',1,'DatabaseHelper::isAdmin()'],['../d5/d1d/classDatabaseHelperImpl.html#a3c6da9438b26955fcef6a080c85652f5',1,'DatabaseHelperImpl::isAdmin()']]]
 ];

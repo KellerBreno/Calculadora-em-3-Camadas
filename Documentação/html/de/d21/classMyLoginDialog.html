@@ -132,6 +132,7 @@ Collaboration diagram for MyLoginDialog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d47/classMyLoginDialog__coll__graph.png" border="0" usemap="#MyLoginDialog_coll__map" alt="Collaboration graph"/></div>
 <map name="MyLoginDialog_coll__map" id="MyLoginDialog_coll__map">
+<area shape="rect" id="node4" href="../../d9/dc0/classUser.html" title="Interface correspondente a qualquer usuário do sistema. " alt="" coords="238,5,289,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -149,9 +150,9 @@ Public Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:af34aa4fb816da6adb7813ced2779cc3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#af34aa4fb816da6adb7813ced2779cc3e">logged</a> (QString username, bool adminLevel)</td></tr>
-<tr class="memdesc:af34aa4fb816da6adb7813ced2779cc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido quando a operação de login é realizada com sucesso.  <a href="#af34aa4fb816da6adb7813ced2779cc3e">More...</a><br /></td></tr>
-<tr class="separator:af34aa4fb816da6adb7813ced2779cc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3abd797b7dafbb9b28672d9092c7bec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#ab3abd797b7dafbb9b28672d9092c7bec">logged</a> (<a class="el" href="../../d9/dc0/classUser.html">User</a> *<a class="el" href="../../de/d21/classMyLoginDialog.html#a0827b7a88e7c312902a07cc17b0c9887">user</a>)</td></tr>
+<tr class="memdesc:ab3abd797b7dafbb9b28672d9092c7bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido quando a operação de login é realizada com sucesso.  <a href="#ab3abd797b7dafbb9b28672d9092c7bec">More...</a><br /></td></tr>
+<tr class="separator:ab3abd797b7dafbb9b28672d9092c7bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b2fde13842c6557400e0e35b9dd1e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81b2fde13842c6557400e0e35b9dd1e0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a81b2fde13842c6557400e0e35b9dd1e0">quit</a> (void)</td></tr>
 <tr class="memdesc:a81b2fde13842c6557400e0e35b9dd1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitido para finalizar a aplicação. <br /></td></tr>
@@ -169,6 +170,10 @@ Private Attributes</h2></td></tr>
 QTcpSocket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#aea07f561f3a3e17b6596da377a538e4f">tcpSocket</a></td></tr>
 <tr class="memdesc:aea07f561f3a3e17b6596da377a538e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCPSocket utilizado pela aplicação para comunicar com servidor. <br /></td></tr>
 <tr class="separator:aea07f561f3a3e17b6596da377a538e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0827b7a88e7c312902a07cc17b0c9887"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0827b7a88e7c312902a07cc17b0c9887"></a>
+<a class="el" href="../../d9/dc0/classUser.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/classMyLoginDialog.html#a0827b7a88e7c312902a07cc17b0c9887">user</a></td></tr>
+<tr class="memdesc:a0827b7a88e7c312902a07cc17b0c9887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Referencia ao usuário da aplicação. <br /></td></tr>
+<tr class="separator:a0827b7a88e7c312902a07cc17b0c9887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -207,7 +212,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af34aa4fb816da6adb7813ced2779cc3e"></a>
+<a class="anchor" id="ab3abd797b7dafbb9b28672d9092c7bec"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,19 +222,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
         <tr>
           <td class="memname">void MyLoginDialog::logged </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>username</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="../../d9/dc0/classUser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>adminLevel</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -242,8 +237,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../
 <p>Signal emitido quando a operação de login é realizada com sucesso. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>Nome do usuário. </td></tr>
-    <tr><td class="paramname">adminLevel</td><td>Flag identificando se o usuário é administrador. </td></tr>
+    <tr><td class="paramname">user</td><td>Referencia ao usuário da aplicação. </td></tr>
   </table>
   </dd>
 </dl>

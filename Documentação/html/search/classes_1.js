@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mycalcwindow',['MyCalcWindow',['../d2/dd3/classMyCalcWindow.html',1,'']]],
-  ['mylogindialog',['MyLoginDialog',['../de/d21/classMyLoginDialog.html',1,'']]]
+  ['basicuser',['BasicUser',['../d4/d79/classBasicUser.html',1,'']]],
+  ['basicuserimpl',['BasicUserImpl',['../d9/da3/classBasicUserImpl.html',1,'']]]
 ];

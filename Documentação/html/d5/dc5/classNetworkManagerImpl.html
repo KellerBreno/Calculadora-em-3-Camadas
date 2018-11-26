@@ -114,6 +114,11 @@ $(document).ready(function(){initNavTree('d5/dc5/classNetworkManagerImpl.html','
 <div class="title">NetworkManagerImpl Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementação da Interface <a class="el" href="../../d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. ">NetworkManager</a>.  
+ <a href="../../d5/dc5/classNetworkManagerImpl.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d7/d81/networkmanagerimpl_8h_source.html">networkmanagerimpl.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NetworkManagerImpl:</div>
 <div class="dyncontent">
@@ -134,32 +139,37 @@ Collaboration diagram for NetworkManagerImpl:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a607626213287dc476d3c7bd01c076b4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a607626213287dc476d3c7bd01c076b4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>readMessage</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a607626213287dc476d3c7bd01c076b4e">readMessage</a> ()</td></tr>
+<tr class="memdesc:a607626213287dc476d3c7bd01c076b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot para encaminhamento das mensagens recebidas pelo servidor. <br /></td></tr>
 <tr class="separator:a607626213287dc476d3c7bd01c076b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:ae375fb6f5addc6325cb3a037bd9eca39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae375fb6f5addc6325cb3a037bd9eca39"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>messageReceive</b> (QJsonObject jsonObject) override</td></tr>
+<tr class="memitem:ae375fb6f5addc6325cb3a037bd9eca39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#ae375fb6f5addc6325cb3a037bd9eca39">messageReceive</a> (QJsonObject jsonObject) override</td></tr>
+<tr class="memdesc:ae375fb6f5addc6325cb3a037bd9eca39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversão do método da super classe em um signal.  <a href="#ae375fb6f5addc6325cb3a037bd9eca39">More...</a><br /></td></tr>
 <tr class="separator:ae375fb6f5addc6325cb3a037bd9eca39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ada113469ada30f72d3c36fac3f7ea4f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada113469ada30f72d3c36fac3f7ea4f2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#ada113469ada30f72d3c36fac3f7ea4f2">NetworkManagerImpl</a> ()</td></tr>
+<tr class="memdesc:ada113469ada30f72d3c36fac3f7ea4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão. <br /></td></tr>
+<tr class="separator:ada113469ada30f72d3c36fac3f7ea4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ad2bada544bc02ea1f9921f3f6f62c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a4ad2bada544bc02ea1f9921f3f6f62c2">configure</a> (QString <a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#ac5d5c68c8000d8afef7632259e19f788">ip</a>, quint16 <a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a4723f928e10d6d90987ff673b36c434d">port</a>) override</td></tr>
 <tr class="memdesc:a4ad2bada544bc02ea1f9921f3f6f62c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para configurar o <a class="el" href="../../d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. ">NetworkManager</a>.  <a href="#a4ad2bada544bc02ea1f9921f3f6f62c2">More...</a><br /></td></tr>
 <tr class="separator:a4ad2bada544bc02ea1f9921f3f6f62c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa468744d773aacf43763fde8e8bd95df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#aa468744d773aacf43763fde8e8bd95df">login</a> (QString username, QString password) override</td></tr>
-<tr class="memdesc:aa468744d773aacf43763fde8e8bd95df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para realizar um login.  <a href="#aa468744d773aacf43763fde8e8bd95df">More...</a><br /></td></tr>
-<tr class="separator:aa468744d773aacf43763fde8e8bd95df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18fcb6129bcaa5f7f225d92ac5d6cd1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a18fcb6129bcaa5f7f225d92ac5d6cd1c">doOperation</a> (QString username, double factor1, double factor2, int opCode) override</td></tr>
-<tr class="memdesc:a18fcb6129bcaa5f7f225d92ac5d6cd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para realizar operações matematicas.  <a href="#a18fcb6129bcaa5f7f225d92ac5d6cd1c">More...</a><br /></td></tr>
-<tr class="separator:a18fcb6129bcaa5f7f225d92ac5d6cd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba85b7a85efee5cc28995c0df82bef5a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#aba85b7a85efee5cc28995c0df82bef5a">reportByUser</a> (QString username) override</td></tr>
-<tr class="memdesc:aba85b7a85efee5cc28995c0df82bef5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para recuperar o relatorio de operações do usuário.  <a href="#aba85b7a85efee5cc28995c0df82bef5a">More...</a><br /></td></tr>
-<tr class="separator:aba85b7a85efee5cc28995c0df82bef5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2131e26c9804d50c6e1ab6d5b7ccec94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a2131e26c9804d50c6e1ab6d5b7ccec94">reportAllUsers</a> (QString username) override</td></tr>
-<tr class="memdesc:a2131e26c9804d50c6e1ab6d5b7ccec94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para recuperar o relatorio de operações de todos os usuários.  <a href="#a2131e26c9804d50c6e1ab6d5b7ccec94">More...</a><br /></td></tr>
-<tr class="separator:a2131e26c9804d50c6e1ab6d5b7ccec94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59dfa1a94c491fadbd62197a36c806b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a59dfa1a94c491fadbd62197a36c806b6">login</a> (<a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *basicUser) override</td></tr>
+<tr class="memdesc:a59dfa1a94c491fadbd62197a36c806b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para realizar um login.  <a href="#a59dfa1a94c491fadbd62197a36c806b6">More...</a><br /></td></tr>
+<tr class="separator:a59dfa1a94c491fadbd62197a36c806b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890d3968345656de525f042dbc281507"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a890d3968345656de525f042dbc281507">doOperation</a> (<a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *basicUser, double factor1, double factor2, int opCode) override</td></tr>
+<tr class="memdesc:a890d3968345656de525f042dbc281507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para realizar operações matematicas.  <a href="#a890d3968345656de525f042dbc281507">More...</a><br /></td></tr>
+<tr class="separator:a890d3968345656de525f042dbc281507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa21ec0a3c38b1b1a48e5c58249c6374"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#afa21ec0a3c38b1b1a48e5c58249c6374">reportByUser</a> (<a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *basicUser) override</td></tr>
+<tr class="memdesc:afa21ec0a3c38b1b1a48e5c58249c6374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para recuperar o relatorio de operações do usuário.  <a href="#afa21ec0a3c38b1b1a48e5c58249c6374">More...</a><br /></td></tr>
+<tr class="separator:afa21ec0a3c38b1b1a48e5c58249c6374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5cac6558c54ef4207cbb56fadd93bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#adc5cac6558c54ef4207cbb56fadd93bf">reportAllUsers</a> (<a class="el" href="../../d6/d08/classAdminUser.html">AdminUser</a> *adminUser) override</td></tr>
+<tr class="memdesc:adc5cac6558c54ef4207cbb56fadd93bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para recuperar o relatorio de operações de todos os usuários.  <a href="#adc5cac6558c54ef4207cbb56fadd93bf">More...</a><br /></td></tr>
+<tr class="separator:adc5cac6558c54ef4207cbb56fadd93bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3340057281dadf1861d94d8aba9e976e"><td class="memItemLeft" align="right" valign="top">virtual QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc5/classNetworkManagerImpl.html#a3340057281dadf1861d94d8aba9e976e">getQObject</a> () override</td></tr>
 <tr class="memdesc:a3340057281dadf1861d94d8aba9e976e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um QObject referente a <a class="el" href="../../d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. ">NetworkManager</a>.  <a href="#a3340057281dadf1861d94d8aba9e976e">More...</a><br /></td></tr>
 <tr class="separator:a3340057281dadf1861d94d8aba9e976e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,7 +200,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a160c056e7177dbe9686310e4896326d6 inherit pub_static_methods_classNetworkManager"><td class="mdescLeft">&#160;</td><td class="mdescRight">Este método retorna uma instancia de <a class="el" href="../../d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. ">NetworkManager</a>.  <a href="#a160c056e7177dbe9686310e4896326d6">More...</a><br /></td></tr>
 <tr class="separator:a160c056e7177dbe9686310e4896326d6 inherit pub_static_methods_classNetworkManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementação da Interface <a class="el" href="../../d6/d6f/classNetworkManager.html" title="Classe para gerenciar comunicações entre a gui e o server pela rede. ">NetworkManager</a>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a4ad2bada544bc02ea1f9921f3f6f62c2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -236,7 +248,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a18fcb6129bcaa5f7f225d92ac5d6cd1c"></a>
+<a class="anchor" id="a890d3968345656de525f042dbc281507"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -246,8 +258,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void NetworkManagerImpl::doOperation </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>username</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *&#160;</td>
+          <td class="paramname"><em>basicUser</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -283,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Método para realizar operações matematicas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>Nome do usuário </td></tr>
+    <tr><td class="paramname">basicUser</td><td>Objeto representando um usuário basico do sistema </td></tr>
     <tr><td class="paramname">factor1</td><td>Primeiro fator da operação </td></tr>
     <tr><td class="paramname">factor2</td><td>Segundo fator da operação </td></tr>
     <tr><td class="paramname">opCode</td><td>Código da operação </td></tr>
@@ -291,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#a7477e7bdee53e76ead1b711d2976e1e1">NetworkManager</a>.</p>
+<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#acf9c749d6bd57e7e1e4f542a33657425">NetworkManager</a>.</p>
 
 </div>
 </div>
@@ -323,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa468744d773aacf43763fde8e8bd95df"></a>
+<a class="anchor" id="a59dfa1a94c491fadbd62197a36c806b6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -333,19 +345,9 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void NetworkManagerImpl::login </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>username</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *&#160;</td>
+          <td class="paramname"><em>basicUser</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>password</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -358,17 +360,48 @@ Additional Inherited Members</h2></td></tr>
 <p>Método para realizar um login. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>Nome do usuário </td></tr>
-    <tr><td class="paramname">password</td><td>Senha do usuário </td></tr>
+    <tr><td class="paramname">basicUser</td><td>Objeto representando um usuário basico do sistema </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#ad39555f78185618bb5e6e906a9ef0c40">NetworkManager</a>.</p>
+<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#ae0f54c8b721ad7ab34e4ce414e23f90f">NetworkManager</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2131e26c9804d50c6e1ab6d5b7ccec94"></a>
+<a class="anchor" id="ae375fb6f5addc6325cb3a037bd9eca39"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManagerImpl::messageReceive </td>
+          <td>(</td>
+          <td class="paramtype">QJsonObject&#160;</td>
+          <td class="paramname"><em>jsonObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Conversão do método da super classe em um signal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonObject</td><td>Resposta recebida do servidor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adc5cac6558c54ef4207cbb56fadd93bf"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -378,8 +411,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void NetworkManagerImpl::reportAllUsers </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>username</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d6/d08/classAdminUser.html">AdminUser</a> *&#160;</td>
+          <td class="paramname"><em>adminUser</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -393,17 +426,17 @@ Additional Inherited Members</h2></td></tr>
 <p>Método para recuperar o relatorio de operações de todos os usuários. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>Nome do usuário solicitando </td></tr>
+    <tr><td class="paramname">adminUser</td><td>Objeto representando um usuário administrador do sistema </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d6f/classNetworkManager.html#a1d37ebe528cb047d40bbacd950e0ef83" title="Método para recuperar o relatorio de operações do usuário. ">NetworkManager::reportByUser()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d6f/classNetworkManager.html#a2a1c3b3d0bc298a621820e723e3141af" title="Método para recuperar o relatorio de operações do usuário. ">NetworkManager::reportByUser()</a> </dd></dl>
 
-<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#a8c788f00be9ce6736cf3a1deac0b0906">NetworkManager</a>.</p>
+<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#adc90f12e3f926a79382aefbceb3aecfc">NetworkManager</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aba85b7a85efee5cc28995c0df82bef5a"></a>
+<a class="anchor" id="afa21ec0a3c38b1b1a48e5c58249c6374"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -413,8 +446,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void NetworkManagerImpl::reportByUser </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>username</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d4/d79/classBasicUser.html">BasicUser</a> *&#160;</td>
+          <td class="paramname"><em>basicUser</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -428,13 +461,13 @@ Additional Inherited Members</h2></td></tr>
 <p>Método para recuperar o relatorio de operações do usuário. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">username</td><td>Nome do usuário a ser gerado o relatorio </td></tr>
+    <tr><td class="paramname">basicUser</td><td>Objeto representando um usuário basico do sistema </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d6f/classNetworkManager.html#a8c788f00be9ce6736cf3a1deac0b0906" title="Método para recuperar o relatorio de operações de todos os usuários. ">NetworkManager::reportAllUsers()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d6f/classNetworkManager.html#adc90f12e3f926a79382aefbceb3aecfc" title="Método para recuperar o relatorio de operações de todos os usuários. ">NetworkManager::reportAllUsers()</a> </dd></dl>
 
-<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#a1d37ebe528cb047d40bbacd950e0ef83">NetworkManager</a>.</p>
+<p>Implements <a class="el" href="../../d6/d6f/classNetworkManager.html#a2a1c3b3d0bc298a621820e723e3141af">NetworkManager</a>.</p>
 
 </div>
 </div>

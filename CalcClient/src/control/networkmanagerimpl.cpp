@@ -17,6 +17,9 @@ NetworkManager* NetworkManager::getInstance(){
     return instance;
 }
 
+/*!
+ * \brief Construtor padrão
+ */
 NetworkManagerImpl::NetworkManagerImpl(){
     ip = "";
     port = 0;
@@ -32,9 +35,14 @@ void NetworkManagerImpl::configure(QString ip, quint16 port){
     this->port = port;
 }
 
-void NetworkManagerImpl::login(QString username, QString password){
+void NetworkManagerImpl::login(BasicUser *basicUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
+        return;
+    }
+
+    if(basicUser == nullptr){
+        // Throw exception
         return;
     }
 
@@ -42,8 +50,8 @@ void NetworkManagerImpl::login(QString username, QString password){
 
     QJsonObject jsonObject;
     jsonObject.insert("operationType", 1);
-    jsonObject.insert("username", username);
-    jsonObject.insert("password", password);
+    jsonObject.insert("username", basicUser->getUsername());
+    jsonObject.insert("password", basicUser->getPassword());
 
     QJsonDocument jsonDocument(jsonObject);
     QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
@@ -58,9 +66,14 @@ void NetworkManagerImpl::login(QString username, QString password){
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::doOperation(QString username, double factor1, double factor2, int opCode){
+void NetworkManagerImpl::doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode){
     if(ip.isEmpty() || port == 0){
         // Throw expection
+        return;
+    }
+
+    if(basicUser==nullptr){
+        // Throw exception
         return;
     }
 
@@ -68,7 +81,7 @@ void NetworkManagerImpl::doOperation(QString username, double factor1, double fa
 
     QJsonObject jsonObject;
     jsonObject.insert("operationType", 2);
-    jsonObject.insert("username", username);
+    jsonObject.insert("username", basicUser->getUsername());
     jsonObject.insert("v1", factor1);
     jsonObject.insert("opCode", opCode);
     jsonObject.insert("v2", factor2);
@@ -87,9 +100,14 @@ void NetworkManagerImpl::doOperation(QString username, double factor1, double fa
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::reportByUser(QString username){
+void NetworkManagerImpl::reportByUser(BasicUser *basicUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
+        return;
+    }
+
+    if(basicUser==nullptr){
+        // Throw exception
         return;
     }
 
@@ -97,7 +115,7 @@ void NetworkManagerImpl::reportByUser(QString username){
 
     QJsonObject jsonObject;
     jsonObject.insert("operationType", 3);
-    jsonObject.insert("username", username);
+    jsonObject.insert("username", basicUser->getUsername());
 
     QJsonDocument jsonDocument(jsonObject);
     QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));
@@ -113,17 +131,23 @@ void NetworkManagerImpl::reportByUser(QString username){
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::reportAllUsers(QString username){
+void NetworkManagerImpl::reportAllUsers(AdminUser *adminUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
         return;
     }
 
+    if(adminUser==nullptr){
+        // Throw exception
+        return;
+    }
+
+
     tcpSocket.connectToHost(ip, port);
 
     QJsonObject jsonObject;
     jsonObject.insert("operationType", 4);
-    jsonObject.insert("username", username);
+    jsonObject.insert("username", adminUser->getUsername());
 
     QJsonDocument jsonDocument(jsonObject);
     QString jsonString(jsonDocument.toJson(QJsonDocument::Compact));

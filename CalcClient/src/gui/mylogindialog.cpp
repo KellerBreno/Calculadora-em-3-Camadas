@@ -24,6 +24,10 @@
 
 #include <control/networkmanagerimpl.h>
 
+#include <data/adminuserimpl.h>
+#include <data/basicuserimpl.h>
+#include <data/userimpl.h>
+
 using namespace std;
 
 /*!
@@ -38,6 +42,13 @@ using namespace std;
 MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){
     setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowTitleHint | Qt::CustomizeWindowHint);
+
+    user = new UserImpl();
+    BasicUser *basicUser = new BasicUserImpl();
+    user->addRole(basicUser);
+
+    NetworkManager *networkManager = NetworkManager::getInstance();
+    connect(networkManager->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
 }
 
 /*!
@@ -59,10 +70,13 @@ void MyLoginDialog::on_login_button_clicked(){
         return;
     }
 
+    user->setUsername(username);
+    user->setPassword(password);
+
     NetworkManager *networkManager = NetworkManager::getInstance();
     networkManager->configure(ip,port.toInt());
-    connect(networkManager->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
-    networkManager->login(username,password);
+    BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
+    networkManager->login(basicUser);
 }
 
 /*!
@@ -105,7 +119,12 @@ void MyLoginDialog::readMessage(QJsonObject jsonObject){
         QMessageBox::information(this, "Login", "Seja Bem Vindo, " + username, QMessageBox::Ok);
         // Abre a calculadora
         disconnect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
-        emit logged(username, adminLevel);
+
+        if(adminLevel){
+            AdminUser *adminUser = new AdminUserImpl();
+            user->addRole(adminUser);
+        }
+        emit logged(user);
         close();
     } else {
         QMessageBox::information(this, "Login", "Credenciais Incorretas", QMessageBox::Ok);

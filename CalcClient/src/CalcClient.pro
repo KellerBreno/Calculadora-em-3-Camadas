@@ -26,7 +26,14 @@ HEADERS += \
     gui/mylogindialog.h \
     gui/mycalcwindow.h \
     control/networkmanager.h \
-    control/networkmanagerimpl.h
+    control/networkmanagerimpl.h \
+    data/role.h \
+    data/basicuser.h \
+    data/adminuser.h \
+    data/user.h \
+    data/adminuserimpl.h \
+    data/basicuserimpl.h \
+    data/userimpl.h
 
 FORMS += \
     gui/logindialog.ui \
@@ -36,4 +43,7 @@ SOURCES += \
     main.cpp \
     gui/mylogindialog.cpp \
     gui/mycalcwindow.cpp \
-    control/networkmanagerimpl.cpp
+    control/networkmanagerimpl.cpp \
+    data/adminuserimpl.cpp \
+    data/basicuserimpl.cpp \
+    data/userimpl.cpp

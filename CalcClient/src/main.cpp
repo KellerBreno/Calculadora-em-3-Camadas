@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
     calcWindow.setEnabled(false);
     MyLoginDialog loginDialog;
 
-    QObject::connect(&loginDialog, SIGNAL(logged(QString, bool)), &calcWindow, SLOT(onUserLogin(QString, bool)));
+    QObject::connect(&loginDialog, SIGNAL(logged(User*)), &calcWindow, SLOT(onUserLogin(User*)));
     QObject::connect(&loginDialog, SIGNAL(quit(void)), &calcWindow, SLOT(onQuit(void)));
 
     calcWindow.show();

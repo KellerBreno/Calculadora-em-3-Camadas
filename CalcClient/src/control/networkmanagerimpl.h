@@ -10,22 +10,33 @@
 
 #include <QTcpSocket>
 
+/*!
+ * \class NetworkManagerImpl
+ * \brief Implementação da Interface NetworkManager
+ */
 class NetworkManagerImpl : public QObject, public NetworkManager{
     Q_OBJECT
 public:
     NetworkManagerImpl();
     virtual ~NetworkManagerImpl();
     virtual void configure(QString ip, quint16 port) override;
-    virtual void login(QString username, QString password) override;
-    virtual void doOperation(QString username, double factor1, double factor2, int opCode) override;
-    virtual void reportByUser(QString username) override;
-    virtual void reportAllUsers(QString username) override;
+    virtual void login(BasicUser *basicUser) override;
+    virtual void doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode) override;
+    virtual void reportByUser(BasicUser *basicUser) override;
+    virtual void reportAllUsers(AdminUser *adminUser) override;
     virtual QObject* getQObject() override;
 
 public slots:
+    /*!
+     * \brief Slot para encaminhamento das mensagens recebidas pelo servidor
+     */
     void readMessage();
 
 signals:
+    /*!
+     * \brief Conversão do método da super classe em um signal
+     * \param jsonObject Resposta recebida do servidor
+     */
     void messageReceive(QJsonObject jsonObject) override;
 
 private:

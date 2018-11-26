@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['networkmanager',['NetworkManager',['../d6/d6f/classNetworkManager.html',1,'']]],
-  ['networkmanagerimpl',['NetworkManagerImpl',['../d5/dc5/classNetworkManagerImpl.html',1,'']]]
+  ['databasehelper',['DatabaseHelper',['../d3/daa/classDatabaseHelper.html',1,'']]],
+  ['databasehelperimpl',['DatabaseHelperImpl',['../d5/d1d/classDatabaseHelperImpl.html',1,'']]]
 ];
