@@ -30,6 +30,8 @@ Após clonar o projeto para a sua máquina, você pode acessar as versões do pr
 
 - [V1](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1) - Versão 1: Projeto com classes concretas;
 
+- [V1a](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V1a) - Versão 1a: Teste para GUI e Classes concretas;
+
 - [V2](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V2) - Versão 2: Projeto com documentação das classes concretas.
 
 - [V3](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V3) - Versão 3: Projeto com APIs separadas.
