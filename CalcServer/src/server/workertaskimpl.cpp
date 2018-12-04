@@ -9,7 +9,7 @@
  */
 #define DEBUG
 
-#include "workerthreadimpl.h"
+#include "workertaskimpl.h"
 
 #include <QtNetwork>
 #include <QDebug>
@@ -31,23 +31,23 @@
  *
  * \sa WorkerThreadImpl::WorkerThreadImpl().
  */
-WorkerThreadImpl::WorkerThreadImpl(qintptr socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)
-    : QThread(parent), socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){}
+WorkerTaskImpl::WorkerTaskImpl(qintptr socketDescriptor, QObject *parent, DatabaseHelper *databaseHelper)
+    : QRunnable(), socketDescriptor(socketDescriptor), databaseHelper(databaseHelper){}
 
 /*!
  * \brief Construtor Padrão.
  *
  * \sa WorkerThreadImpl::WorkerThreadImpl(qintptr, QObject*, DatabaseHelper*)
  */
-WorkerThreadImpl::WorkerThreadImpl(){
+WorkerTaskImpl::WorkerTaskImpl(){
 }
 
-WorkerThreadImpl::WorkerThreadImpl(const WorkerThreadImpl& rhs){
+WorkerTaskImpl::WorkerTaskImpl(const WorkerTaskImpl& rhs){
     socketDescriptor = rhs.socketDescriptor;
     databaseHelper = rhs.databaseHelper;
 }
 
-WorkerThreadImpl& WorkerThreadImpl::operator=(const WorkerThreadImpl& rhs){
+WorkerTaskImpl& WorkerTaskImpl::operator=(const WorkerTaskImpl& rhs){
     if(&rhs == this){
         return *this;
     }
@@ -59,25 +59,17 @@ WorkerThreadImpl& WorkerThreadImpl::operator=(const WorkerThreadImpl& rhs){
 /*!
  * \brief Destrutor Padrão.
  */
-WorkerThreadImpl::~WorkerThreadImpl(){
+WorkerTaskImpl::~WorkerTaskImpl(){
 }
 
-void WorkerThreadImpl::start(){
-    QThread::start();
-}
-
-void WorkerThreadImpl::deleteLater(){
-    QThread::deleteLater();
-}
-
-QObject* WorkerThreadImpl::getQObject(){
+QRunnable* WorkerTaskImpl::getRunnable(){
     return this;
 }
 
-void WorkerThreadImpl::run(){
+void WorkerTaskImpl::run(){
     QTcpSocket tcpSocket;
     if (!tcpSocket.setSocketDescriptor(socketDescriptor)) {
-        emit error(tcpSocket.error());
+        // TODO Error
         return;
     }
 
@@ -124,7 +116,7 @@ void WorkerThreadImpl::run(){
  * \sa WorkerThreadImpl::handleAuthenticate(QJsonObject), WorkerThreadImpl::handleOperation(QJsonObject),
  * WorkerThreadImpl::handleUserReport(QJsonObject), WorkerThreadImpl::handleAllUsersReport(QJsonObject).
  */
-QJsonObject WorkerThreadImpl::handleMessage(QJsonObject jsonObject){
+QJsonObject WorkerTaskImpl::handleMessage(QJsonObject jsonObject){
     QJsonObject answer;
 #ifdef DEBUG
     qDebug() << "Operation Type: " << jsonObject.value("operationType").toInt();
@@ -157,7 +149,7 @@ QJsonObject WorkerThreadImpl::handleMessage(QJsonObject jsonObject){
  *
  * \sa WorkerThreadImpl::handleMessage(QJsonObject)
  */
-QJsonObject WorkerThreadImpl::handleAuthenticate(QJsonObject jsonObject){
+QJsonObject WorkerTaskImpl::handleAuthenticate(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
     QString password = jsonObject.value("password").toString();
 
@@ -207,7 +199,7 @@ QJsonObject WorkerThreadImpl::handleAuthenticate(QJsonObject jsonObject){
  *
  * \sa WorkerThreadImpl::handleMessage(QJsonObject)
  */
-QJsonObject WorkerThreadImpl::handleOperation(QJsonObject jsonObject){
+QJsonObject WorkerTaskImpl::handleOperation(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
     int opCode = jsonObject.value("opCode").toInt();
     double v1 = jsonObject.value("v1").toDouble();
@@ -271,7 +263,7 @@ QJsonObject WorkerThreadImpl::handleOperation(QJsonObject jsonObject){
  *
  * \sa WorkerThreadImpl::handleMessage(QJsonObject)
  */
-QJsonObject WorkerThreadImpl::handleUserReport(QJsonObject jsonObject){
+QJsonObject WorkerTaskImpl::handleUserReport(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
     vector<pair<QString, int>> operations = databaseHelper->getOperationsByUser(username);
 
@@ -305,7 +297,7 @@ QJsonObject WorkerThreadImpl::handleUserReport(QJsonObject jsonObject){
  *
  * \sa WorkerThreadImpl::handleMessage(QJsonObject)
  */
-QJsonObject WorkerThreadImpl::handleAllUsersReport(QJsonObject jsonObject){
+QJsonObject WorkerTaskImpl::handleAllUsersReport(QJsonObject jsonObject){
     QString username = jsonObject.value("username").toString();
     if(!databaseHelper->isAdmin(username)){
         QJsonObject answerJson;

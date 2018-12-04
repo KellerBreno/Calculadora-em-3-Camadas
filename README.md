@@ -40,6 +40,8 @@ Após clonar o projeto para a sua máquina, você pode acessar as versões do pr
 
 - [V4](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V4) - Versão 4: Utilizando Actor-Role.
 
+- [V5](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V5) - Versão 5: Utilizando QThreadPool.
+
 Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 
 ### Exemplo 

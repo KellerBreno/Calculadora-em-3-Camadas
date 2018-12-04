@@ -9,6 +9,7 @@
 #include "database/databasehelper.h"
 #include "server.h"
 #include <QTcpServer>
+#include <QThreadPool>
 
 /*!
  * \class ServerImpl
@@ -45,6 +46,7 @@ protected:
      */
     ServerImpl& operator=(const ServerImpl& rhs);
 
+    QThreadPool *threadPool;
 };
 
 #endif // SERVERIMPL_H
