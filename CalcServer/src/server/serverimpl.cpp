@@ -4,7 +4,7 @@
  */
 
 #include "serverimpl.h"
-#include "workerthreadimpl.h"
+#include "workertaskimpl.h"
 #include "database/databasehelperimpl.h"
 
 /*!
@@ -16,6 +16,7 @@
  */
 ServerImpl::ServerImpl(QObject *parent) : QTcpServer(parent){
     databaseHelper = new DatabaseHelperImpl();
+    threadPool = QThreadPool::globalInstance();
 }
 
 ServerImpl::ServerImpl(const ServerImpl& rhs){
@@ -41,9 +42,10 @@ ServerImpl::~ServerImpl(){
 }
 
 void ServerImpl::incomingConnection(qintptr socketDescriptor){
-    WorkerThread *thread = new WorkerThreadImpl(socketDescriptor, this, databaseHelper);
-    connect(thread->getQObject(), SIGNAL(finished()), thread->getQObject(), SLOT(deleteLater()));
-    thread->start();
+    WorkerTask *task = new WorkerTaskImpl(socketDescriptor, this, databaseHelper);
+    QRunnable* runnable = task->getRunnable();
+    runnable->setAutoDelete(true);
+    threadPool->start(runnable);
 }
 
 bool ServerImpl::listen(){
