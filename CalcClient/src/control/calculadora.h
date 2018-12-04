@@ -3,8 +3,8 @@
  * Arquivo contendo a Declaração da Interface NetworkManager
  */
 
-#ifndef NETWORKMANAGER_H
-#define NETWORKMANAGER_H
+#ifndef CALCULADORA_H
+#define CALCULADORA_H
 
 #include <QString>
 #include <QObject>
@@ -17,18 +17,18 @@
  * \class NetworkManager
  * \brief Classe para gerenciar comunicações entre a gui e o server pela rede
  */
-class NetworkManager{
+class Calculadora{
 private:
     /*!
      * \brief Instancia única da classe
      */
-    static NetworkManager* instance;
+    static Calculadora* instance;
 public:
     /*!
      * \brief Este método retorna uma instancia de NetworkManager
      * \return Instancia de NetworkManager*
      */
-    static NetworkManager* getInstance();
+    static Calculadora* getInstance();
 
     /*!
      * \brief Método para configurar o NetworkManager
@@ -79,4 +79,4 @@ public:
     virtual void messageReceive(QJsonObject jsonObject) = 0;
 };
 
-#endif // NETWORKMANAGER_H
+#endif // CALCULADORA_H

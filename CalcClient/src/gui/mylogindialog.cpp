@@ -22,7 +22,7 @@
 
 #include <iostream>
 
-#include <control/networkmanagerimpl.h>
+#include <control/calculadoraimpl.h>
 
 #include <data/adminuserimpl.h>
 #include <data/basicuserimpl.h>
@@ -47,7 +47,7 @@ MyLoginDialog::MyLoginDialog(QWidget *parent) : QWidget(parent){
     BasicUser *basicUser = new BasicUserImpl();
     user->addRole(basicUser);
 
-    NetworkManager *networkManager = NetworkManager::getInstance();
+    Calculadora *networkManager = Calculadora::getInstance();
     connect(networkManager->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
 }
 
@@ -73,7 +73,7 @@ void MyLoginDialog::on_login_button_clicked(){
     user->setUsername(username);
     user->setPassword(password);
 
-    NetworkManager *networkManager = NetworkManager::getInstance();
+    Calculadora *networkManager = Calculadora::getInstance();
     networkManager->configure(ip,port.toInt());
     BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
     networkManager->login(basicUser);
@@ -118,7 +118,7 @@ void MyLoginDialog::readMessage(QJsonObject jsonObject){
         bool adminLevel = jsonObject.value("adminLevel").toBool();
         QMessageBox::information(this, "Login", "Seja Bem Vindo, " + username, QMessageBox::Ok);
         // Abre a calculadora
-        disconnect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
+        disconnect(Calculadora::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
 
         if(adminLevel){
             AdminUser *adminUser = new AdminUserImpl();

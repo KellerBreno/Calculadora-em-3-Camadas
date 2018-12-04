@@ -25,15 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += \
     gui/mylogindialog.h \
     gui/mycalcwindow.h \
-    control/networkmanager.h \
-    control/networkmanagerimpl.h \
     data/role.h \
     data/basicuser.h \
     data/adminuser.h \
     data/user.h \
     data/adminuserimpl.h \
     data/basicuserimpl.h \
-    data/userimpl.h
+    data/userimpl.h \
+    control/calculadora.h \
+    control/calculadoraimpl.h
 
 FORMS += \
     gui/logindialog.ui \
@@ -43,7 +43,7 @@ SOURCES += \
     main.cpp \
     gui/mylogindialog.cpp \
     gui/mycalcwindow.cpp \
-    control/networkmanagerimpl.cpp \
     data/adminuserimpl.cpp \
     data/basicuserimpl.cpp \
-    data/userimpl.cpp
+    data/userimpl.cpp \
+    control/calculadoraimpl.cpp

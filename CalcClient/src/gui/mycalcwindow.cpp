@@ -20,7 +20,7 @@
 #include <sstream>
 #include <iostream>
 
-#include <control/networkmanager.h>
+#include <control/calculadora.h>
 
 #include "mycalcwindow.h"
 #include "ui_calcwindow.h"
@@ -75,7 +75,7 @@ void MyCalcWindow::execute(){
         opCode = 4;
     }
 
-    NetworkManager *networkManager = NetworkManager::getInstance();
+    Calculadora *networkManager = Calculadora::getInstance();
     BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
     networkManager->doOperation(basicUser,parcela1,parcela2,opCode);
 }
@@ -138,7 +138,7 @@ void MyCalcWindow::onUserLogin(User* user){
     }else{
         setupUserUi(USER);
     }
-    connect(NetworkManager::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
+    connect(Calculadora::getInstance()->getQObject(), SIGNAL(messageReceive(QJsonObject)), this, SLOT(readMessage(QJsonObject)));
 }
 
 /*!
@@ -217,7 +217,7 @@ void MyCalcWindow::readMessage(QJsonObject jsonObject){
  * \sa MyCalcWindow::readMessage(), MyCalcWindow::showPieChart(QString, vector<pair<QString, int>>).
  */
 void MyCalcWindow::on_actionByUser_triggered(void){
-    NetworkManager *networkManager = NetworkManager::getInstance();
+    Calculadora *networkManager = Calculadora::getInstance();
     BasicUser *basicUser = (BasicUser*) user->asRole(BasicUser::BASIC_USER_NAME);
     networkManager->reportByUser(basicUser);
 }
@@ -234,7 +234,7 @@ void MyCalcWindow::on_actionAllUsers_triggered(void){
     if(adminUser == nullptr){
         return;
     }
-    NetworkManager *networkManager = NetworkManager::getInstance();
+    Calculadora *networkManager = Calculadora::getInstance();
     networkManager->reportAllUsers(adminUser);
 }
 

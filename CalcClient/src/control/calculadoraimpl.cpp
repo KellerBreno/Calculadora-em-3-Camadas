@@ -5,14 +5,14 @@
 
 #define DEBUG
 
-#include "networkmanagerimpl.h"
+#include "calculadoraimpl.h"
 #include <QJsonDocument>
 
-NetworkManager* NetworkManager::instance = nullptr;
+Calculadora* Calculadora::instance = nullptr;
 
-NetworkManager* NetworkManager::getInstance(){
+Calculadora* Calculadora::getInstance(){
     if(instance == nullptr){
-        instance = new NetworkManagerImpl();
+        instance = new CalculadoraImpl();
     }
     return instance;
 }
@@ -20,22 +20,22 @@ NetworkManager* NetworkManager::getInstance(){
 /*!
  * \brief Construtor padrão
  */
-NetworkManagerImpl::NetworkManagerImpl(){
+CalculadoraImpl::CalculadoraImpl(){
     ip = "";
     port = 0;
-    QObject::connect(&tcpSocket, &QIODevice::readyRead, this, &NetworkManagerImpl::readMessage);
+    QObject::connect(&tcpSocket, &QIODevice::readyRead, this, &CalculadoraImpl::readMessage);
 }
 
-NetworkManagerImpl::~NetworkManagerImpl(){
+CalculadoraImpl::~CalculadoraImpl(){
 
 }
 
-void NetworkManagerImpl::configure(QString ip, quint16 port){
+void CalculadoraImpl::configure(QString ip, quint16 port){
     this->ip = ip;
     this->port = port;
 }
 
-void NetworkManagerImpl::login(BasicUser *basicUser){
+void CalculadoraImpl::login(BasicUser *basicUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
         return;
@@ -66,7 +66,7 @@ void NetworkManagerImpl::login(BasicUser *basicUser){
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode){
+void CalculadoraImpl::doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode){
     if(ip.isEmpty() || port == 0){
         // Throw expection
         return;
@@ -100,7 +100,7 @@ void NetworkManagerImpl::doOperation(BasicUser *basicUser, double factor1, doubl
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::reportByUser(BasicUser *basicUser){
+void CalculadoraImpl::reportByUser(BasicUser *basicUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
         return;
@@ -131,7 +131,7 @@ void NetworkManagerImpl::reportByUser(BasicUser *basicUser){
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::reportAllUsers(AdminUser *adminUser){
+void CalculadoraImpl::reportAllUsers(AdminUser *adminUser){
     if(ip.isEmpty() || port == 0){
         // Throw expection
         return;
@@ -163,7 +163,7 @@ void NetworkManagerImpl::reportAllUsers(AdminUser *adminUser){
     tcpSocket.write(jsonData);
 }
 
-void NetworkManagerImpl::readMessage(){
+void CalculadoraImpl::readMessage(){
     tcpSocket.waitForReadyRead(-1);
 
     QByteArray jsonData = tcpSocket.readLine();
@@ -181,6 +181,6 @@ void NetworkManagerImpl::readMessage(){
     emit messageReceive(jsonObject);
 }
 
-QObject* NetworkManagerImpl::getQObject(){
+QObject* CalculadoraImpl::getQObject(){
     return this;
 }

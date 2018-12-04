@@ -6,7 +6,7 @@
 #ifndef NETWORKMANAGERIMPL_H
 #define NETWORKMANAGERIMPL_H
 
-#include "networkmanager.h"
+#include "calculadora.h"
 
 #include <QTcpSocket>
 
@@ -14,11 +14,11 @@
  * \class NetworkManagerImpl
  * \brief Implementação da Interface NetworkManager
  */
-class NetworkManagerImpl : public QObject, public NetworkManager{
+class CalculadoraImpl : public QObject, public Calculadora{
     Q_OBJECT
 public:
-    NetworkManagerImpl();
-    virtual ~NetworkManagerImpl();
+    CalculadoraImpl();
+    virtual ~CalculadoraImpl();
     virtual void configure(QString ip, quint16 port) override;
     virtual void login(BasicUser *basicUser) override;
     virtual void doOperation(BasicUser *basicUser, double factor1, double factor2, int opCode) override;
