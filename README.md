@@ -15,14 +15,14 @@ Para compilar este projeto é necessário que você tenha instaladas as APIs QT 
 Após compilar o projeto e gerar os executáveis do cliente e servidor, para executar o código do servidor é necessário:
 
 #### Windows/Linux
-Copiar o arquivo calc_example.sqlite da pasta Recursos para a localização do executável CalcServer. 
+Copiar o arquivo *calc_example.sqlite* da pasta Recursos para a localização do executável CalcServer. 
 
 #### MacOS
-Copiar o arquivo calc_example.sqlite da pasta Recursos para dentro do .app gerado no diretório onde o executável do CalcServer está localizado.
+Copiar o arquivo *calc_example.sqlite* da pasta Recursos para dentro do .app gerado no diretório onde o executável do CalcServer está localizado.
 
 ### Banco de Dados vazio
 
-Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo calc_example.sql localizado na pasta Recursos para se criar um nova instância do banco por meio do programa *DB Browser for SQLite* disponível para Linux e MacOS.
+Caso deseje criar uma nova instância do banco de dados, é possível utilizar o arquivo *calc_example.sql* localizado na pasta Recursos para se criar um nova instância do banco por meio do programa *DB Browser for SQLite* disponível para Linux e MacOS.
 
 ## Versões
 
@@ -41,6 +41,8 @@ Após clonar o projeto para a sua máquina, você pode acessar as versões do pr
 - [V4](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V4) - Versão 4: Utilizando Actor-Role.
 
 - [V5](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V5) - Versão 5: Utilizando QThreadPool.
+
+- [V6](https://bitbucket.org/KellerBreno/calculadora/commits/tag/V6) - Versão 6: Versão Final.
 
 Para acessar as versões tagueadas é **necessário** realizar um checkout no commit referente a aquela tag ou realizar um checkout na tag correspondente.
 
