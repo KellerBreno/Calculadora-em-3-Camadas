@@ -1,6 +1,0 @@
-<map id="Role" name="Role">
-<area shape="rect" id="node2" href="$d6/d08/classAdminUser.html" title="Interface correspondente ao papel de administrador do sistema. " alt="" coords="25,80,111,107"/>
-<area shape="rect" id="node4" href="$d4/d79/classBasicUser.html" title="Interface correspondente ao papel usuário. " alt="" coords="148,80,231,107"/>
-<area shape="rect" id="node3" href="$d7/da8/classAdminUserImpl.html" title="Implementação da Interface AdminUser. " alt="" coords="5,155,117,181"/>
-<area shape="rect" id="node5" href="$d9/da3/classBasicUserImpl.html" title="Implementação da interface BasicUser. " alt="" coords="142,155,250,181"/>
-</map>
